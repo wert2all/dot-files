@@ -2,12 +2,18 @@
 
 my linux dot-files
 
-## install dependencies
+1. install dependencies
 
-### Arch
+   #### Arch
 
-    paru -S htop i3-wm dunst kitty nitrogen picom rofi polybar pavucontrol xfce4-power-manager cava playerctl bluetuith lxsession
+   paru -S htop i3-wm dunst kitty nitrogen picom rofi polybar pavucontrol xfce4-power-manager cava playerctl bluetuith lxsession spotify polybar-spotify-module
 
-### Opensuse
+   #### Opensuse
 
-    sudo zypper in htop
+   sudo zypper in htop
+
+2. start spotify service
+
+   systemctl --user enable spotify-listener
+
+   systemctl --user start spotify-listener
