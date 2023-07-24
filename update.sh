@@ -3,7 +3,10 @@
 mkdir ~/.config/ -p
 
 mkdir ~/.config/dunst -p
-cp .config/dunst/* ~/.config/dunst
-
 mkdir ~/.config/kitty -p
-cp .config/kitty/* ~/.config/kitty
+mkdir ~/.config/nitrogen -p
+mkdir ~/Pictures/Wallpapers -p
+
+cp .config/dunst/* ~/.config/dunst
+cp .config/nitrogen/* ~/.config/nitrogen
+cp wallpapers/* ~/Pictures/Wallpapers/
