@@ -1,2 +1,13 @@
 # dot-files
-linux dot-files
+
+my linux dot-files
+
+## install dependencies
+
+### Arch
+
+    paru -S htop i3-wm
+
+### Opensuse
+
+    sudo zypper in htop
