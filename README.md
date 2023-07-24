@@ -6,7 +6,7 @@ my linux dot-files
 
 ### Arch
 
-    paru -S htop i3-wm dunst
+    paru -S htop i3-wm dunst kitty
 
 ### Opensuse
 
