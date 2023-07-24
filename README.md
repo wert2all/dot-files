@@ -6,7 +6,7 @@ my linux dot-files
 
 ### Arch
 
-    paru -S htop i3-wm dunst kitty nitrogen picom
+    paru -S htop i3-wm dunst kitty nitrogen picom rofi
 
 ### Opensuse
 
