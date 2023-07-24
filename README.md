@@ -6,7 +6,7 @@ my linux dot-files
 
 ### Arch
 
-    paru -S htop i3-wm dunst kitty nitrogen picom rofi
+    paru -S htop i3-wm dunst kitty nitrogen picom rofi polybar pavucontrol xfce4-power-manager cava playerctl bluetuith
 
 ### Opensuse
 
