@@ -7,8 +7,12 @@ mkdir ~/.config/kitty -p
 mkdir ~/.config/nitrogen -p
 mkdir ~/Pictures/Wallpapers -p
 mkdir ~/.config/picom -p
+mkdir ~/.config/rofi -p
+mkdir ~/.local/share/rofi/themes/ -p
 
 cp .config/dunst/* ~/.config/dunst
 cp .config/nitrogen/* ~/.config/nitrogen
 cp wallpapers/* ~/Pictures/Wallpapers/
 cp .config/picom/* ~/.config/picom
+cp .config/rofi/* ~/.config/rofi
+cp themes/rofi/* ~/.local/share/rofi/themes/
