@@ -10,7 +10,7 @@ my linux dot-files
 
    #### Opensuse
 
-   sudo zypper in htop
+   sudo zypper in htop dunst kitty nitrogen picom rofi polybar pavucontrol cava playerctl bluetuith lxsession gnome-keyring libsecret-1-0 qemu-kvm libvirt bridge-utils
 
 2. start spotify service
 
@@ -25,3 +25,5 @@ my linux dot-files
    should be
 
    HandleLidSwitch=suspend
+
+4. install fonts from https://github.com/adi1090x/polybar-themes/tree/master/fonts
