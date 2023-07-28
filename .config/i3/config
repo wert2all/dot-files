@@ -15,9 +15,9 @@ set $mod Mod4
 # is used in the bar {} block below.
 
 font pango:Jetbrains Nerd Mono 14
-for_window [class="^.*"] border pixel 3
-default_border pixel 3
-default_floating_border pixel 3
+for_window [class="^.*"] border pixel 0
+default_border pixel 0
+default_floating_border pixel 0
 
 hide_edge_borders smart
 
@@ -31,9 +31,9 @@ client.unfocused                #16161d #16161d #c0caf5 #16161d #16161d
 
 gaps inner 10
 gaps outer 2
-gaps top 2
+gaps top 38
 gaps bottom 2
-smart_gaps on
+smart_gaps off
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
