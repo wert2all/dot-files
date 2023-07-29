@@ -10,7 +10,7 @@ my linux dot-files
 
    #### Opensuse
 
-   sudo zypper in htop dunst kitty nitrogen picom rofi polybar pavucontrol cava playerctl bluetuith lxsession gnome-keyring libsecret-1-0 qemu-kvm libvirt bridge-utils
+   sudo zypper in htop i3 dunst kitty nitrogen picom rofi polybar pavucontrol cava playerctl bluetuith lxsession gnome-keyring libsecret-1-0 qemu-kvm libvirt bridge-utils
 
 2. start spotify service
 
