@@ -2,28 +2,8 @@
 
 my linux dot-files
 
-1. install dependencies
+#### Opensuse
 
-   #### Arch
+sudo zypper in htop btop dunst kitty pavucontrol bluetuith lxsession gnome-keyring libsecret-1-0 qemu-kvm libvirt bridge-utils
 
-   paru -S htop i3-wm dunst kitty nitrogen picom rofi polybar pavucontrol xfce4-power-manager cava playerctl bluetuith lxsession spotify polybar-spotify-module gnome-keyring libsecret qemu-base libvirt bridge-utils
-
-   #### Opensuse
-
-   sudo zypper in htop i3 dunst kitty nitrogen picom rofi polybar pavucontrol cava playerctl bluetuith lxsession gnome-keyring libsecret-1-0 qemu-kvm libvirt bridge-utils
-
-2. start spotify service
-
-   systemctl --user enable spotify-listener
-
-   systemctl --user start spotify-listener
-
-3. check
-
-   cat /etc/systemd/logind.conf | grep -i "HandleLidSwitch"
-
-   should be
-
-   HandleLidSwitch=suspend
-
-4. install fonts from https://github.com/adi1090x/polybar-themes/tree/master/fonts
+install fonts from https://github.com/adi1090x/polybar-themes/tree/master/fonts

@@ -1,0 +1,22 @@
+---
+window:
+  opacity: 0.8
+  dynamic_padding: true
+
+font:
+  family: JetBrainsMono Nerd Font
+  size: 12
+
+colors:
+  # Default colors
+  primary:
+    background: "#000000"
+
+key_bindings:
+  - { key: Return, mods: Control, action: SpawnNewInstance }
+  - { key: F11, action: ToggleFullscreen }
+commands:
+  - {
+      name: SpawnNewInstance,
+      command: alacritty --working-directory "$(pwd)" & disown,
+    }
