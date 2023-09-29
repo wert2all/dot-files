@@ -60,9 +60,6 @@ exec --no-startup-id lxpolkit
 #dunst
 exec_always --no-startup-id "killall dunst; sleep 1; /usr/bin/dunst"
 
-#ulauncher
-exec_always --no-startup-id "killall ulauncher; sleep 1; /usr/bin/ulauncher"
-
 #polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
@@ -98,7 +95,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
