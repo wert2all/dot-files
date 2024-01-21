@@ -6,7 +6,7 @@ my linux dot-files
 
    #### Arch
 
-   paru -S htop i3-wm dunst alacritty nitrogen picom rofi polybar pavucontrol xfce4-power-manager cava playerctl bluetuith lxsession spotify polybar-spotify-module gnome-keyring libsecret qemu-base libvirt bridge-utils swww eza ags
+   paru -S htop i3-wm dunst alacritty nitrogen picom rofi polybar pavucontrol xfce4-power-manager cava playerctl bluetuith lxsession spotify polybar-spotify-module gnome-keyring libsecret qemu-base libvirt bridge-utils swww eza
 
    #### Opensuse
 
