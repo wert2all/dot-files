@@ -14,7 +14,7 @@ mkdir ~/.config/i3 -p
 mkdir ~/config/hypr/scripts -p
 mkdir ~/.config/swww -p
 
-cp .config/dunst/* ~/.config/dunst
+cp .config/dunst/* ~/.config/dunst -r
 cp .config/nitrogen/* ~/.config/nitrogen
 cp wallpapers/* ~/Pictures/Wallpapers/
 cp .config/picom/* ~/.config/picom
