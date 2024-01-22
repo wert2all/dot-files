@@ -24,7 +24,6 @@ cp .config/polybar/* ~/.config/polybar -r
 cp .config/i3/* ~/.config/i3
 cp .config/alacritty/* ~/.config/alacritty
 cp .config/hypr/* ~/.config/hypr/ -r
-cp .config/swww/* ~/.config/swww/ 
+cp .config/swww/* ~/.config/swww/
 
 cp .zshrc ~/
-
