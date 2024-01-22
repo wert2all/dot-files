@@ -11,8 +11,10 @@ mkdir ~/.config/rofi -p
 mkdir ~/.local/share/rofi/themes/ -p
 mkdir ~/.config/polybar -p
 mkdir ~/.config/i3 -p
+mkdir ~/config/hypr/scripts -p
+mkdir ~/.config/swww -p
 
-cp .config/dunst/* ~/.config/dunst
+cp .config/dunst/* ~/.config/dunst -r
 cp .config/nitrogen/* ~/.config/nitrogen
 cp wallpapers/* ~/Pictures/Wallpapers/
 cp .config/picom/* ~/.config/picom
@@ -21,3 +23,7 @@ cp themes/rofi/* ~/.local/share/rofi/themes/
 cp .config/polybar/* ~/.config/polybar -r
 cp .config/i3/* ~/.config/i3
 cp .config/alacritty/* ~/.config/alacritty
+cp .config/hypr/* ~/.config/hypr/ -r
+cp .config/swww/* ~/.config/swww/
+
+cp .zshrc ~/

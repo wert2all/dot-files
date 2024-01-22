@@ -6,11 +6,11 @@ my linux dot-files
 
    #### Arch
 
-   paru -S htop i3-wm dunst alacritty nitrogen picom rofi polybar pavucontrol xfce4-power-manager cava playerctl bluetuith lxsession spotify polybar-spotify-module gnome-keyring libsecret qemu-base libvirt bridge-utils
+   paru -S htop i3-wm dunst alacritty nitrogen picom rofi polybar pavucontrol xfce4-power-manager cava playerctl bluetuith lxsession spotify polybar-spotify-module gnome-keyring libsecret qemu-base libvirt bridge-utils swww eza
 
    #### Opensuse
 
-   sudo zypper in htop btop i3 dunst alacritty nitrogen picom rofi polybar pavucontrol cava playerctl bluetuith lxsession gnome-keyring libsecret-1-0 qemu-kvm libvirt bridge-utils
+   sudo zypper in htop btop i3 dunst alacritty nitrogen picom rofi polybar pavucontrol cava playerctl bluetuith lxsession gnome-keyring libsecret-1-0 qemu-kvm libvirt bridge-utils swww eza
 
 2. start spotify service
 
