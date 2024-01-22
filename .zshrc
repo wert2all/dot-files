@@ -99,4 +99,4 @@ source $ZSH/oh-my-zsh.sh
 
 alias zshconfig="nvim ~/.zshrc"
 alias vim=nvim
-alias ll="eza -l -g --icons"
+alias ll="eza -lh --icons=auto --sort=name --group-directories-first"
