@@ -30,12 +30,16 @@ function send_notification {
 
 function notify_mute()
 {
-    mute=`pamixer $srce --get-mute | cat`
-    if [ "$mute" == "true" ] ; then
-        dunstify "t2" -a "muted" "$nsink" -i ${icodir}/muted-${dvce}.svg -r 91190 -t 800
+    device=$1
+    mute=`pactl get-sink-mute @DEFAULT_SINK@ | cut -d ' ' -f 2`
+    if [ "$mute" == "yes" ] ; then
+        mute="muted"
     else
-        dunstify "t2" -a "unmuted" "$nsink" -i ${icodir}/unmuted-${dvce}.svg -r 91190 -t 800
+        mute="unmuted"
     fi
+
+    ico="~/.config/dunst/icons/vol/${mute}-${device}.svg"
+    dunstify "t2" -a ${mute} "$nsink" -i ${ico} -r 91190 -t 800
 }
 
 function get_volume()
@@ -48,8 +52,8 @@ case $1 in
       send_notification $(get_volume) ;;
     d) pactl set-sink-volume @DEFAULT_SINK@ -5%
       send_notification $(get_volume) ;;
-    m) pamixer $srce -t
-        notify_mute ;;
+    m) pactl set-sink-mute @DEFAULT_SINK@ toggle
+        notify_mute "speaker";;
     *) print_error ;;
 esac
 
