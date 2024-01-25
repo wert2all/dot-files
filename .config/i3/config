@@ -32,7 +32,7 @@ client.unfocused                #16161d #16161d #c0caf5 #16161d #16161d
 
 gaps inner 10
 gaps outer 2
-gaps top 38
+gaps top 2
 gaps bottom 2
 smart_gaps off
 
