@@ -11,6 +11,8 @@ return {
       "javascript",
       "jsdoc",
       "json",
+      "json5",
+      "jsdoc",
       "lua",
       "luadoc",
       "php",
