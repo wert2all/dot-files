@@ -7,6 +7,7 @@ return {
         "shfmt",
         "prettier",
         "hadolint",
+        "phpactor",
         "phpcs",
         "phpstan",
         "php-cs-fixer",
