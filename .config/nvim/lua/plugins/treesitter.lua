@@ -5,6 +5,7 @@ return {
       "bash",
       "css",
       "diff",
+      "dockerfile",
       "html",
       "gitignore",
       "graphql",

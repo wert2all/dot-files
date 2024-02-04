@@ -62,6 +62,8 @@ return {
           -- to fully override the default_config, change the below
           -- filetypes = {}
         },
+        dockerls = {},
+        docker_compose_language_service = {},
       },
     },
     setup = {
