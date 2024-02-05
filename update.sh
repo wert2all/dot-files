@@ -14,7 +14,6 @@ mkdir ~/.config/i3 -p
 mkdir ~/config/hypr/scripts -p
 mkdir ~/.config/swww -p
 mkdir ~/.config/waybar/ -p
-mkdir ~/.config/nvim/ -p
 
 cp .config/dunst/* ~/.config/dunst -r
 cp .config/nitrogen/* ~/.config/nitrogen
@@ -28,6 +27,5 @@ cp .config/alacritty/* ~/.config/alacritty
 cp .config/hypr/* ~/.config/hypr/ -r
 cp .config/swww/* ~/.config/swww/
 cp .config/waybar/* ~/.config/waybar/ -r
-cp .config/nvim/* ~/.config/nvim/ -r
 
 cp .zshrc ~/
