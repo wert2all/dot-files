@@ -102,3 +102,4 @@ alias vim=nvim
 alias ll="eza -lh --icons=auto --sort=name --group-directories-first"
 alias gph="git push origin HEAD"
 alias gau="git add -u && gss"
+alias dus="sudo du -hs \$(ls -A) | sort -h"
