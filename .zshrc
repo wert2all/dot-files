@@ -115,4 +115,23 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+# aliases
+
+alias p='pnpm'
+
+# Dependencies
+alias pa='pnpm add'
+alias pad='pnpm add --save-dev'
+alias pin='pnpm install'
+alias pu='pnpm update'
+alias pui='pnpm update --interactive'
+alias puil='pnpm update --interactive --latest'
+
+# Run scripts
+alias prun='pnpm run'
+alias pst='pnpm start'
+alias pln='pnpm run lint'
+alias pfmt='pnpm run format'
+
 # pnpm end
