@@ -90,6 +90,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym XF86Go exec playerctl play-pause
 bindsym XF86Favorites exec playerctl next
 
+bindsym $mod+Shift+Return exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
