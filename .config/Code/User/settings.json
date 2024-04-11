@@ -5,12 +5,12 @@
   "workbench.sideBar.location": "left",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
-  
+
   //Editor
   "editor.linkedEditing": true,
   "editor.accessibilitySupport": "off",
-  "editor.fontFamily": "'JetbrainsMono Nerd Font'",
-  "editor.fontSize": 19,
+  "editor.fontFamily": " 'Iosevka Nerd Font', 'JetbrainsMono Nerd Font', '0xProto Nerd Font Mono'",
+  "editor.fontSize": 22,
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
   "editor.cursorSmoothCaretAnimation": "on",
@@ -43,24 +43,24 @@
   "workbench.editor.limit.value": 5,
   "workbench.editor.showTabs": "single",
 
-  //terminal 
+  //terminal
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.fontWeight": "300",
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.tabs.enabled": true,
-  
+
   "files.autoSave": "onFocusChange",
   "workbench.startupEditor": "none",
   "window.autoDetectColorScheme": true,
-  
+
   "workbench.statusBar.visible": false,
   "diffEditor.hideUnchangedRegions.enabled": true,
   "workbench.editor.tabActionLocation": "right",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.scrollbar.verticalScrollbarSize": 10,
   "editor.scrollbar.horizontalScrollbarSize": 0,
-  "workbench.activityBar.location": "side",
+  "workbench.activityBar.location": "default",
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
   //Debug
@@ -68,7 +68,7 @@
   "debug.focusWindowOnBreak": false,
   "debug.showInlineBreakpointCandidates": false,
   "debug.showBreakpointsInOverviewRuler": false,
-  
+
   // breadcrumbs
   "breadcrumbs.icons": false,
   "breadcrumbs.showArrays": false,
@@ -99,5 +99,5 @@
   "workbench.iconTheme": "bearded-icons",
   "workbench.preferredLightColorTheme": "Quiet Light",
   "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
-  "workbench.colorTheme": "Gruvbox Material Dark",
+  "workbench.colorTheme": "Gruvbox Material Dark"
 }
