@@ -1,6 +1,3 @@
 .config/btop/btop.log
 .local/share/fonts/.uuid
-.config/Code/User/globalStorage
-.config/Code/User/History
-.config/Code/User/snippets
-.config/Code/User/workspaceStorage
+.config/Code/
