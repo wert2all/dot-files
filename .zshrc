@@ -7,6 +7,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ANDROID_HOME="$HOME/Android/Sdk"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 
+#cargo 
+export PATH=$HOME/.cargo/bin/:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
