@@ -106,11 +106,22 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 
+gitCheckoutAndReset(){
+  if [ -n "$1" ]
+  then
+    git checkout $1
+    git reset --hard origin/$1
+  fi
+}
+
 alias zshconfig="nvim ~/.zshrc"
 alias vim=nvim
 alias ll="eza -lh --icons=auto --sort=name --group-directories-first"
+
 alias gph="git push origin HEAD"
 alias gau="git add -u && gss"
+alias gcr="gitCheckoutAndReset"
+
 alias dus="sudo du -hs \$(ls -A) | sort -h"
 eval "$(zoxide init zsh)"
 
