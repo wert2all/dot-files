@@ -4,7 +4,7 @@ wallPath="${XDG_CONFIG_HOME:-$HOME/.config}/swww"
 
 swww query
 if [ $? -eq 1 ]; then
-  swww init
+  swww-daemon
 fi
 
 #Get a list of all image files in the wallpapers directory
