@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=launch_sql_ui.sh api
+Exec=launch_app.sh api
 Icon=httpie
 Version=1.0
 Type=Application

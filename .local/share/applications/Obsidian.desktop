@@ -1,11 +1,11 @@
 [Desktop Entry]
-Exec=launch_app.sh sql
-Icon=beekeeper
+Exec=launch_app.sh obsidian
+Icon=obsidian
 Version=1.0
 Type=Application
 Categories=Development
-Name=Beekeeper
+Name=Obsidian
 Terminal=false
 X-GNOME-Autostart-enabled=false
 StartupNotify=false
-GenericName=Beekeeper
+GenericName=Obsidian
