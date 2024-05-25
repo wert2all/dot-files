@@ -1,11 +1,11 @@
 [Desktop Entry]
-Exec=launch_sql_ui.sh sql
-Icon=beekeeper
+Exec=launch_sql_ui.sh api
+Icon=httpie
 Version=1.0
 Type=Application
 Categories=Development
-Name=Beekeeper
+Name=HTTPie
 Terminal=false
 X-GNOME-Autostart-enabled=false
 StartupNotify=false
-GenericName=Beekeeper
+GenericName=HTTPie

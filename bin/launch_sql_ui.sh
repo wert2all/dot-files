@@ -1,3 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-~/apps/Beekeeper-Studio-4.3.4.AppImage
+case $1 in
+sql) ~/apps/Beekeeper-Studio-4.3.4.AppImage ;;
+api) ~/apps/HTTPie-2024.1.2.AppImage ;;
+*) print_error ;;
+esac
