@@ -1,0 +1,11 @@
+[Desktop Entry]
+Exec=launch_sql_ui.sh
+Icon=beekeeper
+Version=1.0
+Type=Application
+Categories=Development
+Name=Beekeeper
+Terminal=false
+X-GNOME-Autostart-enabled=false
+StartupNotify=false
+GenericName=Beekeeper
