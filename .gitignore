@@ -2,3 +2,4 @@
 .local/share/fonts/.uuid
 .config/Code/
 .local/share/applications/mimeinfo.cache
+.local/share/applications/jetbrains*
