@@ -1,0 +1,122 @@
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version = 2
+final_space = true
+console_title_template = '{{ .Folder }}'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    type = 'os'
+    style = 'powerline'
+    foreground = '#ffffff'
+    background = '#3A3A3A'
+    template = '{{ if .WSL }}WSL at{{ end }} {{.Icon}} '
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'powerline'
+    powerline_symbol = ''
+    foreground = '#282828'
+    background = '#458588'
+    template = ' {{ .Path }} '
+
+    [blocks.segments.properties]
+      style = 'full'
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'powerline'
+    powerline_symbol = ''
+    foreground = '#282828'
+    background = '#98971A'
+    background_templates = ['{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}', '{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}', '{{ if gt .Ahead 0 }}#B388FF{{ end }}', '{{ if gt .Behind 0 }}#B388FF{{ end }}']
+    leading_diamond = ''
+    trailing_diamond = ''
+    template = ' {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} '
+
+    [blocks.segments.properties]
+      branch_icon = ' '
+      branch_identical_icon = '●'
+      branch_max_length = 25.0
+      fetch_stash_count = true
+      fetch_status = true
+
+  [[blocks.segments]]
+    type = 'go'
+    style = 'powerline'
+    powerline_symbol = ''
+    foreground = '#111111'
+    background = '#8ED1F7'
+    template = '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} '
+
+    [blocks.segments.properties]
+      fetch_version = true
+
+  [[blocks.segments]]
+    type = 'julia'
+    style = 'powerline'
+    powerline_symbol = ''
+    foreground = '#111111'
+    background = '#4063D8'
+    template = '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} '
+
+    [blocks.segments.properties]
+      fetch_version = true
+
+  [[blocks.segments]]
+    type = 'python'
+    style = 'powerline'
+    powerline_symbol = ''
+    foreground = '#111111'
+    background = '#FFDE57'
+    template = '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} '
+
+    [blocks.segments.properties]
+      display_mode = 'files'
+      fetch_virtual_env = false
+
+  [[blocks.segments]]
+    type = 'ruby'
+    style = 'powerline'
+    powerline_symbol = ''
+    foreground = '#ffffff'
+    background = '#AE1401'
+    template = '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} '
+
+    [blocks.segments.properties]
+      display_mode = 'files'
+      fetch_version = true
+
+  [[blocks.segments]]
+    type = 'azfunc'
+    style = 'powerline'
+    powerline_symbol = ''
+    foreground = '#ffffff'
+    background = '#FEAC19'
+    template = ' {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} '
+
+    [blocks.segments.properties]
+      display_mode = 'files'
+      fetch_version = false
+
+  [[blocks.segments]]
+    type = 'aws'
+    style = 'powerline'
+    powerline_symbol = ''
+    foreground = '#ffffff'
+    background_templates = ['{{if contains "default" .Profile}}#FFA400{{end}}', '{{if contains "jan" .Profile}}#f1184c{{end}}']
+    template = '  {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} '
+
+    [blocks.segments.properties]
+      display_default = false
+
+  [[blocks.segments]]
+    type = 'root'
+    style = 'powerline'
+    powerline_symbol = ''
+    foreground = '#111111'
+    background = '#ffff66'
+    template = '  '
