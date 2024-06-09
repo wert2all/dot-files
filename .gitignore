@@ -3,3 +3,4 @@
 .config/Code/
 .local/share/applications/mimeinfo.cache
 .local/share/applications/jetbrains*
+bin/oh-my-posh

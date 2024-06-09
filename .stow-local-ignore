@@ -5,3 +5,5 @@ LICENSE
 README.md
 .mozilla
 nixos
+.gitignore
+bin/oh-my-posh
