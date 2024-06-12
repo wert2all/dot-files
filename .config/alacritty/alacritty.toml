@@ -26,24 +26,24 @@ background = "0x282828"
 foreground = "0xebdbb2"
 
 [font]
-size = 18
+size = 14
 
 [font.bold]
 # family = "0xProto Nerd Font Mono"
-family = "Iosevka Nerd Font"
-# family = "JetBrainsMono Nerd Font"
+# family = "Iosevka Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Bold"
 
 [font.italic]
 # family = "0xProto Nerd Font Mono"
-family = "Iosevka Nerd Font"
-# family = "JetBrainsMono Nerd Font"
+# family = "Iosevka Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Italic"
 
 [font.normal]
 # family = "0xProto Nerd Font Mono"
-family = "Iosevka Nerd Font"
-# family = "JetBrainsMono Nerd Font"
+# family = "Iosevka Nerd Font"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [window.padding]
