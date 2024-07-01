@@ -1,16 +1,10 @@
 {
-    "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    //"height": 20, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
+    "layer": "top", 
+    "position": "top",
+    "spacing": 0, 
     "modules-left": [
         "hyprland/workspaces"
     ],
-    // "modules-center": [
-    //     "hyprland/window"
-    // ],
     "modules-right": [
         "pulseaudio",
         "battery",
@@ -18,13 +12,11 @@
         "clock",
         "tray"
     ],
+    
     // Modules configuration
     "hyprland/workspaces": {
         "all-outputs": true,
         "format": "{icon}",
-        // "on-scroll-up": "hyprctl dispatch workspace e-1",
-        // "on-scroll-down": "hyprctl dispatch workspace e+1",
-        // "on-click": "activate",
         "format-icons": {
             "1": "",
             "2": "",
@@ -79,46 +71,56 @@
             ""
         ]
     },
-    "battery": {
+
+     "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": {
+            "charging": [
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ],
+            "default": [
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
+            ]
+        },
+        "format-full": "Charged ",
+        "interval": 5,
+        "tooltip": false,
         "states": {
             // "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ", 
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        "format-icons": [
-            "󰁻",
-            "󰁽",
-            "󰁿",
-            "󰂁",
-            "󰁹"
-        ]
     },
+
     "pulseaudio": {
-        "scroll-step": 5, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": " ",
-        "format-source-muted": " ",
+        "format": "{icon}",
+        "format-bluetooth": "󰂰",
+        "nospacing": 1,
+        "tooltip-format": "Volume : {volume}%",
+        "format-muted": "󰝟",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
+            "default": ["󰖀","󰕾",""]
         },
+        "scroll-step": 5, // %, can be a float
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
     "idle_inhibitor": {
