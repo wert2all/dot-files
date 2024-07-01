@@ -96,8 +96,8 @@
   "breadcrumbs.showVariables": false,
 
   //Theme
-  "workbench.iconTheme": "bearded-icons",
+  "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.preferredLightColorTheme": "Quiet Light",
-  "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
+  "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
   "workbench.colorTheme": "Gruvbox Material Dark"
 }
