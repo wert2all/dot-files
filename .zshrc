@@ -156,4 +156,4 @@ alias pfmt='pnpm run format'
 export GPG_TTY=$(tty)
 
 # Prompt
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/catppuccin_macchiato.omp.json)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/atomic.omp.json)"
