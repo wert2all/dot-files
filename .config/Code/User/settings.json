@@ -99,5 +99,6 @@
   "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.preferredLightColorTheme": "Quiet Light",
   "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
-  "workbench.colorTheme": "Catppuccin Macchiato"
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "codeium.enableCodeLens": false
 }
