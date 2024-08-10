@@ -86,6 +86,7 @@
     lightdm-mini-greeter
     bluetuith
     waybar
+    kitty
     alacritty
     zsh
     oh-my-zsh
