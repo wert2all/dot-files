@@ -133,7 +133,6 @@ case ":$PATH:" in
 esac
 
 # aliases
-
 alias p='pnpm'
 
 # Dependencies
@@ -154,6 +153,9 @@ alias pfmt='pnpm run format'
 
 # for sign git commits
 export GPG_TTY=$(tty)
+
+#fix kitty on ssh
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
 # Prompt
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/atomic.omp.json)"
