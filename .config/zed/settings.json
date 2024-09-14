@@ -1,0 +1,12 @@
+{
+  "theme": "Catppuccin Macchiato - No Italics",
+  "vim_mode": false,
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": false
+  },
+  "ui_font_size": 19,
+  "buffer_font_size": 19,
+  "autosave": "on_window_change",
+  "buffer_font_family": "JetBrainsMono Nerd Font"
+}
