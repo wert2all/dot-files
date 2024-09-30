@@ -2,14 +2,14 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "window.menuBarVisibility": "compact",
   "workbench.list.smoothScrolling": true,
-  "workbench.sideBar.location": "left",
+  "workbench.sideBar.location": "right",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
 
   //Editor
   "editor.linkedEditing": true,
   "editor.accessibilitySupport": "off",
-  "editor.fontFamily": " 'Iosevka Nerd Font', 'JetbrainsMono Nerd Font', '0xProto Nerd Font Mono'",
+  "editor.fontFamily": "'Geist Mono', 'Iosevka Nerd Font', 'JetbrainsMono Nerd Font', '0xProto Nerd Font Mono'",
   "editor.fontSize": 22,
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
@@ -41,7 +41,7 @@
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 5,
-  "workbench.editor.showTabs": "single",
+  "workbench.editor.showTabs": "none",
 
   //terminal
   "terminal.integrated.cursorBlinking": true,
@@ -60,9 +60,9 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.scrollbar.verticalScrollbarSize": 10,
   "editor.scrollbar.horizontalScrollbarSize": 0,
-  "workbench.activityBar.location": "default",
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
+
   //Debug
   "debug.toolBarLocation": "hidden",
   "debug.focusWindowOnBreak": false,
@@ -100,5 +100,21 @@
   "workbench.preferredLightColorTheme": "Quiet Light",
   "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
   "workbench.colorTheme": "Catppuccin Macchiato",
-  "codeium.enableCodeLens": false
+  "codeium.enableCodeLens": false,
+
+  "editor.copyWithSyntaxHighlighting": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.emptySelectionClipboard": false,
+  "workbench.editor.enablePreview": false,
+  "window.newWindowDimensions": "inherit",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "files.trimTrailingWhitespace": true,
+  "diffEditor.renderSideBySide": false,
+  "editor.snippetSuggestions": "top",
+  "editor.detectIndentation": false,
+  "window.nativeFullScreen": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "editor.guides.indentation": false,
+  "window.customTitleBarVisibility": "auto",
 }
