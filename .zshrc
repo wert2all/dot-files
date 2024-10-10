@@ -1,3 +1,6 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/wert2all/.zsh/completions:"* ]]; then export FPATH="/home/wert2all/.zsh/completions:$FPATH"; fi
+export PATH=$HOME/.deno/bin:$PATH
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
