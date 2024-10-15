@@ -98,8 +98,8 @@
   //Theme
   "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.preferredLightColorTheme": "Quiet Light",
-  "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.preferredDarkColorTheme": "Nightfox",
+  "workbench.colorTheme": "Nightfox",
   "codeium.enableCodeLens": false,
 
   "editor.copyWithSyntaxHighlighting": false,
@@ -116,5 +116,5 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "editor.guides.indentation": false,
-  "window.customTitleBarVisibility": "auto",
+  "window.customTitleBarVisibility": "auto"
 }

@@ -1,7 +1,14 @@
-* {
-    main-bg:           #1e2030FF;
-    main-fg:           #cad3f5FF;
+/* bd color #192330
+   selected color #2b3b51
+   fg color #cdcecf 
+*/
 
-    select-bg:         #c6a0f6FF;
-    select-fg:         #24273aFF;
+* {
+    main-bg:           #192330FF;
+    main-fg:           #cdcecfFF;
+
+    select-bg:         #2b3b51FF;
+    select-fg:         #cdcecfFF;
+
+    font:              "VictorMono Nerd Font Mono 14";
 }
