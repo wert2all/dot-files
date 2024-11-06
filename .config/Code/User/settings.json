@@ -97,8 +97,8 @@
 
   //Theme
   "workbench.iconTheme": "catppuccin-macchiato",
-  "workbench.preferredLightColorTheme": "Nightfox",
-  "workbench.preferredDarkColorTheme": "Nightfox",
+  "workbench.preferredLightColorTheme": "Quiet Light",
+  "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
   "workbench.colorTheme": "Nightfox",
   "codeium.enableCodeLens": false,
 

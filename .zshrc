@@ -159,4 +159,4 @@ export GPG_TTY=$(tty)
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
 # Prompt
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/spaceship.omp.json)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/tokyo.omp.json)"
