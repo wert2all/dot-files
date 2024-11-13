@@ -34,7 +34,7 @@ function notify_mute()
         mute="unmuted"
     fi
 
-    ico="~/.config/dunst/icons/vol/${mute}-${device}.svg"
+    ico=$HOME"/.config/dunst/icons/vol/${mute}-${device}.svg"
     dunstify "t2" -a ${mute} "$nsink" -i ${ico} -r 91190 -t 800
 
 }

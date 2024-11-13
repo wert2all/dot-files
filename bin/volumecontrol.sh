@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # define functions
-source $HOME/bin/_functions.sh
+source "$HOME"/bin/_functions.sh
 
 function send_notification {
     vol=$1
@@ -16,7 +16,7 @@ function get_volume()
   pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1
 }
 
-icodir=$HOME"/home/wert2all/.config/dunst/icons/vol"
+icodir=$HOME"/.config/dunst/icons/vol"
 
 case $1 in
     i) pactl set-sink-volume @DEFAULT_SINK@ +5%
