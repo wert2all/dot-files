@@ -11,6 +11,9 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/plat
 #go 
 export PATH=$HOME/go/bin/:$PATH
 
+# fix tmux patch for wsl2
+export TMUX_TMPDIR=/tmp
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
