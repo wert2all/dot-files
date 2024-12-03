@@ -164,5 +164,3 @@ export GPG_TTY=$(tty)
 # Prompt
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/tokyo.omp.json)"
 
-#nvim
-alias nvm='NVIM_APPNAME="nvm" nvim'
