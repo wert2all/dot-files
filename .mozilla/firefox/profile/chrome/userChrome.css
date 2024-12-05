@@ -1,1170 +1,1091 @@
-/* GLOBAL SETTING */
+/*! SHIMMMER v2.20 */
+/*? https://github.com/nuclearcodecat/shimmer */
 
-/* Fonts */
 
-* {
-  font-family: 'CaskaydiaCove Nerd Font', monospace !important;
+/* browser toolbox prompt hack - set devtools.debugger.prompt-connection to false */
+
+/*? shimmer variables */
+:root {
+  /*? urlbar border radius */
+  --shimmer-urlbar-rounding: 16px;
+  --shimmer-urlbar-inner-rounding: calc(var(--shimmer-urlbar-rounding) * .75);
+
+  /*? max tab width */
+  --shimmer-tab-max-width: 13em;
+  /*? min tab width */
+  --shimmer-tab-min-width: 9em;
+  /*? selected tab width */
+  --shimmer-tab-selected-width: var(--shimmer-tab-max-width);
+
+  /* --shimmer-tab-height: 32px; */
+  /* --shimmer-titlebar-height: calc(var(--shimmer-tab-height) + 6px); */
+  --shimmer-tab-border-radius: 12px;
+  --shimmer-browser-border-radius: 20px;
+  --shimmer-top-bottom-browser-margin: 8px;
+
+  /* could be hardcoded in some places... */
+  --shimmer-btn-anim: background 0.075s linear, opacity 0.075s linear;
+
+  /*? gap between window control buttons */
+  --shimmer-winctr-gap: 5px;
+  /*? margin around winctr buttons */
+  --shimmer-winctr-margin: 12px;
 }
 
-/*------------------------------------------------*/
-/* Background Color */
-
-@media (prefers-color-scheme: dark) {
-
-  #nav-bar,
-  #navigator-toolbox,
-  #sidebar-box,
-  #tabbrowser-tabbox,
-  #tabbrowser-tabpanels,
-  #browser,
-  #appcontent,
-  #sidebar-select-box,
-  .browser-sidebar2,
-  tab.tabbrowser-tab * {
-    background-color: #1a1a1a !important;
-  }
-
+/*? overwritten variables */
+:root {
+  --arrowpanel-menuitem-margin-inline: 5px !important;
+  --arrowpanel-header-min-height: calc(calc(var(--arrowpanel-header-back-icon-full-width) + (var(--panel-separator-margin-horizontal) * 2)) * 0.5) !important;
+  --arrowpanel-menuitem-padding: 4px 8px !important;
+  --arrowpanel-border-radius: 12px !important;
+  --arrowpanel-menuitem-border-radius: calc(var(--arrowpanel-border-radius) / 1.65) !important;
+  /* --var-tab-min-height: 10px !important; */
+  /* --tab-border-radius: var(--shimmer-tab-border-radius) !important; */
+  /*? disable opacity change when tabbed out */
+  --inactive-titlebar-opacity: 1 !important;
+  --splitter-width: 8px !important;
 }
 
-@media (prefers-color-scheme: light) {
-
-  #nav-bar,
-  #navigator-toolbox,
-  #sidebar-box,
-  #tabbrowser-tabbox,
-  #tabbrowser-tabpanels,
-  #browser,
-  #appcontent,
-  #sidebar-select-box,
-  .browser-sidebar2,
-  tab.tabbrowser-tab * {
-    background-color: #e6e6e6 !important;
-  }
-}
-
-#PersonalToolbar {
-  background: transparent !important;
-}
-
-/*============================================================================================*/
-/* NAV BAR */
-
-/* Auto hide icons on the Nav Bar */
-#nav-bar>#nav-bar-customization-target *:not(#urlbar-container):not(#urlbar-container *),
-#PanelUI-button {
-  opacity: 0 !important;
-  transition: opacity 0.7s ease !important;
-}
-
-#nav-bar:hover>#nav-bar-customization-target *:not(#urlbar-container):not(#urlbar-container *),
-#nav-bar:hover>#PanelUI-button {
-  opacity: 1 !important;
-  transition: opacity 0.3s ease !important;
-}
-
-/*------------------------------------------------*/
-/* Remove line between website content and top bar */
-
-#navigator-toolbox {
-  border-bottom: var(--firefoxcss-top-bar-border-bottom-size) solid var(--firefoxcss-top-bar-border-bottom-color) !important;
-}
-
-/*------------------------------------------------*/
-/* Remove the 3 dots from Alt Key */
-
-#titlebar #toolbar-menubar .titlebar-buttonbox-container {
+/*? customize context menu */
+/* #context-back, */
+/* #context-bookmarklink, */
+/* #context-bookmarkpage, */
+/* #context-forward, */
+/* #context-inspect, */
+#context-inspect-a11y,
+/* #context-navigation, */
+/* #context-openlink, */
+/* #context-openlinkintab, */
+/* #context-openlinkinusercontext-menu, */
+/* #context-openlinkprivate, */
+#context-pocket,
+/* #context-reload, */
+#context-savelink,
+#context-savelinktopocket,
+/* #context-savepage, */
+/* #context-searchselect, */
+/* #context-selectall, */
+/* #context-sendlinktodevice, */
+/* #context-sendpagetodevice, */
+/* #context-sep-navigation, */
+/* #context-sep-open, */
+/* #context-sep-selectall, */
+#context-sep-sendlinktodevice,
+#context-sep-sendpagetodevice,
+/* #context-sep-viewbgimage, */
+#context-sep-viewsource,
+/* #context-stop, */
+/* #context-viewbgimage, */
+/* #context-viewinfo, */
+#context-viewpartialsource-selection,
+#context-viewsource,
+/* #inspect-separator, */
+#screenshots_mozilla_org_create-screenshot {
   display: none !important;
 }
 
-/*------------------------------------------------*/
-/* Move menu buttons to the left side */
-
-#nav-bar #PanelUI-button #PanelUI-menu-button {
-  padding-right: 2px !important;
-  padding-left: 4px !important;
+/*? slim scrollbars everywhear!!!! */
+* {
+  scrollbar-width: thin !important;
 }
 
-#nav-bar #PanelUI-button {
-  -moz-box-ordinal-group: 0 !important;
-  order: 0 !important;
+@media (-moz-bool-pref: "shimmer.hide-sidebar-button") {
+  #sidebar-button {
+    display: none !important;
+  }
 }
 
-toolbar:not([customizing])>#nav-bar-overflow-button {
-  -moz-box-ordinal-group: 1 !important;
-  order: 1 !important;
+/*! === titlebar === */
+
+.toolbarbutton-animatable-box>image {
+  /*? change reload button animation length */
+  animation-duration: 0.7s !important;
+  animation-timing-function: ease-in-out !important;
 }
 
-toolbar:not([customizing])>#nav-bar-customization-target {
-  -moz-box-ordinal-group: 2 !important;
-  order: 2 !important;
+/*? change bookmark star button to yellow_ when starred */
+#star-button[starred="true"] {
+  fill: #f7e617 !important;
+  stroke: #000 !important;
+  stroke-width: 2px !important;
+  filter: drop-shadow(0px 0px 0.5px #000) !important;
 }
 
-#appMenu-popup {
-  margin-inline: -244px !important;
+/*? taller navbar */
+@media not (-moz-bool-pref: "shimmer.shorter-navbar") {
+  #navigator-toolbox, #nav-bar {
+    min-height: 50px !important;
+  }
+}
+#TabsToolbar {
+  height: 100% !important;
 }
 
-#widget-overflow {
-  margin-inline: -320px !important;
+/*? make extensions buttons reach the entire height of navbar */
+#nav-bar-customization-target toolbarbutton {
+  height: 100% !important;
 }
 
-/*------------------------------------------------*/
-/* Macos Style window buttons */
-
-:root {
-  --firefoxcss-control-buttons-margin: 95px;
-}
-
-#navigator-toolbox #nav-bar {
-  padding-right: calc(var(--firefoxcss-control-buttons-margin) - 10px) !important;
-}
-
-#navigator-toolbox:not([inFullscreen]) #TabsToolbar .titlebar-buttonbox-container {
-  visibility: visible !important;
-  display: flex !important;
-  position: absolute !important;
-  top: 2px !important;
-  left: unset !important;
-  right: 0 !important;
-  padding-top: 10px !important;
-  padding-bottom: 2px !important;
-  padding-right: 8px !important;
-  padding-left: 2px !important;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-button {
-  width: 14px !important;
-  min-width: 14px !important;
-  min-height: 14px !important;
-  height: 14px !important;
-}
-
-#navigator-toolbox[inFullscreen] #TabsToolbar .titlebar-buttonbox-container {
-  padding-top: 4px !important;
-  padding-bottom: 4px !important;
-  padding-right: 8px !important;
-  padding-left: 4px !important;
+#urlbar {
   margin: 0 !important;
+}
+
+/*? move the window control buttons to the same row as urlbar */
+#main-window[titlepreface="​"] #navigator-toolbox {
+  display: grid !important;
+  grid-template-rows: repeat(4, auto);
+}
+#PersonalToolbar:not([collapsed="true"]) {
+  padding-bottom: calc(var(--shimmer-top-bottom-browser-margin) / 2) !important;
+}
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #PersonalToolbar {
+    grid-area: 4 / 1 / 5 / 3 !important;
+  }
+}
+@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #main-window[titlepreface="​"] #PersonalToolbar {
+    grid-area: 4 / 1 / 5 / 3 !important;
+  }
+}
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #toolbar-menubar {
+    grid-area: 1 / 1 / 2 / 3 !important;
+  }
+}
+@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #main-window[titlepreface="​"] #toolbar-menubar {
+    grid-area: 1 / 1 / 2 / 3 !important;
+  }
+}
+@media not (-moz-bool-pref: "shimmer.reverse-winctr-buttons-side") {
+  #navigator-toolbox {
+    grid-template-columns: 1fr auto !important;
+  }
+
+  @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+    #nav-bar {
+      grid-area: 3 / 1 / 4 / 2 !important;
+    }
+  }
+  #main-window[titlepreface="​"] #nav-bar {
+    grid-area: 3 / 1 / 4 / 2 !important;
+  }
+
+  @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+    #TabsToolbar {
+      grid-area: 3 / 2 / 4 / 3 !important;
+    }
+  }
+  #main-window[titlepreface="​"] #TabsToolbar {
+    grid-area: 3 / 2 / 4 / 3 !important;
+  }
+}
+@media (-moz-bool-pref: "shimmer.reverse-winctr-buttons-side") {
+  #navigator-toolbox {
+    grid-template-columns: auto 1fr !important;
+  }
+
+  @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+    #nav-bar {
+      grid-area: 3 / 2 / 4 / 3 !important;
+    }
+  }
+  #main-window[titlepreface="​"] #nav-bar {
+    grid-area: 3 / 2 / 4 / 3 !important;
+  }
+
+  @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+    #TabsToolbar {
+      grid-area: 3 / 1 / 4 / 2 !important;
+    }
+  }
+  #main-window[titlepreface="​"] #TabsToolbar {
+    grid-area: 3 / 1 / 4 / 2 !important;
+  }
+
+  #TabsToolbar {
+    flex-direction: row-reverse !important;
+  }
+}
+
+/*TODO possible fix for macos icons not centered (#3) */
+.titlebar-buttonbox-container {
+  justify-content: space-evenly !important;
   align-items: center !important;
 }
-
-:root:-moz-window-inactive:not([customizing]) :is(.titlebar-buttonbox)>toolbarbutton:not(:hover) {
-  opacity: 0.65 !important;
+.titlebar-buttonbox {
+  height: 100% !important;
+  align-items: center !important;
+}
+.titlebar-button {
+  height: 100% !important;
 }
 
-:is(.titlebar-buttonbox) .toolbarbutton-icon {
-  opacity: 1 !important;
-  appearance: none !important;
+/*? make the window grabbable at the top, but not the window control buttons */
+/* #main-window[titlepreface="​"] #nav-bar {
+  border-top: 1px solid rgba(0, 0, 0, 0) !important;
 }
+#main-window[titlepreface=""] .toolbar-items {
+  margin-top: 1px !important;
+} */
 
-#TabsToolbar .titlebar-button>.toolbarbutton-icon {
-  width: 14px !important;
-  min-width: 14px !important;
-  min-height: 14px !important;
-  height: 14px !important;
-  stroke: none !important;
-}
-
-#TabsToolbar .titlebar-buttonbox {
-  margin-right: 2px !important;
-  margin-left: 0px !important;
-}
-
-#TabsToolbar .titlebar-button {
-  background-color: transparent !important;
-  appearance: none !important;
-  padding: 0px !important;
-  margin: 0 !important;
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-}
-
-#TabsToolbar .titlebar-close {
-  appearance: none !important;
-  -moz-box-ordinal-group: 2 !important;
-  order: 2 !important;
-}
-
-#TabsToolbar .titlebar-min {
-  appearance: none !important;
-  -moz-box-ordinal-group: 0 !important;
-  order: 0 !important;
-}
-
-#TabsToolbar .titlebar-max,
-#TabsToolbar .titlebar-restore {
-  appearance: none !important;
-  -moz-box-ordinal-group: 1 !important;
-  order: 1 !important;
-}
-
-#TabsToolbar .titlebar-buttonbox-container:not(:hover) .titlebar-buttonbox .titlebar-button {
-  background-color: hsla(0, 0%, 65%, 1) !important;
-  transition: background-color 400ms ease 400ms !important;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-button>.toolbarbutton-icon {
-  list-style-image: none !important;
-  margin: 0px !important;
-  padding: 0px !important;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-buttonbox .titlebar-button {
-  border-radius: 50% !important;
-  margin-left: 8px !important;
-  position: relative !important;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-min {
-  background-color: #fac536 !important;
-  overflow: hidden !important;
-  transition: background-color 200ms ease !important;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-min::before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70%;
-  height: 2px;
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 2px;
-  transition: 200ms;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-min:hover::before {
-  opacity: 1;
-  top: 50%;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-max,
-#TabsToolbar .titlebar-buttonbox-container .titlebar-restore {
-  background: #39ea49 !important;
-  overflow: hidden !important;
-  transition: background-color 200ms ease !important;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-max::before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 55%;
-  height: 55%;
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 2px;
-  transition: 200ms;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-max::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  width: 3px;
-  height: 80%;
-  opacity: 0;
-  background: #39ea49;
-  transition: 200ms;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-max:hover::before,
-#TabsToolbar .titlebar-buttonbox-container .titlebar-max:hover::after {
-  opacity: 1;
-  top: 50%;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-close {
-  background: #f25056 !important;
-  overflow: hidden !important;
-  transition: background-color 200ms ease !important;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-close::before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  width: 2px;
-  height: 9px;
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.65);
-  border-radius: 1px;
-  transition: 200ms;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-close::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  width: 2px;
-  height: 9px;
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.65);
-  border-radius: 1px;
-  transition: 200ms;
-
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-close:hover::before,
-#TabsToolbar .titlebar-buttonbox-container .titlebar-close:hover::after {
-  opacity: 1;
-  top: 50%;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-restore:before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.65);
-  border-radius: 2px;
-  transition: 200ms;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-restore:after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 4px;
-  height: 4px;
-  opacity: 0;
-  background: #39ea49;
-  border-radius: 0px;
-  transition: 200ms;
-}
-
-#TabsToolbar .titlebar-buttonbox-container .titlebar-restore:hover::before,
-#TabsToolbar .titlebar-buttonbox-container .titlebar-restore:hover::after {
-  opacity: 1;
-  top: 50%;
-}
-
-#navigator-toolbox #TabsToolbar .titlebar-buttonbox-container {
-  -moz-box-ordinal-group: 1 !important;
-}
-
-#navigator-toolbox[inFullscreen] #navigator-toolbox #TabsToolbar .titlebar-buttonbox-container {
-  -moz-box-ordinal-group: 1 !important;
-}
-
-@media only screen and (max-width: 370px) {
-  #main-window #navigator-toolbox:not([inFullscreen]) #TabsToolbar .titlebar-buttonbox-container {
-    visibility: visible !important;
-    position: relative !important;
-    padding-top: 4px !important;
-    padding-bottom: 2px !important;
-    padding-right: 8px !important;
-    padding-left: 2px !important;
-  }
-
-  #main-window #navigator-toolbox:not([inFullscreen]) #nav-bar {
-    padding-right: initial !important;
+/*? hide native tabs */
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #TabsToolbar > .toolbar-items {
+    display: none !important;
   }
 }
-
-/*------------------------------------------------*/
-/* Make Tab Bar join with URL Bar on the left */
-
-:root {
-  --tab-border-radius: 3px !important;
-  --NavbarWidth: 2;
-  --TabsHeight: 36;
-  --TabsBorder: 8;
-  --NavbarHeightSmall: calc(var(--TabsHeight) + var(--TabsBorder))
-}
-
-#nav-bar {
-  margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px) !important;
-  height: calc((var(--TabsHeight) * 1px + var(--TabsBorder) * 1px) + 0px)
-}
-
-
-
-#nav-bar {
-  margin-left: 35px !important;
-}
-
-#urlbar-container {
-  min-width: 0px !important;
-  flex: auto !important;
-}
-
-
-@media screen and (max-width:100px) {
-  #TabsToolbar {
-    margin-right: 0 !important;
-  }
-
-  #nav-bar {
-    margin-left: 0 !important;
-  }
-}
-
-/*------------------------------------------------*/
-/* Make active tab to hidden tab */
-
-tab:not([selected="true"]),
-[part="overflow-start-indicator"],
-[part="overflow-end-indicator"],
-#scrollbutton-up,
-#scrollbutton-down,
-#TabsToolbar .titlebar-spacer,
-.tabbrowser-tab[selected="true"] .tab-text,
-.tabbrowser-tab[selected="true"] .tab-close-button,
-.tab-line,
-.tab-throbber {
+#main-window[titlepreface="​"] #TabsToolbar > .toolbar-items {
   display: none !important;
 }
 
-.tabbrowser-tab[selected="true"] {
-  min-width: 37px !important;
-  max-width: 37px !important;
+/*? make navigation buttons white_ when sidebar open */
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #navigator-toolbox, #nav-bar {
+    background: var(--toolbar-bgcolor) !important;
+  }
+}
+#main-window[titlepreface="​"] #navigator-toolbox {
+  background: var(--toolbar-bgcolor) !important;
 }
 
-tab,
-.tabbrowser-tab {
-  padding-left: 0 !important;
-  margin-left: 0 !important;
+/*? hide spacers when sidebery open */
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #TabsToolbar .titlebar-spacer {
+    display: none;
+  }
+}
+#main-window[titlepreface="​"] #TabsToolbar .titlebar-spacer {
+  display: none;
 }
 
-.tab-background {
-  outline: none !important;
-  box-shadow: none !important;
+/*? smaller titlebar buttons */
+.toolbar-items {
+  & .toolbarbutton-icon {
+    padding: 4px !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  & .toolbarbutton-badge-stack {
+    padding: 0 !important;
+  } 
 }
 
-.tab-icon-image {
-  height: 32px !important;
-  width: 32px !important;
+#firefox-view-button {
+  margin-left: 8px !important;
+}
+
+@media (-moz-bool-pref: "shimmer.hide-firefox-view-button") {
+  #firefox-view-button {
+    display: none !important;
+  }
+}
+
+/*! === menubar === */
+
+/*? hide regular winctr buttons when menubar is open */
+#toolbar-menubar:not([inactive]) ~ #TabsToolbar .titlebar-buttonbox-container {
+  display: none !important;
+}
+
+#toolbar-menubar:not([inactive]) {
+  width: 100vw !important;
+  overflow: hidden !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+/*? hide if sidebery open and stable release */
+@media not (-moz-bool-pref: "shimmer.nightly") {
+  #main-window[titlepreface="​"] #titlebar #toolbar-menubar {
+    display: none !important;
+  }
+}
+
+/*! === navbar === */
+
+/*? rounded url bar and box */
+#urlbar-background {
+  background: var(--toolbar-field-background-color) !important;
+  /* background: color-mix(in srgb, var(--toolbar-bgcolor) 90%, rgba(0, 0, 0, 255)) !important; */
+  border-radius: var(--shimmer-urlbar-rounding) !important;
+  transition: all 0.1s linear !important;
+}
+
+/*? rounded buttons inside urlbar (firefox logo on about pages, padlock, trans, etc.) */
+#identity-box > box, #tracking-protection-icon-container, #page-action-buttons > *, #urlbar-revert-button-container, #urlbar-searchmode-switcher {
+  border-radius: var(--shimmer-urlbar-rounding) !important;
+}
+
+/*? needed for popup transition to work */
+#urlbar {
+  margin-top: 0 !important;
+  transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+}
+
+/*? make the background of extended urlbar move down and BROKEN drop a blur behing */
+@media not (-moz-bool-pref: "shimmer.disable-popover-urlbar") {
+  #urlbar[breakout-extend] {
+    position: fixed !important;
+    margin-top: 12vh !important;
+    /* margin-left: 8vw !important; */
+    z-index: 9999 !important;
+    transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+    /* backdrop-filter: blur(8px) !important; */
+    background: rgba(0, 0, 0, 0) !important;
+    /* border-radius: 20px; */
+    left: 10% !important;
+    width: calc(100vw - 20%) !important;
+  }  
+}
+
+#urlbar[breakout-extend] #urlbar-background {
+  background: var(--toolbar-field-focus-background-color) !important;
+  transition: all 0.1s linear !important;
+}
+
+/*? urlbox backdrop */
+#urlbar[breakout-extend]::before{
+  content: '' !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  position: fixed !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  top: 0 !important;
+  left: 0 !important;
+  background: color-mix(in srgb, var(--toolbar-field-focus-background-color) 65%, rgba(0, 0, 0, 0)) !important;
+}
+
+
+@media (min-width: 800px) {
+  /*? urlbar bigger text */
+  #urlbar[breakout-extend] #urlbar-input {
+    font-size: 1.5rem !important;
+  }
+
+  /*? taller urlbar for bigger text when extended */
+  #urlbar[breakout-extend] .urlbar-input-container {
+    height: 48px !important;
+  }
+}
+
+/*? centered text when urlbar not in use */
+#urlbar:not(:is([breakout-extend])) #urlbar-input {
+  text-align: center !important;
+}
+
+/*? hide search one offs */
+@media not (-moz-bool-pref: "shimmer.show-search-one-offs") {
+  .search-one-offs {
+    display: none !important;
+  }
+}
+
+/*? fix for floating urlbar */
+@media (-moz-bool-pref: "shimmer.nightly") { 
+  #urlbar:not([breakout-extend]) {
+    top: auto !important;
+  }
+}
+
+/*? hide 1px line below urlbar */
+.urlbarView-body-inner {
+  border-top: none !important;
+}
+
+/*? hide border below top bar */
+#navigator-toolbox {
+  border: 0px !important;
+}
+
+/*? make rounded borders have nice color */
+#browser {
+  background: var(--toolbar-bgcolor) !important;
+}
+
+/*? if popup window, make urlbar smaller and centered */
+#main-window[chromehidden*="toolbar"] #urlbar-container {
+  max-width: 90% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/*? bigger rounding for navbar buttons */
+#nav-bar {
+  toolbarbutton {
+    & > stack, & > image {
+      border-radius: 8px !important;
+    }
+  }
+}
+
+/*! === findbar === */
+
+findbar {
+  border: 0 !important;
+  /*? relative for margins */
+  position: relative !important;
+  border-radius: 16px !important;
+  bottom: 60px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 530px !important;
+  height: 3rem !important;
+  display: flex !important;
+  align-items: center !important;
+  /*? fix for relative positioning */
+  margin-top: -36px !important;
+  border: 0 !important;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+  overflow-x: visible !important;
+  filter: drop-shadow(0px 0px 1px color-mix(in srgb, var(--lwt-text-color) 60%, rgba(0, 0, 0, 0)));
+}
+
+findbar[hidden]{
+  margin-bottom: 0 !important;
+  opacity: 0 !important;
+  background: rgba(0, 0, 0, 0) !important;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+}
+
+findbar:not([hidden]) {
+  opacity: 1 !important;
+  background: var(--lwt-accent-color) !important;
+}
+
+.findbar-container, .findbar-container > hbox {
+  height: 100% !important;
+}
+
+.findbar-container {
+  margin-left: 7px !important;
+}
+
+/*? change text to icons for smaller findbar */
+.findbar-container checkbox::after {
+  height: 16px;
+  font-size: 14px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  -moz-context-properties: fill;
+  fill: currentColor;
+  color: inherit;
+}
+.findbar-highlight::after {
+  content: '';
+  background: url(./assets/icons/hl.svg) no-repeat;
+  width: 18px;
+  background-position-y: -1px;
+}
+.findbar-match-diacritics::after {
+  content: 'ąâ';
+  font-weight: 600;
+}
+.findbar-entire-word::after {
+  content: '';
+  background: url(./assets/icons/word.svg) no-repeat;
+  width: 20px;
+  background-position-y: -2px;
+}
+.findbar-case-sensitive::after {
+  content: 'Aa';
+  font-weight: 600;
+}
+
+/*? hide all text for findbar checkboxes */
+.findbar-container checkbox > .checkbox-label-box {
+  display: none !important;
+}
+
+.findbar-textbox {
+  border-radius: 11px !important;
+  font-family: monospace !important;
+  padding: 5px 8px !important;
+  width: 16em !important;
+}
+
+.findbar-closebutton:hover {
+  opacity: 1 !important;
+  background: var(--toolbarbutton-hover-background) !important;
+}
+.findbar-closebutton {
+  opacity: 1 !important;
+  background: var(--lwt-accent-color) !important;
+  /* wasn't square for some reason */
+  width: auto !important;
+}
+
+/*? move matched amount below main findbar */
+.found-matches {
+  position: absolute !important;
+  padding: 20px 13px 3px 10px !important;
+  top: 14px !important;
+  background: var(--lwt-accent-color) !important;
+  /* border: solid var(--arrowpanel-border-color) 1px !important; */
+  left: -12px !important;
+  border-bottom-left-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+  z-index: 9 !important;
+}
+.findbar-find-status {
+  display: none !important;
+}
+.found-matches::before {
+  z-index: 8 !important;
+}
+.found-matches::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 16px;
+  height: 22px;
+  background: var(--lwt-accent-color);
+  right: -6px;
+  top: 12px;
+  transform: rotate(45deg);
+}
+.findbar-textbox { 
+  z-index: 10 !important;
+}
+
+
+/*? compact private browsing indicator */
+#private-browsing-indicator-with-label > label, .private-browsing-indicator-label {
+  display: none !important;
+}
+.private-browsing-indicator-icon {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+#PanelUI-menu-button {
+  display: flex !important;
+}
+
+@media (max-width: 620px) {
+  #PanelUI-menu-button {
+    display: none !important;
+  }
+
+  #unified-extensions-button {
+    margin-right: 12px !important;
+  }
+}
+
+/*? make the go button bigger in urlbar */
+.urlbar-go-button {
+  height: 100% !important;
+  width: auto !important;
+  padding: 1.5% !important;
+  border-radius: var(--shimmer-urlbar-inner-rounding) !important;
+}
+
+
+/*? rounded results */
+.urlbarView-row {
+  border-radius: var(--shimmer-urlbar-inner-rounding) !important;
+}
+/*? for some reason the results get clipped so adding some padding */
+.urlbarView {
+  padding: 0 5px !important;
+}
+
+.urlbarView-row:hover {
+  background: var(--urlbar-box-hover-bgcolor) !important;
+}
+
+/*? small separator between results and search bar */
+/* .urlbarView-body-outer {
+  border-top: 1px rgba(0, 0, 0, 0.15) solid !important;
+} */
+.urlbarView-body-outer::before {
+  content: '';
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 1px;
+  background: #aaa;
+  opacity: 0.2;
+  display: block;
+  mix-blend-mode: difference;
+}
+.urlbarView-body-inner {
+  border: 0 !important;
+}
+
+/*? increase padding in urlbar */
+#urlbar-results {
+  padding-bottom: 8px !important;
+}
+
+/*? seamless transition */
+/* #sidebar-box {
+  box-shadow: -10px -100px 0px 100px var(--toolbar-bgcolor),
+  0 0px 20px 15px var(--lwt-accent-color);
+} */
+/*? hide the hiding box shadow */
+/* #navigator-toolbox {
+  z-index: 2 !important;
+} */
+
+/*? add margin to left of browser when sidebar hidden */
+#sidebar-box[hidden="true"] ~ #tabbrowser-tabpanels {
+  padding-left: 3px !important;
+}
+
+#tabbrowser-tabpanels, #sidebar-box {
+  background: rgba(0, 0, 0, 0) !important;
+}
+
+/*! === floating statuspanel === */
+
+/*? move statuspanel */
+#statuspanel {
+  bottom: 11px !important;
+  left: 11px !important;
+}
+#statuspanel[mirror] {
+  left: auto !important;
+  right: 18px !important;
+}
+
+/*? round statuspanel */
+#statuspanel, #statuspanel-label {
   border-radius: 10px !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  .tab-icon-image {
-    display: none;
-  }
+/*? border and alternative statuspanel padding */
+#statuspanel-label {
+  padding: 3px 8px !important;
+  border: solid 1px var(--button-background-color-active) !important;
 }
 
-@media (prefers-color-scheme: light) {
-  .tab-icon-image {
-    display: none;
-  }
+/*? color the statuspanel */
+#statuspanel-label {
+  background: var(--lwt-accent-color) !important;
+  color: var(--lwt-text-color) !important;
 }
 
+#statuspanel, #statuspanel[type="overLink"] {
+  transition: opacity 75ms, visibility 75ms !important;
+}
 
-/*------------------------------------------------*/
-/* Hide all buttons in active tab context menu except for split tab and extensions */
+/*! === tabs === */
 
-#main-window #context_openANewTab,
-#main-window #context_reloadTab,
-#main-window #context_toggleMuteTab,
-#main-window #context_playTab,
-#main-window #context_pinTab,
-#main-window #context_duplicateTab,
-#main-window #context_bookmarkTab,
-#main-window #context_moveTabOptions,
-#main-window #context_reopenInContainer,
-#main-window #context_toggleToPrivateContainer,
-#main-window #context_selectAllTabs,
-#main-window #context_closeTab,
-#main-window #context_closeTabOptions,
-#main-window #context_undoCloseTab,
-#context_MoveTabToOtherWorkspace,
-#main-window #tabContextMenu menuseparator {
+/*? tab on titlebar that's not pinned */
+#tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab[fadein]:not([pinned]) {
+  /*? min tab width */
+  min-width: var(--shimmer-tab-min-width) !important;
+  /*? max tab width */
+  max-width: var(--shimmer-tab-max-width) !important;
+}
+
+/*? make tab background round and small */
+.tab-background {
+  min-height: 0 !important;
+  border: solid 1px color-mix(in srgb, var(--tab-selected-bgcolor) 90%, #000);
+  box-shadow: 0 0 0 #fff !important;
+}
+
+/*? show tab close buttons when hovering tab */
+#tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab:not([pinned]):hover .tab-close-button {
+  display: block !important;
+}
+
+/*? hide shadow on tabbrowser (overflow already indicated by arrow clickable) */
+spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   display: none !important;
 }
 
+/*? change tab background color */
+.tab-background {
+  background: color-mix(in srgb, var(--tab-selected-bgcolor) 20%, rgba(0, 0, 0, 0));
+} 
 
-
-/*============================================================================================*/
-/* EXTENSION */
-
-/* Make extensions looks minimal */
-
-#unified-extensions-view #unified-extensions-manage-extensions .toolbarbutton-text::before {
-  content: "• • •";
-  font-size: 15px;
-  visibility: visible !important;
-  display: block;
-  text-align: center;
+/*? hide firefox view separator */
+#tabbrowser-tabs {
+  border: 0 !important;
 }
 
-#unified-extensions-panel #unified-extensions-view {
-  width: 100% !important;
+/*? tab height and x button pos */
+#tabbrowser-tabs[orient="vertical"] .tab-background {min-height: 28px !important;}
+
+@media not (-moz-bool-pref: "shimmer.taller-tabs") {
+  #tabbrowser-tabs[orient="horizontal"], .tabbrowser-tab {
+    min-height: 38px !important;
+    height: 38px !important;
+  }
+
+  .tab-close-button {
+    margin-inline-end: -3px !important;
+    width: 20px !important;
+    height: 20px !important;
+    padding: 4px !important;
+  }
+
+  .tab-background {
+    border-radius: var(--shimmer-tab-border-radius) !important;
+  }
 }
+@media (-moz-bool-pref: "shimmer.taller-tabs") {
+  #tabbrowser-tabs[orient="horizontal"], .tabbrowser-tab {
+    min-height: 45px !important;
+    height: 45px !important;
+  }
 
-#unified-extensions-view {
-  --uei-icon-size: 22px;
-  --firefoxcss-number-of-extensions-in-a-row: 4;
-}
+  .tab-close-button {
+    margin-inline-end: -1px !important;
+    width: 24px !important;
+    height: 24px !important;
+    padding: 6px !important;
+  }
 
-
-#unified-extensions-view .unified-extensions-item-menu-button.subviewbutton,
-#unified-extensions-view .unified-extensions-item-action-button .unified-extensions-item-contents {
-  display: none !important;
-}
-
-#unified-extensions-view .panel-subview-body {
-  padding: 10px !important;
-}
-
-#unified-extensions-view .unified-extensions-item .unified-extensions-item-icon,
-#unified-extensions-view .unified-extensions-item .toolbarbutton-badge-stack {
-  margin-inline-end: 0px !important;
-}
-
-#unified-extensions-view #overflowed-extensions-list,
-#unified-extensions-view #unified-extensions-area,
-#unified-extensions-view .unified-extensions-list {
-  display: grid !important;
-  grid-template-columns: repeat(var(--firefoxcss-number-of-extensions-in-a-row), auto);
-  justify-items: left !important;
-  align-items: left !important;
-}
-
-
-
-/*============================================================================================*/
-/* URL BAR */
-
-/* Make text in URL bar in the center */
-
-#nav-bar {
-  display: flex;
-  justify-content: center;
-}
-
-#urlbar-container {
-  flex: 1;
-  max-width: 1000px;
-  min-width: 200px;
-  margin: auto !important;
-}
-
-#main-window #urlbar {
-  z-index: 9999 !important;
-  width: 100% !important;
-  margin-top: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  transition: width 0.3s ease, left 0.3s ease, margin-top 0.3s ease, margin-left 0.3s ease, margin-right 0.3s ease;
-}
-
-#main-window #urlbar[breakout][breakout-extend] {
-  opacity: 0.97 !important;
-  width: 100% !important;
-  left: 0;
-  right: 0;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-top: 30vh !important;
-  transition: width 0.3s ease, left 0.3s ease, margin-top 0.3s ease, margin-left 0.3s ease, margin-right 0.3s ease;
-}
-
-#urlbar-background,
-#urlbar-input-container {
-  --toolbarbutton-border-radius: calc(var(--urlbar-min-height) / 2);
-}
-
-#urlbar-input-container {
-  --urlbar-icon-border-radius: calc(var(--toolbarbutton-border-radius) - 1px);
-}
-
-#urlbar:not([focused]) #urlbar-input {
-  text-align: center !important;
-}
-
-#urlbar:not([breakout][breakout-extend]) #urlbar-input {
-  text-align: center !important;
-}
-
-/*------------------------------------------------*/
-/* Change URL Bar background color */
-@media (prefers-color-scheme: dark) {
-  #urlbar-background {
-    background-color: #2a2a2a !important;
+  .tab-background {
+    border-radius: calc(var(--shimmer-tab-border-radius) * 1.2) !important;
   }
 }
 
-@media (prefers-color-scheme: light) {
-  #urlbar-background {
-    background-color: #d6d6d6 !important;
+/*? make inner tab html occupy whole height (for some reason wouldn't happen to pinned tab) */
+.tab-stack {
+  height: 100% !important;
+}
+
+/*? don't change background behind tabs even when window inactive */
+#navigator-toolbox, #navigator-toolox:-moz-window-inactive {
+  background: var(--lwt-accent-color) !important;
+}
+
+/*? rounded tab close button */
+.tab-close-button {
+  border-radius: calc(var(--shimmer-tab-border-radius) * 0.6) !important;
+}
+
+.tab-close-button, .tab-close-button:hover {
+  transition: var(--shimmer-btn-anim) !important;
+}
+
+/*? minimal selected tab width */
+@media not (-moz-bool-pref: "shimmer.dont-expand-selected-tab") {
+  #tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab:not([pinned])[selected] {
+    min-width: var(--shimmer-tab-selected-width) !important;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  #urlbar-results>*[selected=""] {
-    background-color: #424242 !important;
+/*? fix for moving tabs looking weird */
+#tabbrowser-tabs {
+  &[orient="horizontal"] {
+    &[movingtab] {
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
+    }
   }
 }
 
-@media (prefers-color-scheme: light) {
-  #urlbar-results>*[selected=""] {
-    background-color: #e8e8e8 !important;
+/*! === sidebar === */
+
+/*? hide header, or give good color */
+@media not (-moz-bool-pref: "shimmer.show-sidebar-header") {
+  #sidebar-header {
+    display: none !important;
+  }
+}
+#sidebar-header {
+  background: var(--lwt-accent-color) !important;
+}
+
+/*? remove ugly border below "tabs" text */
+#sidebar-header {
+  border-bottom: 0 !important;
+}
+
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  :root:not([inDOMFullscreen]) #tabbrowser-tabbox, :root:not([inDOMFullscreen]) #sidebar-main {
+    margin-bottom: var(--shimmer-top-bottom-browser-margin) !important;
+  }
+}
+@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  :root:not([inDOMFullscreen]) #sidebar-box:not([hidden]), :root:not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+    margin-bottom: var(--shimmer-top-bottom-browser-margin) !important;
   }
 }
 
 
-/*------------------------------------------------*/
-/* Hide and Hover icons in URL Bar */
-
-#nav-bar:not([customizing="true"]):not(.searchButton)>#nav-bar-customization-target>#urlbar-container:not(:hover)>#urlbar:not([focused])>#urlbar-input-container>#page-action-buttons .urlbar-page-action {
-  opacity: 0;
-  transition-delay: 500ms;
-}
-
-#nav-bar:not([customizing="true"]):not(.searchButton)>#nav-bar-customization-target>#urlbar-container:not(:hover)>#urlbar:not([focused])>#urlbar-input-container>#identity-box>#identity-permission-box:not([open]) {
-  opacity: 0;
-  transition-delay: 500ms;
-}
-
-#page-action-buttons .urlbar-page-action,
-#identity-permission-box,
-#notification-popup-box .notification-anchor-icon {
-  transition: opacity 0.2s ease;
-}
-
-#urlbar #identity-icon-box,
-#urlbar #identity-permission-box {
-  opacity: 0 !important;
-  margin-inline-start: calc(-16px - 2 * var(--urlbar-icon-padding));
-  transition: margin-inline-start 100ms linear, opacity 200ms linear;
-}
-
-#urlbar #identity-box.notSecureText #identity-icon-box {
-  margin-inline-start: initial !important;
-  opacity: 1 !important;
-  color: #e36f6f !important;
-}
-
-#urlbar #identity-box.extensionPage #identity-icon-box {
-  margin-inline-start: initial !important;
-  opacity: 1 !important;
-}
-
-#identity-box:hover #identity-icon-box,
-#identity-box:hover #identity-permission-box,
-#identity-box #identity-permission-box[open="true"] {
-  opacity: 1 !important;
-  margin-inline-start: initial !important;
-}
-
-#urlbar-input-container .urlbar-input-box {
-  padding-inline-start: 2px !important;
-}
-
-#identity-box:hover~.urlbar-input-box>#urlbar-input {
-  mask-image: linear-gradient(to right, transparent, black 3ch) !important;
-}
-
-#page-action-buttons {
-  padding-inline-start: 8px;
-}
-
-#page-action-buttons .urlbar-page-action {
-  margin-inline-end: calc(-16px - 2 * var(--urlbar-icon-padding));
-  opacity: 0;
-  transition: margin-inline-end 100ms linear, opacity 200ms linear;
-}
-
-#page-action-buttons:hover>.urlbar-page-action,
-.urlbar-page-action[open],
-.urlbar-page-action[open]~.urlbar-page-action {
-  opacity: 1;
-  margin-inline-end: 0px !important;
-}
-
-#identity-box.chromeUI #identity-icon-box {
-  opacity: 1 !important;
-  margin-inline-start: initial;
-}
-
-#identity-box.chromeUI::after,
-#identity-box.chromeUI:hover::after {
-  opacity: 0 !important;
-}
-
-#page-action-buttons:not(:hover) #translations-button[translationsactive="true"]:not([open]) {
-  visibility: collapse !important;
-}
-
-
-/*------------------------------------------------*/
-/* Create visual dots on both sides */
-#identity-box::after,
-#page-action-buttons::before {
-  position: relative;
-  content: "•••";
-  pointer-events: none;
-  transition: opacity 100ms ease;
-  align-self: center;
-  font-size: 0.7em;
-}
-
-#identity-box::after,
-#page-action-buttons::before {
-  opacity: 0.2;
-}
-
-#identity-box::after {
-  transform: rotate(90deg);
-  left: 4px;
-}
-
-#page-action-buttons::before {
-  transform: rotate(-90deg);
-  right: 4px;
-}
-
-#identity-box:hover::after,
-#page-action-buttons:hover::before {
-  opacity: 0.2 !important;
-  transition: opacity 50ms ease;
-  pointer-events: none;
-}
-
-#identity-box[pageproxystate="invalid"]::after,
-#urlbar-input-container[pageproxystate="invalid"]>#page-action-buttons::before {
-  opacity: 0 !important;
-  transition: opacity 50ms ease;
-}
-
-/* Linux changes for visual dots */
-@media (-moz-platform: linux) {
-
-  #identity-box::after,
-  #page-action-buttons::before {
-    content: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="utf-8"%3F><svg fill="%23FFFFFF" width="11px" height="11px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M20.25 16c0 2.347-1.903 4.25-4.25 4.25s-4.25-1.903-4.25-4.25c0-2.347 1.903-4.25 4.25-4.25s4.25 1.903 4.25 4.25zM20.25 27c0 2.347-1.903 4.25-4.25 4.25s-4.25-1.903-4.25-4.25c0-2.347 1.903-4.25 4.25-4.25s4.25 1.903 4.25 4.25zM20.25 5c0 2.347-1.903 4.25-4.25 4.25s-4.25-1.903-4.25-4.25c0-2.347 1.903-4.25 4.25-4.25s4.25 1.903 4.25 4.25z"></path></svg>');
-    transform: none;
-    font-size: unset;
+/*? native vert tabs space on right edge */
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #sidebar-main {
+    margin-left: 0 !important;
+    margin-right: var(--splitter-width);
   }
-
-  #page-action-buttons::before {
-    right: 2px;
+}
+@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #sidebar-box:not([hidden]) {
+    margin-left: 0 !important;
+    margin-right: var(--splitter-width) !important;
   }
-
-  #identity-box::after {
-    left: 2px;
+  @media (-moz-bool-pref: "shimmer.sidebar-right-side") {
+    #sidebar-box:not([hidden]) {
+      margin-right: 0 !important;
+      margin-left: var(--splitter-width) !important;
+    }
   }
 }
 
-#identity-box[pageproxystate="valid"].notSecureText>.identity-box-button,
-#identity-box[pageproxystate="valid"].extensionPage>.identity-box-button,
-#identity-box[pageproxystate="valid"].chromeUI>.identity-box-button,
-#urlbar-label-box,
-#urlbar-zoom-button {
-  background-color: var(--firefoxcss-item-bg-color) !important;
+#sidebar-splitter {
+  --sidebar-splitter: 8px !important;
+  border: 0 !important;
 }
 
-#urlbar-zoom-button:hover {
-  background-color: var(--firefoxcss-urlbar-zoom-button) !important;
+@media not (-moz-bool-pref: "shimmer.show-sidebar-header-close-button") {
+  #sidebar-close {
+    display: none !important;
+  }
 }
 
-#urlbar-input-container #identity-box>.identity-box-button,
-#tracking-protection-icon-container,
-#urlbar-go-button,
-#page-action-buttons .urlbar-page-action,
-#notification-popup-box {
-  border-radius: 8px !important;
+#sidebar-close {
+  /* ch */
+  margin-right: 10px !important;
 }
 
-#urlbar-go-button,
-#tracking-protection-icon-container {
-  display: none !important;
+/*? hide ugly border around tabbox */
+#tabbrowser-tabbox * {
+  border: 0 !important;
+}
+
+/*? rounded browser on left edge */
+@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  :root:not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+    border-radius: 0;
+    clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
+    overflow: hidden !important;
+  }
+}
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  :root:not([inDOMFullscreen]) #tabbrowser-tabbox {
+    border-radius: 0;
+    clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
+    overflow: hidden !important;
+  }
+}
+
+/*? rounded sidebar on right edge */
+:root:not([inDOMFullscreen]) #sidebar-box {
+  clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
+  overflow: hidden !important;
+}
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  :root:not([inDOMFullscreen]) #sidebar-main {
+    clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
+  }
+}
+
+@media (-moz-bool-pref: "shimmer.sidebar-right-side") {
+  /*? rounded browser on right edge */
+  @media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+    :root:not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+      border-radius: 0 !important;
+      clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
+    }
+  }
+  @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+    :root:not([inDOMFullscreen]) #tabbrowser-tabbox {
+      border-radius: 0 !important;
+      clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
+    }
+  }
+
+  /*? rounded sidebar on left edge */
+  :root:not([inDOMFullscreen]) #sidebar-box {
+    border-radius: 0 !important;
+    clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
+  }
+  @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+    :root:not([inDOMFullscreen]) #sidebar-main {
+      clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
+    }
+  }
+}
+
+/*? native vertical tabs background color */
+#sidebar-main {
+  background: var(--lwt-accent-color) !important;
 }
 
 
-
-/*============================================================================================*/
-/* BOOKMARK BAR */
-
-/* Variables for toolbar & bookmark attributes */
-:root {
-  --uc-bm-height: 24px;
-  --uc-bm-padding: 6px;
-}
-
-/* Style for Personal Toolbar */
-#PersonalToolbar {
-  position: relative !important;
-  padding: 1px 6px !important;
-}
-
-/* Additional padding for touch density */
-:root[uidensity="touch"] #PersonalToolbar {
-  --uc-bm-padding: 6px;
-}
-
-/* Transform and delay transition of Personal Toolbar */
-#PersonalToolbar:not([customizing]) {
-  margin-bottom: calc(2px - var(--uc-bm-height) - 2 * var(--uc-bm-padding)) !important;
-  transform: rotateX(90deg) !important;
-  transform-origin: top !important;
-  transition: transform 0.1s ease-in-out 0.6s !important;
-  z-index: 2 !important;
-}
-
-/* Bookmark item padding and icon transition */
-#PlacesToolbarItems>.bookmark-item {
-  padding-block: var(--uc-bm-padding) !important;
-  padding-left: 6px !important;
-  padding-right: 6px !important;
-}
-
-#PlacesToolbarItems>.bookmark-item .toolbarbutton-icon {
-  transition: opacity 0.1s ease-in-out 0.4s !important;
+/*? animated sidebar-box hidden animation, breaks native tabs because the sidebery titlepreface reappears when #sidebar-box display prop isn't none */
+/* #sidebar-box[hidden] {
+  visibility: hidden !important;
+  min-width: 0 !important;
+  width: 0 !important;
+  transition: width 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
   opacity: 0 !important;
 }
-
-/* Hover effect for toolbar and bookmark icon/text */
-#navigator-toolbox:hover>#PersonalToolbar,
-#navigator-toolbox:hover #PlacesToolbarItems>.bookmark-item .toolbarbutton-icon,
-#navigator-toolbox:hover #PlacesToolbarItems>.bookmark-item .toolbarbutton-text {
-  transition-delay: 100ms !important;
-  transform: rotateX(0) !important;
+#sidebar-box:not([hidden]) {
   opacity: 1 !important;
 }
 
-/* Bookmark item text transition */
-#PlacesToolbarItems>.bookmark-item .toolbarbutton-text {
-  transition: opacity 0.1s ease-in-out 0.4s !important;
-  opacity: 0 !important;
+#sidebar-splitter:not([state="dragging"]) ~ #tabbrowser-tabbox, #sidebar-splitter:not([state="dragging"]) ~ #sidebar-box, #sidebar-splitter[hidden] ~ #sidebar-box {
+  transition: width 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
 }
 
-/* Fix the white line above the bookmarks bar when it's empty */
-#personal-toolbar-empty {
+#sidebar-splitter[hidden] {
+  display: flex !important;
+  width: 0px !important;
+} */
+
+/*! === menus === */
+/*? consistent color for ctx menus */
+.menupopup-arrowscrollbox, #searchmode-switcher-popup slot[part="content"] {
+  background: var(--lwt-accent-color, var(--panel-background)) !important;
+  border-radius: var(--arrowpanel-border-radius) !important;
+  border: 0 !important;
+  outline: solid 1px var(--lwt-tab-line-color) !important;
+}
+
+/*? round context menu items */
+/* --panel-background */
+menuitem, menu, .menu-iconic, #searchmode-switcher-popup tooblarbutton {
+  border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+  /* margin-inline: var(--arrowpanel-menuitem-margin-inline) !important; */
+  padding: var(--arrowpanel-menuitem-padding) !important;
+}
+/*? better hover color */
+/* menuitem:hover, menu:hover, .menu-iconic:hover, #searchmode-switcher-popup:hover tooblarbutton {
+  background: var(--panel-item-hover-bgcolor) !important;
+} */
+menu, menuitem {
+  &:where([_moz-menuactive]) {
+    &:not([disabled="true"]) {
+      background: color-mix(in srgb, var(--lwt-accent-color, var(--panel-background)) 85%, var(--lwt-text-color, var(--panel-color))) !important;
+    }
+    background: color-mix(in srgb, var(--lwt-accent-color, var(--panel-background)) 92.5%, var(--lwt-text-color, var(--panel-color))) !important;
+  }
+}
+
+/*? fading backgrounds on buttons */
+menuitem, toolbarbutton > stack, toolbaritem, toolbarbutton, toolbarbutton > image, .urlbarView-row, menu,
+menuitem:hover, toolbarbutton:hover > stack, toolbaritem:hover, toolbarbutton:hover, toolbarbutton:hover > image, .urlbarView-row:hover, menu:hover,
+.findbar-closebutton, .findbar-closebutton:hover
+{
+  transition: var(--shimmer-btn-anim) !important;
+}
+
+/*?  */
+#context-navigation menuitem {
   padding: 2px !important;
 }
 
-/*------------------------------------------------*/
-/* Make it good in transparent bg */
+/*? smaller manage extensions button */
+#unified-extensions-manage-extensions {
+  padding: 5px 8px !important;
+  margin-bottom: 5px !important;
+}
 
-@media (prefers-color-scheme: dark) {
-  #PlacesToolbarItems>* {
-    background: #333333 !important;
+/*? larger titles in panels like extensions */
+.panel-header {
+  font-size: 1.35rem !important;
+}
+
+/*? panelui smaller margin */
+.panel-subview-body {
+  margin-bottom: 5px !important;
+}
+
+.panel-subview-body {
+  padding: 5px 0 0 0 !important;
+}
+
+treecol {
+  transition: var(--shimmer-btn-anim) !important;
+}
+
+/*! === autoscroller === */
+
+/* why no work */
+/* #autoscroller slot[part="content"] {
+  --panel-background: var(--lwt-accent-color) !important;
+
+  background-color: var(--panel-background) !important;
+  background-image: var(--autoscroll-background-image) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 12px !important;
+} */
+
+/*! === compact, macos-like winctr buttons === */
+@media not (-moz-bool-pref: "shimmer.disable-compact-winctr-buttons") {
+  #toolbar-menubar .titlebar-buttonbox > toolbarbutton {
+    &:hover > image {
+      padding: 2px 0 !important;
+    }
   }
 
-  #PlacesToolbarItems>*:hover {
-    background: #555555 !important;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  #PlacesToolbarItems>* {
-    background: #cccccc !important;
+  #TabsToolbar .titlebar-buttonbox > toolbarbutton {
+    &:hover > image {
+      padding: 4px 0 !important;
+    }
   }
 
-  #PlacesToolbarItems>*:hover {
-    background: #eeeeee !important;
+  .titlebar-buttonbox > toolbarbutton {
+    background: rgba(0, 0, 0, 0) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  
+    & > image {
+      width: 14px !important;
+      height: 14px !important;
+      border-radius: 12px !important;
+      transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+      list-style-image: none !important;
+      box-sizing: content-box !important;
+      padding: 0px !important;
+      background: var(--toolbarbutton-hover-background) !important;
+    }
+  
+    &:hover > image {
+      transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+    }
   }
-}
-
-
-
-/*============================================================================================*/
-/* SIDE BAR */
-
-/* Expand Side bar on hover */
-
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
-  --sidebar-width: 40px;
-  --sidebar-hover-width: 512px;
-  position: relative;
-  min-width: var(--sidebar-width) !important;
-  width: var(--sidebar-width) !important;
-  max-width: var(--sidebar-width) !important;
-  z-index: 1;
-}
-
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]>#sidebar {
-  transition: min-width 200ms ease-in-out !important;
-  min-width: var(--sidebar-width) !important;
-  will-change: min-width;
-  transition-delay: 0.3s !important;
-  /* Delay on hover off */
-}
-
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover>#sidebar {
-  min-width: var(--sidebar-hover-width) !important;
-  transition-delay: 0.1s !important;
-  /* No delay on hover on */
-}
-
-#sidebar-box {
-  opacity: 0.9;
-
-}
-
-/*------------------------------------------------*/
-/* Hide Side bar header and line */
-
-#sidebar-header,
-#sidebar-splitter {
-  display: none !important;
-}
-
-/*------------------------------------------------*/
-/* Sidebar padding */
-
-#sidebar-box #sidebar {
-  padding-top: 10px;
-  padding-left: 3px;
-}
-
-/*------------------------------------------------*/
-/* Sidebar Border */
-
-@media (prefers-color-scheme: dark) {
-
-  #sidebar-box #sidebar,
-  #sidebar-box #webextpanels-window {
-    border-radius: 15px !important;
-    margin: 15px 15px 15px 5px !important;
-    border: 1px solid rgba(204, 204, 204, 0.3);
-    transition: border 0.3s ease;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  .titlebar-close {
+    /* background: hsl(355, 86%, 49%) url(chrome://browser/skin/window-controls/close.svg) no-repeat center !important; */
+    &:hover > image {
+      background: #fc5753 !important;
+    }
+    padding-right: calc(var(--shimmer-winctr-gap) + var(--shimmer-winctr-margin)) !important;
+    padding-left: var(--shimmer-winctr-gap) !important;
   }
-
-  #sidebar-box #sidebar:hover,
-  #sidebar-box #webextpanels-:hover {
-    border: 1px solid rgba(204, 204, 204, 0.6);
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  .titlebar-min {
+    &:hover > image {
+      background: #fdbc40 !important;
+    }
+    padding-left: calc(var(--shimmer-winctr-gap) + var(--shimmer-winctr-margin)) !important;
+    padding-right: var(--shimmer-winctr-gap) !important;
   }
-}
-
-@media (prefers-color-scheme: light) {
-
-  #sidebar-box #sidebar,
-  #sidebar-box #webextpanels-window {
-    border-radius: 15px !important;
-    margin: 15px 15px 15px 5px !important;
-    border: 1px solid rgba(51, 51, 51, 0.1);
-    transition: border 0.3s ease;
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+  .titlebar-max, .titlebar-restore {
+    &:hover > image {
+      background: #33c748 !important;
+    }
+    padding: 0 var(--shimmer-winctr-gap) !important;
   }
-
-  #sidebar-box #sidebar:hover,
-  #sidebar-box #webextpanels-window:hover {
-    border: 1px solid rgba(51, 51, 51, 0.6);
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+  @media not (-moz-bool-pref: "shimmer.reverse-winctr-buttons-side") {
+    #main-window[titlepreface="​"] #toolbar-menubar:not([inactive]) #PanelUI-menu-button {
+      padding-right: 0 !important;
+    }
+    @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+      #toolbar-menubar:not([inactive]) #PanelUI-menu-button {
+        padding-right: 0 !important;
+      }
+    }
   }
-}
-
-/*============================================================================================*/
-/* SIDE BAR 2 (FLOORP) */
-
-/* Make splitter invisible */
-
-#sidebar-splitter2 {
-  appearance: none !important;
-  width: 10px !important;
-  ;
-  /* Set initial width */
-  transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  /* Add transitions */
-}
-
-#sidebar-splitter2:hover {
-  width: 20px !important;
-  /* Width on hover */
-  opacity: 1;
-  /* Opacity on hover */
+  /* .titlebar-buttonbox-container {
+    margin: 0 var(--shimmer-winctr-margin) 0 0 !important;
+  } */
 }
 
 
-/*------------------------------------------------*/
-/* Hide Floorp sidebar header */
-
-#sidebar2-header {
-  max-height: 0.5em !important;
-  min-height: 0.5em !important;
-  opacity: 0 !important;
-  transition: max-height 0.3s ease-in-out, min-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-#sidebar2-header:hover {
-  max-height: 2.5em !important;
-  min-height: 2.5em !important;
-  opacity: 1 !important;
-}
-
-
-/*------------------------------------------------*/
-/* Floorp Sidebar Border */
-
-@media (prefers-color-scheme: dark) {
-  #sidebar2-box browser {
-    border-radius: 15px !important;
-    margin: 15px 15px 15px 0px !important;
-    border: 3px solid rgba(0, 0, 0, 0);
-    transition: border 0.3s ease;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-  }
-
-  #sidebar2-box browser:hover {
-    border: 3px solid rgba(204, 204, 204, 0.6);
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  #sidebar2-box browser {
-    border-radius: 15px !important;
-    margin: 15px 15px 15px 0px !important;
-    border: 3px solid rgba(51, 51, 51, 0.1);
-    transition: border 0.3s ease;
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
-  }
-
-  #sidebar2-box browser:hover {
-    border: 3px solid rgba(51, 51, 51, 0.6);
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.2);
-  }
-}
-
-/*------------------------------------------------*/
-/* Floorp Sidebar Select Box Styling */
-
-#sidebar-select-box {
-  align-items: center !important;
-  background-color: transparent !important;
-}
-
-.sidepanel-icon {
-  border-radius: 10px !important;
-}
-
-/*------------------------------------------------*/
-/* Floorp Sidebar Border */
-
-@media (prefers-color-scheme: dark) {
-  #sidebar-select-box {
-    border-radius: 15px !important;
-    margin: 15px 10px 15px 15px !important;
-    border: 3px solid rgba(204, 204, 204, 0) !important;
-    transition: border 0.3s ease;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-  }
-
-  #sidebar-select-box:hover {
-    border: 3px solid rgba(204, 204, 204, 0.6) !important;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  #sidebar-select-box {
-    border-radius: 15px !important;
-    margin: 15px 10px 15px 15px !important;
-    border: 3px solid rgba(51, 51, 51, 0.1) !important;
-    transition: border 0.3s ease;
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
-  }
-
-  #sidebar-select-box:hover {
-    border: 3px solid rgba(51, 51, 51, 0.6) !important;
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
-  }
-}
-
-/*------------------------------------------------*/
-/* Hide random stuff coming out of Floorp Sidebar */
-
-.browser-sidebar2 {
-  border: none !important;
-  border-bottom: none !important;
-}
-
-#sidebar2-box[style="min-width: 0px; order: 6; width: 415px; max-width: 0px;"]>* {
-  display: none !important;
-}
-
-/*============================================================================================*/
-/* MAIN BROWSER */
-
-/* Browser Border */
-
-@media (prefers-color-scheme: dark) {
-  #appcontent browser {
-    border-radius: 15px !important;
-    margin: 15px 15px 15px 15px !important;
-    border: 1px solid rgba(0, 0, 0, 0);
-    transition: border 0.3s ease;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-  }
-
-  #appcontent browser:hover {
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  #appcontent browser {
-    border-radius: 15px !important;
-    margin: 15px 15px 15px 15px !important;
-    border: 1px solid rgba(51, 51, 51, 0.1);
-    transition: border 0.3s ease;
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
-  }
-
-  #appcontent browser:hover {
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
-  }
-
-}
-
-/*============================================================================================*/
-/* FIND BAR */
-
-/* CTRL+F Search Bar Border */
-
-@media (prefers-color-scheme: dark) {
-  .browserContainer>findbar {
-    border-radius: 15px !important;
-    margin: 0px 15px 0px 15px !important;
-    border: 1px solid rgba(204, 204, 204, 0.3) !important;
-    transition: border 0.3s ease !important;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-  }
-
-  .browserContainer>findbar:hover {
-    border: 1px solid #ccc !important;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  .browserContainer>findbar {
-    border-radius: 15px !important;
-    margin: 0px 15px 0px 15px !important;
-    border: 1px solid rgba(51, 51, 51, 0.1) !important;
-    transition: border 0.3s ease !important;
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
-  }
-
-  .browserContainer>findbar:hover {
-    border: 1px solid rgba(51, 51, 51, 0.6) !important;
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
-  }
-}
-
-/*------------------------------------------------*/
-/* Text in the center */
-.browserContainer>findbar .findbar-textbox {
-  border-radius: 10px !important;
-  text-align: center !important;
-}
+/* review:  todo, change, fix */
+/*TODO some of the usual buttons that appear on the right-click context menu are hidden. right now you can change them at the top of `userChrome.css`. i will maybe later introduce `about:config` variables for easier customization */
+/*TODO autoscroller styles */
