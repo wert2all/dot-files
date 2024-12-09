@@ -1,22 +1,27 @@
 #!/usr/bin/env sh
+PROJECT="timeline"
 
 # start go backend
-cd ~/work/timeline/timeline-backend/ || exit
-tmux new-session -s 'go-timeline' -d
-tmux send-keys -t go-timeline:0 "docker compose up -d" C-m
-tmux send-keys -t go-timeline:0 "gaper --program-args=\"-postgres-port=5434\"" C-m
+cd ~/work/$PROJECT/$PROJECT-backend/ || exit
+PROJECT_BACKEND=go-$PROJECT
+tmux new-session -s $PROJECT_BACKEND -d
+tmux send-keys -t $PROJECT_BACKEND:0 "docker compose up -d" C-m
+tmux send-keys -t $PROJECT_BACKEND:0 "gaper --program-args=\"-postgres-port=5434\"" C-m
 
 #start angular frontend
-cd ~/work/timeline/timeline-frontend/ || exit
-tmux new-session -s 'angular-timeline' -d
-tmux send-keys -t angular-timeline:0 "pnpm install && pnpm start" C-m
+cd ~/work/$PROJECT/$PROJECT-frontend/ || exit
+PROJECT_ANGULAR=angular-$PROJECT
+tmux new-session -s $PROJECT_ANGULAR -d
+tmux send-keys -t $PROJECT_ANGULAR:0 "pnpm install && pnpm start" C-m
 
 #start frontend nvim
-cd ~/work/timeline/timeline-frontend/ || exit
-tmux new-session -s 'nvim-timeline-frontend' -d
-tmux send-keys -t nvim-timeline-frontend:0 "nvim" C-m
+cd ~/work/timeline/$PROJECT-frontend/ || exit
+PROJECT_NVIM_FRONTEND=nvim-$PROJECT-frontend
+tmux new-session -s $PROJECT_NVIM_FRONTEND -d
+tmux send-keys -t $PROJECT_NVIM_FRONTEND:0 "nvim" C-m
 
 #start backend nvim
-cd ~/work/timeline/timeline-backend/ || exit
-tmux new-session -s 'nvim-timeline-backend' -d
-tmux send-keys -t nvim-timeline-backend:0 "nvim" C-m
+cd ~/work/timeline/$PROJECT-backend/ || exit
+PROJECT_NVIM_BACKEND=nvim-$PROJECT-backend
+tmux new-session -s $PROJECT_NVIM_BACKEND -d
+tmux send-keys -t $PROJECT_NVIM_BACKEND:0 "nvim" C-m#!/usr/bin/env sh
