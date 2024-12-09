@@ -15,13 +15,13 @@ tmux new-session -s $PROJECT_ANGULAR -d
 tmux send-keys -t $PROJECT_ANGULAR:0 "pnpm install && pnpm start" C-m
 
 #start frontend nvim
-cd ~/work/timeline/timeline-frontend/ || exit
+cd ~/work/timeline/$PROJECT-frontend/ || exit
 PROJECT_NVIM_FRONTEND=nvim-$PROJECT-frontend
 tmux new-session -s $PROJECT_NVIM_FRONTEND -d
 tmux send-keys -t $PROJECT_NVIM_FRONTEND:0 "nvim" C-m
 
 #start backend nvim
-cd ~/work/timeline/timeline-backend/ || exit
+cd ~/work/timeline/$PROJECT-backend/ || exit
 PROJECT_NVIM_BACKEND=nvim-$PROJECT-backend
 tmux new-session -s $PROJECT_NVIM_BACKEND -d
 tmux send-keys -t $PROJECT_NVIM_BACKEND:0 "nvim" C-m
