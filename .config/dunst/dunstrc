@@ -1,8 +1,10 @@
 [global]
     monitor = 0
+    
+    width = (300, 600)
+    height = (0, 300)
+
     follow = none
-    width = 300
-    height = 300
     origin = top-right
     offset = 20x20
     scale = 0
