@@ -73,7 +73,7 @@ exec_always --no-startup-id picom -f
 exec --no-startup-id nitrogen --restore &
 
 #auto start
-exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 1; exec kitty; '
+exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 1; exec alacritty; '
 
 #layouts
 exec_always "setxkbmap -layout us,ua -variant ,, -option grp:alt_shift_toggle"
@@ -108,7 +108,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
