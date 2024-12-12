@@ -36,6 +36,11 @@ return {
             ensure_installed = { "lua_ls" },
             automatic_installation = true,
         })
+        require('mason-lspconfig').setup_handlers({
+            function(server_name)
+                require("lspconfig")[server_name].setup({})
+            end,
+        })
 
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
@@ -48,17 +53,11 @@ return {
                 map("gD", vim.lsp.buf.declaration, "Goto Declaration")
 
                 require("which-key").add({
-                    { "<leader>l",  desc = "Lsp" },
-                    { "<leader>lf", vim.lsp.buf.format,         desc = "Format buffer" },
-                    { "<leader>la", vim.lsp.buf.code_action,    desc = "Code action" },
+                    { "<leader>l", icon = "", desc = "LSP" },
+                    { "<leader>lf", vim.lsp.buf.format, desc = "Format buffer" },
+                    { "<leader>la", vim.lsp.buf.code_action, desc = "Code action" },
                     { "<leader>ls", vim.lsp.buf.signature_help, desc = "Display Signature Information" },
-                    { "<leader>lr", vim.lsp.buf.rename,         desc = "Rename all references" }, })
-            end,
-        })
-
-        require('mason-lspconfig').setup_handlers({
-            function(server_name)
-                require("lspconfig")[server_name].setup({})
+                    { "<leader>lr", vim.lsp.buf.rename, desc = "Rename all references" }, })
             end,
         })
     end,

@@ -2,8 +2,16 @@ return {
     {
         "folke/which-key.nvim",
         dependencies = {
-            { 'echasnovski/mini.icons', version = false }
+            'echasnovski/mini.icons',
         },
-        event = "VeryLazy",
+        event = "VimEnter",
+        opts = {
+            icons = {
+                mappings = true,
+            },
+            spec = {
+                { "<leader>g", icon = "", group = "Git" }
+            }
+        },
     }
 }
