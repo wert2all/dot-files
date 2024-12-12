@@ -142,8 +142,11 @@ gitCheckoutAndReset(){
   fi
 }
 
+# NeoVim config
 alias zshconfig="nvim ~/.zshrc"
 alias vim=nvim
+alias unvim="NVIM_APPNAME=\"unvim\" nvim"
+
 alias ll="eza -lh --icons=auto --sort=name --group-directories-first"
 
 alias gph="git push origin HEAD"
