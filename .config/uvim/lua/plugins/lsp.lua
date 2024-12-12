@@ -48,6 +48,7 @@ return {
                 map("gD", vim.lsp.buf.declaration, "Goto Declaration")
 
                 require("which-key").add({
+                    { "<leader>l",  desc = "Lsp" },
                     { "<leader>lf", vim.lsp.buf.format,         desc = "Format buffer" },
                     { "<leader>la", vim.lsp.buf.code_action,    desc = "Code action" },
                     { "<leader>ls", vim.lsp.buf.signature_help, desc = "Display Signature Information" },
