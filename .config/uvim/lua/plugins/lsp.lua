@@ -37,14 +37,28 @@ return {
             automatic_installation = true,
         })
 
+        vim.api.nvim_create_autocmd("LspAttach", {
+            group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
+            callback = function(event)
+                local map = function(keys, func, desc)
+                    vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+                end
+
+                map("K", vim.lsp.buf.hover, "Hover Documentation")
+                map("gD", vim.lsp.buf.declaration, "Goto Declaration")
+
+                require("which-key").add({
+                    { "<leader>lf", vim.lsp.buf.format,         desc = "Format buffer" },
+                    { "<leader>la", vim.lsp.buf.code_action,    desc = "Code action" },
+                    { "<leader>ls", vim.lsp.buf.signature_help, desc = "Display Signature Information" },
+                    { "<leader>lr", vim.lsp.buf.rename,         desc = "Rename all references" }, })
+            end,
+        })
+
         require('mason-lspconfig').setup_handlers({
             function(server_name)
                 require("lspconfig")[server_name].setup({})
             end,
         })
     end,
-    keys = {
-        { "<leader>lf", function() vim.lsp.buf.format() end,      desc = "Format buffer" },
-        { "<leader>la", function() vim.lsp.buf.code_action() end, desc = "Code action" }
-    }
 }
