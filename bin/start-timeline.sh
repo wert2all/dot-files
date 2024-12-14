@@ -24,4 +24,4 @@ tmux send-keys -t $PROJECT_NVIM_FRONTEND:0 "nvim" C-m
 cd ~/work/$PROJECT/$PROJECT-backend/ || exit
 PROJECT_NVIM_BACKEND=nvim-$PROJECT-backend
 tmux new-session -s $PROJECT_NVIM_BACKEND -d
-tmux send-keys -t $PROJECT_NVIM_BACKEND:0 "nvim" C-m#!/usr/bin/env sh
+tmux send-keys -t $PROJECT_NVIM_BACKEND:0 "nvim" C-m
