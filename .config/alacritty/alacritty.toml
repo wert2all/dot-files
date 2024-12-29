@@ -19,7 +19,7 @@ shape = "Block"
 
 [font]
 normal.family = "JetBrainsMono Nerd Font"
-size = 18
+size = 14
 
 [font.glyph_offset]
 x = 0
