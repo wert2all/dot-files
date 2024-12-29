@@ -26,8 +26,8 @@ tooltip {
   margin-right: 4px;
   padding-top: 2px;
   padding-bottom: 2px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 9px;
+  padding-right: 9px;
   border: 2px solid @border;
   border-radius: 8px;
   /* Remove GTK theme values (waybar #1351) */
@@ -55,6 +55,17 @@ tooltip {
 
 .modules-right label {
   margin-right: 8px;
+  background: @bg;
+
+  border-left: 10px solid @light-border;
+  border-top: 1px solid @light-border;
+  border-bottom: 1px solid @light-border;
+  border-right: 1px solid @light-border;
+
+  padding-left: 8px;
+  padding-right: 8px;
+
+  border-radius: 15px;
 }
 
 #custom-date,
@@ -101,6 +112,16 @@ tooltip {
 }
 
 #tray {
+}
+#tray menu * {
+  min-height: 16px;
+  font-weight: bold;
+  font-size: 13px;
+  color: #9488e3;
+}
+
+#tray menu separator {
+  min-height: 10px;
 }
 
 @keyframes blink {

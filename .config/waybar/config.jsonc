@@ -9,10 +9,12 @@
   "mode": "dock", // overlay
   "reload_style_on_change": true,
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["hyprland/window"],
+  "modules-center": [],
   "modules-right": [
     "pulseaudio",
     "battery",
+    "network",
+    "custom/led",
     "hyprland/language",
     "clock",
     "tray",
@@ -28,13 +30,8 @@
       "4": "",
       "10": "",
       "urgent": "",
-      "default": "",
+      "default": "",
     },
-  },
-  "hyprland/window": {
-    "format": "<span color='#202020' bgcolor='#d3869b' > 󰣆 </span> {title}",
-    "separate-outputs": true,
-    "icon": false,
   },
   "hyprland/language": {
     "format": "{}",
@@ -49,12 +46,13 @@
     "path": "/home",
   },
   "tray": {
-    "icon-size": 15,
-    "spacing": 7,
+    "icon-size": 16,
+    "rotate": 0,
+    "spacing": 3,
   },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%H:%M} ",
+    "format": " {:%H:%M}",
     // "format-alt": "{:%d/%m/%Y} ",
     "format-alt": "{:%A, %B %d, %Y (%T)} ",
     "interval": 1,
@@ -63,7 +61,7 @@
     "tooltip": false,
     "on-scroll-up": "blight set +5%",
     "on-scroll-down": "blight set -5%",
-    "format": "{percent}% {icon}",
+    "format": "{icon} {percent}%",
     "format-icons": ["", "", "", "", "", "", "", "", ""],
   },
   "battery": {
@@ -74,7 +72,7 @@
     },
     "format-full": "Charged ",
     "interval": 5,
-    "tooltip": false,
+    "tooltip": true,
     "states": {
       // "good": 95,
       "warning": 30,
@@ -103,5 +101,49 @@
     "format": "",
     "interval": "once",
     "tooltip": false,
+  },
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "<span color='grey'>{status_icon} {dynamic}</span>",
+    "max-length": 30,
+    "player-icons": {
+      "default": "⏸",
+      "mpv": "🎵",
+    },
+    "status-icons": {
+      "paused": "▶",
+    },
+    // "ignored-players": ["firefox"]
+  },
+  "memory": {
+    "interval": 30,
+    "format": "{icon} {percentage}%",
+    "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
+    "max-length": 10,
+  },
+  "cpu": {
+    "interval": 30,
+    "format": "{icon} {usage}%",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+  },
+  "network": {
+    "tooltip": true,
+    "format-wifi": "{icon} {signalStrength}%",
+    "format-icons": ["󰤟", "󰤢", "󰤥"],
+    //  "format-wifi": "<i class='fa-solid fa-wifi-slash'></i>",
+    "rotate": 0,
+    "format-ethernet": "󰈀 ",
+    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "format-disconnected": " ",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 2,
+  },
+  "custom/led": {
+    "format": "󰃞",
+    "format-alt": "󰃠",
+    "on-click": "~/bin/toggle-keyboard-brightness.sh",
+    "tooltip": true,
+    "tooltip-format": "Switch brightness",
   },
 }
