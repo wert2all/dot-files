@@ -7,4 +7,5 @@ killall -q waybar
 while pgrep -x waybar >/dev/null; do sleep 1; done
 
 # Launch main
+# env GTK_DEBUG=interactive waybar
 waybar

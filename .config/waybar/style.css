@@ -1,48 +1,60 @@
+@import url("./theme.css");
+
 * {
-  border: none;
-  border-radius: 0;
   font-family: "Mononoki Nerd Font Mono";
-  font-size: 22px;
-  min-height: 0;
 }
 
 window#waybar {
   background: transparent;
-  color: white;
+  color: @text;
+}
+
+tooltip {
+  background: @light-bg;
+  border: 0px solid @light-bg;
 }
 
 #workspaces {
-  background-color: #24283b;
-  margin: 5px;
-  margin-left: 10px;
-  border-radius: 18px;
+  padding-left: 10px;
 }
 
 #workspaces button {
-  padding: 5px 12px;
-  margin: 2px;
-  color: #c0caf5;
+  color: @workspace-button;
+  font-size: 28px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border: 2px solid @border;
+  border-radius: 8px;
   /* Remove GTK theme values (waybar #1351) */
   min-width: 0;
   /* Fix weird spacing in materia (waybar #450) */
   box-shadow: inset 0 -3px transparent;
   /* Use box-shadow instead of border so the text isn't offset */
-  border-radius: 15px;
 }
 
 #workspaces button.active {
-  background-color: #7aa2f7;
+  border-color: @light-border;
 }
 
 #workspaces button.active:hover,
 #workspaces button:hover {
-  background-color: #7dcfff;
-  color: #24283b;
 }
 
 #workspaces button.focused {
-  color: #24283b;
-  background-color: #7aa2f7;
+}
+
+.modules-right {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.modules-right label {
+  margin-right: 8px;
 }
 
 #custom-date,
@@ -51,29 +63,44 @@ window#waybar {
 #pulseaudio,
 #language,
 #network {
-  padding: 5px 10px;
-  margin: 5px 0px;
 }
 
 #custom-date {
-  color: #7dcfff;
-}
-
-#custom-power {
-  color: #24283b;
-  background-color: #db4b4b;
-  margin-right: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-left: 0px;
-  padding: 5px 10px;
 }
 
 #clock {
-  color: white;
-  background-color: #7aa2f7;
-  border-radius: 15px;
-  margin-right: 10px;
+}
+
+#battery {
+}
+
+#battery.charging {
+}
+
+#battery.warning:not(.charging) {
+}
+
+#battery.critical:not(.charging),
+#battery.urgent:not(.charging) {
+}
+
+#battery.warning:not(.charging),
+#battery.critical:not(.charging),
+#battery.urgent:not(.charging) {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#network {
+}
+
+#pulseaudio {
+}
+
+#tray {
 }
 
 @keyframes blink {
@@ -81,44 +108,4 @@ window#waybar {
     background-color: #e0af68;
     /* color: white; */
   }
-}
-#battery {
-  color: #9ece6a;
-}
-
-#battery.charging {
-  color: #9ece6a;
-}
-
-#battery.warning:not(.charging) {
-  background-color: #9ece6a;
-}
-
-#battery.critical:not(.charging),
-#battery.urgent:not(.charging) {
-  background-color: #f7768e;
-}
-
-#battery.warning:not(.charging),
-#battery.critical:not(.charging),
-#battery.urgent:not(.charging) {
-  border-radius: 15px;
-  color: #24283b;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#network {
-  color: #f7768e;
-}
-
-#pulseaudio {
-  color: #e0af68;
-}
-
-#tray {
-  padding: 0 16px;
 }
