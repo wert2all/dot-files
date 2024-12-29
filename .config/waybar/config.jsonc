@@ -1,0 +1,107 @@
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": 0,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 10,
+  "margin-right": 10,
+  "mode": "dock", // overlay
+  "reload_style_on_change": true,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "pulseaudio",
+    "battery",
+    "hyprland/language",
+    "clock",
+    "tray",
+  ],
+  // Modules configuration
+  "hyprland/workspaces": {
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "10": "",
+      "urgent": "",
+      "default": "",
+    },
+  },
+  "hyprland/window": {
+    "format": "<span color='#202020' bgcolor='#d3869b' > 󰣆 </span> {title}",
+    "separate-outputs": true,
+    "icon": false,
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "en",
+    "format-uk": "ua",
+    // "format-tr": "As bayrakları",
+    // "keyboard-name": "at-translated-set-2-keyboard"
+  },
+  "disk": {
+    "interval": 60,
+    "format": "{percentage_used}% ",
+    "path": "/home",
+  },
+  "tray": {
+    "icon-size": 15,
+    "spacing": 7,
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%H:%M} ",
+    // "format-alt": "{:%d/%m/%Y} ",
+    "format-alt": "{:%A, %B %d, %Y (%T)} ",
+    "interval": 1,
+  },
+  "backlight": {
+    "tooltip": false,
+    "on-scroll-up": "blight set +5%",
+    "on-scroll-down": "blight set -5%",
+    "format": "{percent}% {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": {
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    },
+    "format-full": "Charged ",
+    "interval": 5,
+    "tooltip": false,
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15,
+    },
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "nospacing": 1,
+    "format-muted": "󰝟",
+    "format-icons": {
+      "headphone": "",
+      "default": ["󰖀", "󰕾", ""],
+    },
+    "scroll-step": 5, // %, can be a float
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": "",
+    },
+  },
+  "custom/separator": {
+    "format": "",
+    "interval": "once",
+    "tooltip": false,
+  },
+}
