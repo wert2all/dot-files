@@ -64,7 +64,7 @@ exec --no-startup-id lxpolkit
 exec_always --no-startup-id "killall dunst; sleep 1; /usr/bin/dunst"
 
 #polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id re-launch-polybar.sh
 
 #picom
 exec_always --no-startup-id picom -f
