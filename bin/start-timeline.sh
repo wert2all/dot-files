@@ -6,7 +6,7 @@ cd ~/work/$PROJECT/$PROJECT-backend/ || exit
 PROJECT_BACKEND=go-$PROJECT
 tmux new-session -s $PROJECT_BACKEND -d
 tmux send-keys -t $PROJECT_BACKEND:0 "docker compose up -d" C-m
-tmux send-keys -t $PROJECT_BACKEND:0 "gaper --program-args=\"-postgres-port=5434\" -development=true" C-m
+tmux send-keys -t $PROJECT_BACKEND:0 "gaper --program-args=\"-postgres-port=5434 -development=true\" " C-m
 
 #start angular frontend
 cd ~/work/$PROJECT/$PROJECT-frontend/ || exit
