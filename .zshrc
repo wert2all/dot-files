@@ -134,6 +134,7 @@ gitCheckoutAndReset(){
 
 alias gfa='git fetch --all --tags --prune --jobs=10'
 alias gss='git status --short'
+alias gcb='git checkout -b'
 alias gaa="git add --all"
 alias gph="git push origin HEAD"
 alias gau="git add -u && gss"
