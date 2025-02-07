@@ -13,7 +13,7 @@ export PATH=$HOME/go/bin/:$PATH
 
 # fix tmux patch for wsl2
 export TMUX_TMPDIR=/tmp
-
+#
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -83,27 +83,14 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-commit zsh-256color zsh-syntax-highlighting zsh-autosuggestions tmux)
-
+plugins=(git-commit zsh-256color tmux)
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
+# zsh plugins
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-you-should-use/zsh-you-should-use.plugin.zsh
+#
 # Auto-start the ssh agent and add necessary keys once per reboot. 
 #
 # This is recommended to be added to your ~/.bash_aliases (preferred) or ~/.bashrc file on any
@@ -128,11 +115,14 @@ if [ "$?" -ne "0" ]; then
     ssh-add
 fi
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
+
+# NeoVim config
+alias zshconfig="nvim ~/.zshrc"
+alias vim=nvim
+
+alias ll="eza -lh --icons=auto --sort=name --group-directories-first"
+
+# Git aliases
 
 gitCheckoutAndReset(){
   if [ -n "$1" ]
@@ -142,17 +132,16 @@ gitCheckoutAndReset(){
   fi
 }
 
-# NeoVim config
-alias zshconfig="nvim ~/.zshrc"
-alias vim=nvim
-
-alias ll="eza -lh --icons=auto --sort=name --group-directories-first"
-
+alias gfa='git fetch --all --tags --prune --jobs=10'
+alias gss='git status --short'
+alias gaa="git add --all"
 alias gph="git push origin HEAD"
 alias gau="git add -u && gss"
 alias gcr="gitCheckoutAndReset"
-
+alias gcn='git commit --verbose --no-edit'
+alias gcn!='git commit --verbose --no-edit --amend'
 alias dus="sudo du -hs \$(ls -A) | sort -h"
+
 eval "$(zoxide init zsh)"
 
 # pnpm
@@ -162,10 +151,8 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-# aliases
 alias p='pnpm'
 
-# Dependencies
 alias pa='pnpm add'
 alias pad='pnpm add --save-dev'
 alias pin='pnpm install'
@@ -173,7 +160,6 @@ alias pu='pnpm update'
 alias pui='pnpm update --interactive'
 alias puil='pnpm update --interactive --latest'
 
-# Run scripts
 alias prun='pnpm run'
 alias pst='pnpm start'
 alias pln='pnpm run lint'
