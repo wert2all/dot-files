@@ -190,3 +190,9 @@ export GPG_TTY=$(tty)
 # Prompt
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/tokyo.omp.json)"
 
+# History (from https://github.com/mischavandenburg/dotfiles/blob/main/.zshrc)
+
+setopt HIST_IGNORE_SPACE  # Don't save when prefixed with space
+setopt HIST_IGNORE_DUPS   # Don't save duplicate lines
+setopt SHARE_HISTORY      # Share history between sessions
+
