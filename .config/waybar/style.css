@@ -24,12 +24,12 @@ tooltip {
   margin-top: 4px;
   margin-bottom: 4px;
   margin-right: 4px;
+
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 9px;
   padding-right: 9px;
-  border: 2px solid @border;
-  border-radius: 8px;
+  border-radius: 0px;
   /* Remove GTK theme values (waybar #1351) */
   min-width: 0;
   /* Fix weird spacing in materia (waybar #450) */
@@ -38,14 +38,7 @@ tooltip {
 }
 
 #workspaces button.active {
-  border-color: @light-border;
-}
-
-#workspaces button.active:hover,
-#workspaces button:hover {
-}
-
-#workspaces button.focused {
+  color: @right-accent-red;
 }
 
 .modules-right {
@@ -54,45 +47,13 @@ tooltip {
 }
 
 .modules-right label {
-  margin-right: 8px;
+  margin-right: 2px;
   background: @bg;
-
-  border-left: 10px solid @light-border;
-  border-top: 1px solid @light-border;
-  border-bottom: 1px solid @light-border;
-  border-right: 1px solid @light-border;
 
   padding-left: 8px;
   padding-right: 8px;
 
-  border-radius: 15px;
-}
-
-#custom-date,
-#clock,
-#battery,
-#pulseaudio,
-#language,
-#network {
-}
-
-#custom-date {
-}
-
-#clock {
-}
-
-#battery {
-}
-
-#battery.charging {
-}
-
-#battery.warning:not(.charging) {
-}
-
-#battery.critical:not(.charging),
-#battery.urgent:not(.charging) {
+  border-radius: 0px;
 }
 
 #battery.warning:not(.charging),
@@ -105,14 +66,6 @@ tooltip {
   animation-direction: alternate;
 }
 
-#network {
-}
-
-#pulseaudio {
-}
-
-#tray {
-}
 #tray menu * {
   min-height: 16px;
   font-weight: bold;
