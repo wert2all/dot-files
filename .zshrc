@@ -89,7 +89,6 @@ source $ZSH/oh-my-zsh.sh
 # zsh plugins
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-you-should-use/zsh-you-should-use.plugin.zsh
 #
 # Auto-start the ssh agent and add necessary keys once per reboot. 
 #
