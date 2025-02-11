@@ -8,9 +8,7 @@
   "margin-right": 10,
   "mode": "dock", // overlay
   "reload_style_on_change": true,
-  "modules-left": [
-    "hyprland/workspaces"
-  ],
+  "modules-left": ["hyprland/workspaces"],
   "modules-center": [],
   "modules-right": [
     "pulseaudio",
@@ -18,8 +16,8 @@
     "network",
     "custom/led",
     "hyprland/language",
-    "clock",
     "tray",
+    "clock",
   ],
   // Modules configuration
   "hyprland/workspaces": {
@@ -64,45 +62,13 @@
     "on-scroll-up": "blight set +5%",
     "on-scroll-down": "blight set -5%",
     "format": "{icon} {percent}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
   },
   "battery": {
     "format": "{icon} {capacity}%",
     "format-icons": {
-      "charging": [
-        "󰢜",
-        "󰂆",
-        "󰂇",
-        "󰂈",
-        "󰢝",
-        "󰂉",
-        "󰢞",
-        "󰂊",
-        "󰂋",
-        "󰂅"
-      ],
-      "default": [
-        "󰁺",
-        "󰁻",
-        "󰁼",
-        "󰁽",
-        "󰁾",
-        "󰁿",
-        "󰂀",
-        "󰂁",
-        "󰂂",
-        "󰁹"
-      ],
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     },
     "format-full": "Charged ",
     "interval": 5,
@@ -119,11 +85,7 @@
     "format-muted": "󰝟",
     "format-icons": {
       "headphone": "",
-      "default": [
-        "󰖀",
-        "󰕾",
-        ""
-      ],
+      "default": ["󰖀", "󰕾", ""],
     },
     "scroll-step": 5, // %, can be a float
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
@@ -156,41 +118,18 @@
   "memory": {
     "interval": 30,
     "format": "{icon} {percentage}%",
-    "format-icons": [
-      "󰝦",
-      "󰪞",
-      "󰪟",
-      "󰪠",
-      "󰪡",
-      "󰪢",
-      "󰪣",
-      "󰪤",
-      "󰪥"
-    ],
+    "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
     "max-length": 10,
   },
   "cpu": {
     "interval": 30,
     "format": "{icon} {usage}%",
-    "format-icons": [
-      "▁",
-      "▂",
-      "▃",
-      "▄",
-      "▅",
-      "▆",
-      "▇",
-      "█"
-    ],
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
   },
   "network": {
     "tooltip": true,
     "format-wifi": "{icon} {signalStrength}%",
-    "format-icons": [
-      "󰤟",
-      "󰤢",
-      "󰤥"
-    ],
+    "format-icons": ["󰤟", "󰤢", "󰤥"],
     //  "format-wifi": "<i class='fa-solid fa-wifi-slash'></i>",
     "rotate": 0,
     "format-ethernet": "󰈀 ",
