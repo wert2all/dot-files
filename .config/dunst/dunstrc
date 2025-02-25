@@ -111,7 +111,7 @@
   format = "<span size="250%">%a</span>\n%b"
 
 [global]
-  frame_color = "#8aadf4"
+  frame_color = "#24273a"
   separator_color= frame
 
 [urgency_low]
