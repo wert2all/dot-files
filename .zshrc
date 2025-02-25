@@ -118,6 +118,7 @@ fi
 # NeoVim config
 alias zshconfig="nvim ~/.zshrc"
 alias vim=nvim
+alias nvchad="NVIM_APPNAME=nvchad nvim"
 
 alias ll="eza -lh --icons=auto --sort=name --group-directories-first"
 
