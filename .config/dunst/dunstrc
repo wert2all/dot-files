@@ -6,7 +6,7 @@
 
     follow = none
     origin = top-right
-    offset = 20x20
+    offset = (20, 20)
     scale = 0
     notification_limit = 20
     progress_bar = true
