@@ -7,6 +7,7 @@ export PATH=$HOME/.local/bin:$PATH
 # Android home
 export ANDROID_HOME="$HOME/Android/Sdk"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 #go 
 export PATH=$HOME/go/bin/:$PATH
