@@ -187,3 +187,15 @@ setopt HIST_IGNORE_SPACE  # Don't save when prefixed with space
 setopt HIST_IGNORE_DUPS   # Don't save duplicate lines
 setopt SHARE_HISTORY      # Share history between sessions
 
+# Check if dotenv is installed, if not install it
+if ! command -v dotenv &> /dev/null
+then
+    echo "dotenv could not be found, installing it now..."
+    pnpm install -g dotenv-cli
+fi
+#
+# Load environment variables from .env file if it exists
+if [ -f .env ]; then
+    dotenv -f .env
+fi
+
