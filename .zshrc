@@ -1,5 +1,7 @@
 # read .env file 
-set -a && source .env && set +a
+if [ -f .env ]; then
+  set -a && source .env && set +a
+fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
