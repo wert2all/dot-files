@@ -5,12 +5,11 @@
   "workbench.sideBar.location": "right",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
-
   //Editor
   "editor.linkedEditing": true,
   "editor.accessibilitySupport": "off",
   "editor.fontFamily": "'GeistMono NF', 'Iosevka Nerd Font', 'JetbrainsMono Nerd Font', '0xProto Nerd Font Mono'",
-  "editor.fontSize": 22,
+  "editor.fontSize": 16,
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
   "editor.cursorSmoothCaretAnimation": "on",
@@ -42,18 +41,15 @@
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 5,
   "workbench.editor.showTabs": "none",
-
   //terminal
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.fontWeight": "300",
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.tabs.enabled": true,
-
   "files.autoSave": "onFocusChange",
   "workbench.startupEditor": "none",
   "window.autoDetectColorScheme": true,
-
   "workbench.statusBar.visible": false,
   "diffEditor.hideUnchangedRegions.enabled": true,
   "workbench.editor.tabActionLocation": "right",
@@ -62,13 +58,11 @@
   "editor.scrollbar.horizontalScrollbarSize": 0,
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
-
   //Debug
   "debug.toolBarLocation": "hidden",
   "debug.focusWindowOnBreak": false,
   "debug.showInlineBreakpointCandidates": false,
   "debug.showBreakpointsInOverviewRuler": false,
-
   // breadcrumbs
   "breadcrumbs.icons": false,
   "breadcrumbs.showArrays": false,
@@ -94,14 +88,12 @@
   "breadcrumbs.showStrings": false,
   "breadcrumbs.showTypeParameters": false,
   "breadcrumbs.showVariables": false,
-
   //Theme
   "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.preferredLightColorTheme": "Quiet Light",
   "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
   "workbench.colorTheme": "Nightfox",
   "codeium.enableCodeLens": false,
-
   "editor.copyWithSyntaxHighlighting": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.emptySelectionClipboard": false,
@@ -117,5 +109,15 @@
   "files.trimFinalNewlines": true,
   "editor.guides.indentation": false,
   "window.customTitleBarVisibility": "auto",
-  "workbench.productIconTheme": "icons-octicons"
+  "workbench.productIconTheme": "icons-octicons",
+
+  "roo-cline.allowedCommands": [
+    "npm test",
+    "npm install",
+    "tsc",
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "window.zoomLevel": 1
 }
