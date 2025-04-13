@@ -1,4 +1,5 @@
 {
+  "icon_theme": "JetBrains New UI Icons (Dark)",
   "features": {
     "edit_prediction_provider": "zed"
   },
