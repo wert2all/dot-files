@@ -1,130 +1,35 @@
 {
+  "name": "sidebar",
   "layer": "top",
-  "position": "top",
-  "spacing": 0,
-  "margin-top": 0,
-  "margin-bottom": 0,
-  "margin-left": 10,
-  "margin-right": 10,
-  "mode": "dock", // overlay
-  "reload_style_on_change": true,
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": [],
-  "modules-right": [
-    "pulseaudio",
-    "battery",
-    "network",
-    "custom/led",
-    "hyprland/language",
-    "tray",
-    "clock",
-  ],
-  // Modules configuration
+  "position": "left",
+  "modules-left": ["clock"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["pulseaudio", "hyprland/language", "custom/led", "battery"],
   "hyprland/workspaces": {
+    "disable-scroll": true,
     "all-outputs": true,
+    "on-click": "activate",
     "format": "{icon}",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "10": "",
-      "urgent": "",
-      "default": "",
+      "active": "󰁃",
+      "default": "·",
     },
+    "sort-by-number": true,
+  },
+  "clock": {
+    "format": "{:%H\n%M}",
+  },
+  "custom/led": {
+    "format": "󰃞",
+    "format-alt": "󰃠",
+    "on-click": "~/bin/toggle-keyboard-brightness.sh",
+    "tooltip": true,
+    "tooltip-format": "Switch brightness",
   },
   "hyprland/language": {
     "format": "{}",
     "format-en": "en",
     "format-uk": "ua",
-    // "format-tr": "As bayrakları",
-    // "keyboard-name": "at-translated-set-2-keyboard"
-  },
-  "disk": {
-    "interval": 60,
-    "format": "{percentage_used}% ",
-    "path": "/home",
-  },
-  "tray": {
-    "icon-size": 16,
-    "rotate": 0,
-    "spacing": 3,
-  },
-  "clock": {
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": " {:%H:%M}",
-    // "format-alt": "{:%d/%m/%Y} ",
-    "format-alt": "{:%A, %B %d, %Y (%T)} ",
-    "interval": 1,
-  },
-  "backlight": {
-    "tooltip": false,
-    "on-scroll-up": "blight set +5%",
-    "on-scroll-down": "blight set -5%",
-    "format": "{icon} {percent}%",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
-  },
-  "battery": {
-    "format": "{icon} {capacity}%",
-    "format-icons": {
-      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-    },
-    "format-full": "Charged ",
-    "interval": 5,
-    "tooltip": true,
-    "states": {
-      // "good": 95,
-      "warning": 30,
-      "critical": 15,
-    },
-  },
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "nospacing": 1,
-    "format-muted": "󰝟",
-    "format-icons": {
-      "headphone": "",
-      "default": ["󰖀", "󰕾", ""],
-    },
-    "scroll-step": 5, // %, can be a float
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": "",
-    },
-  },
-  "custom/separator": {
-    "format": "",
-    "interval": "once",
-    "tooltip": false,
-  },
-  "mpris": {
-    "format": "{player_icon} {dynamic}",
-    "format-paused": "<span color='grey'>{status_icon} {dynamic}</span>",
-    "max-length": 30,
-    "player-icons": {
-      "default": "⏸",
-      "mpv": "🎵",
-    },
-    "status-icons": {
-      "paused": "▶",
-    },
-    // "ignored-players": ["firefox"]
-  },
-  "memory": {
-    "interval": 30,
-    "format": "{icon} {percentage}%",
-    "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
-    "max-length": 10,
-  },
-  "cpu": {
-    "interval": 30,
-    "format": "{icon} {usage}%",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
   },
   "network": {
     "tooltip": true,
@@ -139,11 +44,30 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 2,
   },
-  "custom/led": {
-    "format": "󰃞",
-    "format-alt": "󰃠",
-    "on-click": "~/bin/toggle-keyboard-brightness.sh",
+  "battery": {
+    "format": "{icon}",
+    "format-icons": {
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    },
+    "format-full": "",
+    "interval": 5,
     "tooltip": true,
-    "tooltip-format": "Switch brightness",
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15,
+    },
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "nospacing": 1,
+    "format-muted": "󰝟",
+    "format-icons": {
+      "headphone": "",
+      "default": ["󰖀", "󰕾", ""],
+    },
+    "scroll-step": 5, // %, can be a float
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
   },
 }

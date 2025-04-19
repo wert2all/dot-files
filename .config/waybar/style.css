@@ -1,12 +1,34 @@
-@import url("./theme.css");
+@define-color bg        #2a292d;
+@define-color light-bg  #4C4E56;
+@define-color darker-bg #201f22;
+@define-color color     #fbf1c7;
+
+@define-color active    #ff4c4c;
 
 * {
+  all: unset;
   font-family: "Mononoki Nerd Font Mono";
 }
 
-window#waybar {
-  background: transparent;
-  color: @text;
+window > box {
+  margin: 12px;
+  background-color: @bg;
+  box-shadow: 0 0 5px 5px @darker-bg;
+}
+
+#workspaces {
+  padding: 15px 10px;
+  margin: 0px;
+}
+
+#workspaces button.active {
+  font-size: 24px;
+  color: @active;
+}
+
+.modules-right {
+  color: @color;
+  margin-bottom: 15px;
 }
 
 tooltip {
@@ -14,83 +36,22 @@ tooltip {
   border: 0px solid @light-bg;
 }
 
-#workspaces {
-  padding-left: 10px;
-}
-
-#workspaces button {
-  color: @workspace-button;
-  font-size: 28px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  margin-right: 4px;
-
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-left: 9px;
-  padding-right: 9px;
-  border-radius: 0px;
-  /* Remove GTK theme values (waybar #1351) */
-  min-width: 0;
-  /* Fix weird spacing in materia (waybar #450) */
-  box-shadow: inset 0 -3px transparent;
-  /* Use box-shadow instead of border so the text isn't offset */
-}
-
-#workspaces button.active {
-  color: @right-accent-red;
-}
-
-.modules-right {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-
-.modules-right label {
-  margin-right: 2px;
-  background: @bg;
-
-  padding-left: 8px;
-  padding-right: 8px;
-
-  border-radius: 0px;
-}
-
-#battery.warning:not(.charging),
-#battery.critical:not(.charging),
-#battery.urgent:not(.charging) {
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: steps(12);
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-#tray {
-  background-color: @bg;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-#tray menu {
-  background-color: @bg;
-}
-
-#tray menu * {
-  min-height: 16px;
-  font-weight: bold;
-  font-size: 13px;
-}
-
-/**/
-/* #tray menu separator { */
-/*   min-height: 10px; */
-/* } */
-
 @keyframes blink {
   to {
     background-color: #e0af68;
     /* color: white; */
   }
+}
+
+#clock {
+  margin: 15px;
+  color: @active;
+  padding: 15px 10px;
+  margin: 0px;
+}
+
+#pulseaudio,
+#battery,
+#custom-led {
+  font-size: 28px;
 }
