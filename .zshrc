@@ -1,4 +1,4 @@
-# read .env file 
+# read .env file
 if [ -f .env ]; then
   set -a && source .env && set +a
 fi
@@ -13,7 +13,7 @@ export ANDROID_HOME="$HOME/Android/Sdk"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-#go 
+#go
 export PATH=$HOME/go/bin/:$PATH
 
 # fix tmux patch for wsl2
@@ -41,7 +41,7 @@ fi
 source ${zsh_plugins}.zsh
 
 #
-# Auto-start the ssh agent and add necessary keys once per reboot. 
+# Auto-start the ssh agent and add necessary keys once per reboot.
 #
 # This is recommended to be added to your ~/.bash_aliases (preferred) or ~/.bashrc file on any
 # remote ssh server development machine that you generally ssh into, and from which you must ssh
@@ -49,35 +49,31 @@ source ${zsh_plugins}.zsh
 # log into this machine, however, there is no need to do this, as Ubuntu's Gnome window manager,
 # for instance, will automatically start and manage the `ssh-agent` for you instead.
 #
-# See: 
+# See:
 # https://github.com/ElectricRCAircraftGuy/eRCaGuy_dotfiles/tree/master/home/.ssh#auto-starting-the-the-ssh-agent-on-a-remote-ssh-based-development-machine
 
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-    echo "'ssh-agent' has not been started since the last reboot. Starting 'ssh-agent' now."
-    eval "$(ssh-agent -s)"
-    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+  echo "'ssh-agent' has not been started since the last reboot. Starting 'ssh-agent' now."
+  eval "$(ssh-agent -s)"
+  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 # see if any key files are already added to the ssh-agent, and if not, add them
-ssh-add -l > /dev/null
+ssh-add -l >/dev/null
 if [ "$?" -ne "0" ]; then
-    echo "No ssh keys have been added to your 'ssh-agent' since the last reboot. Adding default keys now."
-    ssh-add
+  echo "No ssh keys have been added to your 'ssh-agent' since the last reboot. Adding default keys now."
+  ssh-add
 fi
 
-
 # NeoVim config
-alias zshconfig="nvim ~/.zshrc"
 alias vim=nvim
-alias kickvim="NVIM_APPNAME=kickvim nvim"
 
 alias ll="eza -lh --icons=auto --sort=name --group-directories-first"
 
 # Git aliases
 
-gitCheckoutAndReset(){
-  if [ -n "$1" ]
-  then
+gitCheckoutAndReset() {
+  if [ -n "$1" ]; then
     git checkout $1
     git reset --hard origin/$1
   fi
@@ -85,6 +81,7 @@ gitCheckoutAndReset(){
 
 alias gfa='git fetch --all --tags --prune --jobs=10'
 alias gss='git status --short'
+alias gd='git diff --output-indicator-new=" " --output-indicator-old=" "'
 alias gcb='git checkout -b'
 alias gaa="git add --all"
 alias gph="git push origin HEAD"
@@ -94,6 +91,8 @@ alias gcn='git commit --verbose --no-edit'
 alias gcn!='git commit --verbose --no-edit --amend'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]"'
 alias gunwip='git rev-list --max-count=1 --format="%s" HEAD | grep -q "\--wip--" && git reset HEAD~1'
+alias gcl='git clone --recurse-submodules'
+alias gl='git log --graph --all --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n"'
 
 alias dus="sudo du -hs \$(ls -A) | sort -h"
 
@@ -102,8 +101,8 @@ eval "$(zoxide init zsh)"
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
 alias p='pnpm'
@@ -133,10 +132,9 @@ export GPG_TTY=$(tty)
 
 # History (from https://github.com/mischavandenburg/dotfiles/blob/main/.zshrc)
 
-setopt HIST_IGNORE_SPACE  # Don't save when prefixed with space
-setopt HIST_IGNORE_DUPS   # Don't save duplicate lines
-setopt SHARE_HISTORY      # Share history between sessions
+setopt HIST_IGNORE_SPACE # Don't save when prefixed with space
+setopt HIST_IGNORE_DUPS  # Don't save duplicate lines
+setopt SHARE_HISTORY     # Share history between sessions
 
 #AI commit
-
 alias commit='ai-commit -provider=mistral'
