@@ -90,8 +90,13 @@ alias gcr="gitCheckoutAndReset"
 alias gr="git reset --hard"
 alias grm="git reset --hard origin/main"
 
+alias gra="git rebase --abort"
+alias grc="git rebase --continue"
+
 alias gaa="git add --all"
 alias gau="git add -u && gss"
+
+alias gum="git pull origin main --rebase"
 
 alias gph="git push origin HEAD"
 
