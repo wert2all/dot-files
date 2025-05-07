@@ -73,7 +73,10 @@ exec_always --no-startup-id picom -f
 exec --no-startup-id nitrogen --restore &
 
 #auto start
-exec --no-startup-id i3-msg 'workspace 1; exec kitty; '
+exec --no-startup-id i3-msg 'workspace 1; exec kitty;'
+
+#auto start obsidian
+exec --no-startup-id ~/bin/start.sh obsidian
 
 #layouts
 exec_always "setxkbmap -layout us,ua -variant ,, -option grp:alt_shift_toggle"
