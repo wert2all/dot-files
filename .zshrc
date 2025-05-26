@@ -152,4 +152,4 @@ setopt HIST_IGNORE_DUPS  # Don't save duplicate lines
 setopt SHARE_HISTORY     # Share history between sessions
 
 #AI commit
-alias commit='ai-commit -provider=mistral'
+alias commit='ai-commit -provider=mistral -model=codestral-latest'
