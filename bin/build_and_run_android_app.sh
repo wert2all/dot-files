@@ -89,7 +89,7 @@ start_emulator() {
 
     # Start the emulator in the background
     # Use -no-snapshot-load to ensure a clean boot
-    emulator -avd "$avd_to_start" -no-snapshot-load &
+    emulator -avd "$avd_to_start" -no-audio -no-snapshot-load &
     EMULATOR_PID=$!
     echo "Emulator launching with PID: $EMULATOR_PID"
 
