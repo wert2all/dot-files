@@ -50,8 +50,21 @@ tooltip {
   margin: 0px;
 }
 
+#cpu,
 #pulseaudio,
 #battery,
 #custom-led {
   font-size: 28px;
+}
+
+#cpu {
+  background-color: @light-bg;
+}
+
+#cpu.warning {
+  background-color: #e0b341;
+}
+
+#cpu.critical {
+  background-color: @active;
 }

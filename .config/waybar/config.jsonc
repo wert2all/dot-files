@@ -4,7 +4,13 @@
   "position": "left",
   "modules-left": ["clock"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["pulseaudio", "hyprland/language", "custom/led", "battery"],
+  "modules-right": [
+    "cpu",
+    "pulseaudio",
+    "hyprland/language",
+    "custom/led",
+    "battery",
+  ],
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
@@ -69,5 +75,15 @@
     },
     "scroll-step": 5, // %, can be a float
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+  },
+  "cpu": {
+    "format": "",
+    "tooltip": true,
+    "tooltip-format": "CPU: {usage}% \nAvg Load: {avg_load}",
+    "interval": 2,
+    "states": {
+      "warning": 70,
+      "critical": 90,
+    },
   },
 }
