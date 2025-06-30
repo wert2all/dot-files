@@ -85,7 +85,7 @@ gitCheckoutAndReset() {
 alias gfa='git fetch --all --tags --prune --jobs=10'
 alias gss='git status --short'
 alias gd= 'git diff --output-indicator-new=" " --output-indicator-old=" "'
-alias gl='git log --graph --all --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n"'
+alias gl='git log --graph --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n"'
 
 alias gcb='git checkout -b'
 alias gcr="gitCheckoutAndReset"
