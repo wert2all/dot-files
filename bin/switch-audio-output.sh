@@ -6,28 +6,6 @@
 
 set -euo pipefail
 
-# Check if required dependencies are installed
-check_dependencies() {
-    local missing_deps=()
-    
-    if ! command -v pactl &> /dev/null; then
-        missing_deps+=("pulseaudio-utils")
-    fi
-    
-    if ! command -v fzf &> /dev/null; then
-        missing_deps+=("fzf")
-    fi
-    
-    if [ ${#missing_deps[@]} -ne 0 ]; then
-        echo "Error: Missing required dependencies: ${missing_deps[*]}"
-        echo "Please install them using your package manager:"
-        echo "  Ubuntu/Debian: sudo apt install ${missing_deps[*]}"
-        echo "  Fedora: sudo dnf install ${missing_deps[*]}"
-        echo "  Arch: sudo pacman -S ${missing_deps[*]}"
-        exit 1
-    fi
-}
-
 # Get list of audio sinks with friendly names
 get_audio_sinks() {
     pactl list sinks | grep -E "(Sink #|Description:|Name:)" | \
@@ -58,9 +36,6 @@ move_active_streams() {
 main() {
     echo "🔊 Audio Output Device Switcher"
     echo "================================"
-    
-    # Check dependencies
-    check_dependencies
     
     # Get current default sink
     current_sink=$(pactl get-default-sink 2>/dev/null || echo "unknown")
