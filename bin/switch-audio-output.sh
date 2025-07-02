@@ -1,28 +1,136 @@
 #!/bin/bash
 
-# Get the list of sinks and format them for fzf
-# We extract the sink number and its description
-sinks=$(pactl list sinks | grep -E 'Sink #|Description:' | sed 's/^[[:space:]]*//' | paste - - | sed 's/Sink #//' | sed 's/Description: / /')
+# Switch Audio Output Device Script
+# Provides an interactive way to switch the default audio output device
+# Dependencies: pulseaudio-utils, fzf
 
-# Let the user choose a sink using fzf, but only show the description
-chosen_sink_desc=$(echo "$sinks" | cut -d' ' -f2- | fzf --prompt="Select an audio output device: " --height=20% --border)
+set -euo pipefail
 
-# If the user made a choice (i.e., didn't cancel fzf)
-if [ -n "$chosen_sink_desc" ]; then
-    # Find the original line corresponding to the chosen description
-    chosen_sink=$(echo "$sinks" | grep "$chosen_sink_desc")
-    # Extract the sink number from the chosen line
-    sink_id=$(echo "$chosen_sink" | awk '{print $1}')
+# Check if required dependencies are installed
+check_dependencies() {
+    local missing_deps=()
+    
+    if ! command -v pactl &> /dev/null; then
+        missing_deps+=("pulseaudio-utils")
+    fi
+    
+    if ! command -v fzf &> /dev/null; then
+        missing_deps+=("fzf")
+    fi
+    
+    if [ ${#missing_deps[@]} -ne 0 ]; then
+        echo "Error: Missing required dependencies: ${missing_deps[*]}"
+        echo "Please install them using your package manager:"
+        echo "  Ubuntu/Debian: sudo apt install ${missing_deps[*]}"
+        echo "  Fedora: sudo dnf install ${missing_deps[*]}"
+        echo "  Arch: sudo pacman -S ${missing_deps[*]}"
+        exit 1
+    fi
+}
 
-    # Set the chosen sink as the default
-    pactl set-default-sink "$sink_id"
-    echo "Default audio output set to: $chosen_sink_desc"
+# Get list of audio sinks with friendly names
+get_audio_sinks() {
+    pactl list sinks | grep -E "(Sink #|Description:|Name:)" | \
+    awk '
+        /Sink #/ { sink_id = $2; gsub(/#/, "", sink_id) }
+        /Name:/ { name = $2 }
+        /Description:/ { 
+            desc = $0; 
+            gsub(/^[[:space:]]*Description:[[:space:]]*/, "", desc);
+            print sink_id ":" name ":" desc
+        }
+    '
+}
 
-    # Move all existing audio streams to the new sink
-    pactl list short sink-inputs | awk '{print $1}' | while read -r input_id; do
-        pactl move-sink-input "$input_id" "$sink_id"
+# Move all active audio streams to the selected sink
+move_active_streams() {
+    local target_sink="$1"
+    
+    # Get all active sink inputs and move them to the new default sink
+    pactl list sink-inputs short | while read -r input_id _; do
+        if [ -n "$input_id" ]; then
+            pactl move-sink-input "$input_id" "$target_sink" 2>/dev/null || true
+        fi
     done
-    echo "All active audio streams moved to the new output."
-else
-    echo "No device selected. Audio output remains unchanged."
-fi
+}
+
+# Main function
+main() {
+    echo "🔊 Audio Output Device Switcher"
+    echo "================================"
+    
+    # Check dependencies
+    check_dependencies
+    
+    # Get current default sink
+    current_sink=$(pactl get-default-sink 2>/dev/null || echo "unknown")
+    echo "Current default: $current_sink"
+    echo ""
+    
+    # Get available sinks
+    sinks=$(get_audio_sinks)
+    
+    if [ -z "$sinks" ]; then
+        echo "No audio output devices found!"
+        exit 1
+    fi
+    
+    # Create user-friendly list for fzf
+    sink_list=""
+    while IFS=':' read -r sink_id sink_name description; do
+        # Mark current default with an indicator
+        indicator=""
+        if [ "$sink_name" = "$current_sink" ]; then
+            indicator=" [CURRENT]"
+        fi
+        sink_list+="$sink_id:$sink_name:$description$indicator"$'\n'
+    done <<< "$sinks"
+    
+    # Use fzf to select audio device
+    echo "Select audio output device:"
+    selected=$(echo "$sink_list" | fzf \
+        --prompt="🎵 Select audio device: " \
+        --header="Use arrow keys to navigate, Enter to select, Esc to cancel" \
+        --height=40% \
+        --reverse \
+        --border \
+        --preview-window=hidden \
+        --delimiter=':' \
+        --with-nth=3.. \
+        --no-multi
+    ) || {
+        echo "Selection cancelled."
+        exit 0
+    }
+    
+    # Extract sink name from selection
+    selected_sink=$(echo "$selected" | cut -d':' -f2)
+    selected_desc=$(echo "$selected" | cut -d':' -f3 | sed 's/ \[CURRENT\]$//')
+    
+    if [ -z "$selected_sink" ]; then
+        echo "Invalid selection!"
+        exit 1
+    fi
+    
+    # Set as default sink
+    echo ""
+    echo "Setting default audio output to: $selected_desc"
+    pactl set-default-sink "$selected_sink"
+    
+    # Move all active streams to the new sink
+    echo "Moving active audio streams..."
+    move_active_streams "$selected_sink"
+    
+    echo "✅ Audio output switched successfully!"
+    
+    # Show confirmation
+    new_default=$(pactl get-default-sink)
+    if [ "$new_default" = "$selected_sink" ]; then
+        echo "New default: $selected_desc"
+    else
+        echo "⚠️  Warning: Default sink may not have been set correctly"
+    fi
+}
+
+# Run main function
+main "$@"
