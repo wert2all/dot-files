@@ -17,84 +17,6 @@ start_mail() {
     tmux send-keys -t mail:0 "mailspring --password-store=\"gnome-libsecret\" " C-m
 }
 
-start_previewly() {
-    echo -e "${BLUE}󰸻 Starting Previewly...${NC}"
-    PROJECT="previewly"
-
-    # start go backend
-    cd ~/work/$PROJECT/$PROJECT-backend/ || {
-        echo "Error: Could not change directory to ~/work/$PROJECT/$PROJECT-backend/"
-        exit 1
-    }
-    PROJECT_BACKEND=go-$PROJECT
-    tmux new-session -s $PROJECT_BACKEND -d
-    tmux send-keys -t $PROJECT_BACKEND:0 "gaper" C-m
-
-    #start angular frontend
-    cd ~/work/$PROJECT/$PROJECT-frontend/ || {
-        echo "Error: Could not change directory to ~/work/$PROJECT/$PROJECT-frontend/"
-        exit 1
-    }
-    PROJECT_ANGULAR=angular-$PROJECT
-    tmux new-session -s $PROJECT_ANGULAR -d
-    tmux send-keys -t $PROJECT_ANGULAR:0 "pnpm install && pnpm start" C-m
-
-    #start frontend nvim
-    cd ~/work/$PROJECT/$PROJECT-frontend/ || {
-        echo "Error: Could not change directory to ~/work/$PROJECT/$PROJECT-frontend/"
-        exit 1
-    }
-    PROJECT_NVIM_FRONTEND=nvim-$PROJECT-frontend
-    tmux new-session -s $PROJECT_NVIM_FRONTEND -d
-
-    #start backend nvim
-    cd ~/work/$PROJECT/$PROJECT-backend/ || {
-        echo "Error: Could not change directory to ~/work/$PROJECT/$PROJECT-backend/"
-        exit 1
-    }
-    PROJECT_NVIM_BACKEND=nvim-$PROJECT-backend
-    tmux new-session -s $PROJECT_NVIM_BACKEND -d
-}
-
-start_timeline() {
-    echo -e "${PURPLE}󰸻 Starting Timeline...${NC}"
-    PROJECT="timeline"
-
-    # start go backend
-    cd ~/work/$PROJECT/$PROJECT-backend/ || {
-        echo "Error: Could not change directory to ~/work/$PROJECT/$PROJECT-backend/"
-        exit 1
-    }
-    PROJECT_BACKEND=go-$PROJECT
-    tmux new-session -s $PROJECT_BACKEND -d
-    tmux send-keys -t $PROJECT_BACKEND:0 "gaper --program-args=\"-development=true\" " C-m
-
-    #start angular frontend
-    cd ~/work/$PROJECT/$PROJECT-frontend/ || {
-        echo "Error: Could not change directory to ~/work/$PROJECT/$PROJECT-frontend/"
-        exit 1
-    }
-    PROJECT_ANGULAR=angular-$PROJECT
-    tmux new-session -s $PROJECT_ANGULAR -d
-    tmux send-keys -t $PROJECT_ANGULAR:0 "pnpm install && pnpm start" C-m
-
-    #start frontend nvim
-    cd ~/work/$PROJECT/$PROJECT-frontend/ || {
-        echo "Error: Could not change directory to ~/work/$PROJECT/$PROJECT-frontend/"
-        exit 1
-    }
-    PROJECT_NVIM_FRONTEND=nvim-$PROJECT-frontend
-    tmux new-session -s $PROJECT_NVIM_FRONTEND -d
-
-    #start backend nvim
-    cd ~/work/$PROJECT/$PROJECT-backend/ || {
-        echo "Error: Could not change directory to ~/work/$PROJECT/$PROJECT-backend/"
-        exit 1
-    }
-    PROJECT_NVIM_BACKEND=nvim-$PROJECT-backend
-    tmux new-session -s $PROJECT_NVIM_BACKEND -d
-}
-
 start_obsidian() {
     echo -e "${GREEN}󰸻 Starting Obsidian...${NC}"
     cd ~/Documents/obsidian/ || {
@@ -110,8 +32,6 @@ show_menu() {
     echo -e "${CYAN}║${BOLD}${WHITE}   󰀻    Application Launcher    󰀻   ${NC}${CYAN}║${NC}"
     echo -e "${CYAN}╠════════════════════════════════════╣${NC}"
     echo -e "${CYAN}║${NC} ${YELLOW}1)${NC} ${GREEN}󰇮 Mail${NC}                          ${CYAN}║${NC}"
-    echo -e "${CYAN}║${NC} ${YELLOW}2)${NC} ${BLUE}󰖟 Previewly${NC}                     ${CYAN}║${NC}"
-    echo -e "${CYAN}║${NC} ${YELLOW}3)${NC} ${PURPLE}󰇡 Timeline${NC}                      ${CYAN}║${NC}"
     echo -e "${CYAN}║${NC} ${YELLOW}4)${NC} ${GREEN}󰠮 Obsidian${NC}                      ${CYAN}║${NC}"
     echo -e "${CYAN}║${NC} ${YELLOW}5)${NC} ${RED}󰩈 Exit${NC}                          ${CYAN}║${NC}"
     echo -e "${CYAN}╚════════════════════════════════════╝${NC}"
@@ -125,14 +45,6 @@ handle_choice() {
     case "$choice" in
     1 | mail)
         start_mail
-        return 0
-        ;;
-    2 | previewly)
-        start_previewly
-        return 0
-        ;;
-    3 | timeline)
-        start_timeline
         return 0
         ;;
     4 | obsidian)
