@@ -17,6 +17,22 @@ start_mail() {
     tmux send-keys -t mail:0 "mailspring --password-store=\"gnome-libsecret\" " C-m
 }
 
+start_dashboard() {
+    echo -e "${BLUE}󰸻 Starting Home Dashboard...${NC}"
+    PROJECT="dashboard"
+
+    cd ~/work/angular-home-page || {
+        echo "Error: Could not change directory to ~/work/angular-home-page/"
+        exit 1
+    }
+
+    PROJECT_ANGULAR=angular-$PROJECT
+    tmux new-session -s $PROJECT_ANGULAR -d
+    tmux send-keys -t $PROJECT_ANGULAR:0 "pnpm install && pnpm start" C-m
+
+    PROJECT_NVIM_FRONTEND=nvim-$PROJECT-frontend
+    tmux new-session -s $PROJECT_NVIM_FRONTEND -d
+}
 start_obsidian() {
     echo -e "${GREEN}󰸻 Starting Obsidian...${NC}"
     cd ~/Documents/obsidian/ || {
@@ -32,6 +48,7 @@ show_menu() {
     echo -e "${CYAN}║${BOLD}${WHITE}   󰀻    Application Launcher    󰀻   ${NC}${CYAN}║${NC}"
     echo -e "${CYAN}╠════════════════════════════════════╣${NC}"
     echo -e "${CYAN}║${NC} ${YELLOW}1)${NC} ${GREEN}󰇮 Mail${NC}                          ${CYAN}║${NC}"
+    echo -e "${CYAN}║${NC} ${YELLOW}2)${NC} ${BLUE}󰠮 Dashboard${NC}                     ${CYAN}║${NC}"
     echo -e "${CYAN}║${NC} ${YELLOW}4)${NC} ${GREEN}󰠮 Obsidian${NC}                      ${CYAN}║${NC}"
     echo -e "${CYAN}║${NC} ${YELLOW}5)${NC} ${RED}󰩈 Exit${NC}                          ${CYAN}║${NC}"
     echo -e "${CYAN}╚════════════════════════════════════╝${NC}"
@@ -45,6 +62,10 @@ handle_choice() {
     case "$choice" in
     1 | mail)
         start_mail
+        return 0
+        ;;
+    2 | dashboard)
+        start_dashboard
         return 0
         ;;
     4 | obsidian)
