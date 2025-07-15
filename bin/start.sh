@@ -26,12 +26,9 @@ start_dashboard() {
         exit 1
     }
 
-    PROJECT_ANGULAR=angular-$PROJECT
-    tmux new-session -s $PROJECT_ANGULAR -d
-    tmux send-keys -t $PROJECT_ANGULAR:0 "pnpm install && pnpm start" C-m
-
-    PROJECT_NVIM_FRONTEND=nvim-$PROJECT-frontend
-    tmux new-session -s $PROJECT_NVIM_FRONTEND -d
+    tmux new-session -s $PROJECT -d
+    tmux send-keys -t $PROJECT:0 "pnpm install && pnpm start" C-m
+    tmux new-window -t $PROJECT -d
 }
 start_obsidian() {
     echo -e "${GREEN}󰸻 Starting Obsidian...${NC}"
