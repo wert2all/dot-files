@@ -17,6 +17,9 @@ set $mod Mod4
 font pango:Jetbrains Nerd Mono 14
 for_window [class="^.*"] border none
 
+for_window [class="sp-htop"] move to scratchpad
+for_window [class="sp-obsidian"] move to scratchpad
+
 default_border pixel 0
 default_floating_border pixel 0
 
@@ -76,7 +79,8 @@ exec --no-startup-id nitrogen --restore &
 exec --no-startup-id i3-msg 'workspace 1; exec kitty;'
 
 # exec kitty with htop for scratchpad
-exec --no-startup-id kitty --class htop -e tmux new-session -s spesial htop
+exec --no-startup-id kitty --class sp-htop -e tmux new-session -s spesial htop
+exec --no-startup-id kitty --class sp-obsidian -e tmux new-session -s spesial-obsidian "cd ~/Documents/obsidian/; nvim"
 
 #layouts
 exec_always "setxkbmap -layout us,ua -variant ,, -option grp:alt_shift_toggle"
@@ -214,11 +218,16 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
+# scrathpads
+
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+s move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+s scratchpad show
+
+bindsym $mod+t [class="sp-htop"] scratchpad show; move position center
+bindsym $mod+o [class="sp-obsidian"] scratchpad show; move position center
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
