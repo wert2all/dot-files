@@ -1,59 +1,78 @@
 #!/usr/bin/env sh
 
-icodir=$HOME"/.config/dunst/icons/vol"
+# Directory for volume icons
+ICON_DIR="$HOME/.config/dunst/icons/vol"
 
+# Sends a notification using dunstify
+# Usage: send_notification "title" "icon_path"
 send_notification() {
     dunstify "t2" -a "${1}" -i "${2}" -r 91190 -t 800
 }
 
-mute() {
-    device=$1
+# Toggles mute for a given device type (mic or speaker) and sends a notification
+# Usage: toggle_mute "mic" | "speaker"
+toggle_mute() {
+    device_type=$1
+    set_cmd=""
+    get_cmd=""
+    default_device=""
 
-    case $device in
+    case $device_type in
     mic)
-        pactlCommand="get-source-mute"
-        dsink="@DEFAULT_SOURCE@"
+        set_cmd="set-source-mute"
+        get_cmd="get-source-mute"
+        default_device="@DEFAULT_SOURCE@"
         ;;
     speaker)
-        pactlCommand="get-sink-mute"
-        dsink="@DEFAULT_SINK@"
+        set_cmd="set-sink-mute"
+        get_cmd="get-sink-mute"
+        default_device="@DEFAULT_SINK@"
+        ;;
+    *)
+        echo "Invalid device type: $device_type" >&2
+        exit 1
         ;;
     esac
 
-    mute=$(pactl "${pactlCommand}" "${dsink}" | cut -d ' ' -f 2)
+    # Toggle the mute state
+    pactl "$set_cmd" "$default_device" toggle
 
-    if [ "$mute" = "yes" ]; then
-        send_notification "muted" "${icodir}/muted-${device}.svg"
+    # Get the new mute status
+    mute_status=$(pactl "$get_cmd" "$default_device" | awk '{print $2}')
+
+    if [ "$mute_status" = "yes" ]; then
+        send_notification "muted" "${ICON_DIR}/muted-${device_type}.svg"
     else
-        send_notification "unmuted" "${icodir}/unmuted-${device}.svg"
+        send_notification "unmuted" "${ICON_DIR}/unmuted-${device_type}.svg"
     fi
 }
 
-say_volume() {
-    angle="$(((($1 + 2) / 5) * 5))"
-    send_notification "${1}..." "${icodir}/vol-${angle}.svg"
+# Changes the volume for the default sink and sends a notification
+# Usage: change_volume "+5%" | "-5%"
+change_volume() {
+    pactl set-sink-volume @DEFAULT_SINK@ "$1"
+    volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1)
+    # Round to the nearest 5 for icon selection
+    angle=$((((volume + 2) / 5) * 5))
+    send_notification "${volume}%" "${ICON_DIR}/vol-${angle}.svg"
 }
 
-get_volume() {
-    pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1
-}
-
+# Main script logic
 case $1 in
 i)
-    pactl set-sink-volume @DEFAULT_SINK@ +5%
-    say_volume "$(get_volume)"
+    change_volume "+5%"
     ;;
 d)
-    pactl set-sink-volume @DEFAULT_SINK@ -5%
-    say_volume "$(get_volume)"
+    change_volume "-5%"
     ;;
 m)
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
-    mute "speaker"
+    toggle_mute "speaker"
     ;;
 mm)
-    pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    mute "mic"
+    toggle_mute "mic"
     ;;
-*) printf "use i,d,m,mm" ;;
+*)
+    printf "Usage: %s [i|d|m|mm]\n" "$0" >&2
+    exit 1
+    ;;
 esac
