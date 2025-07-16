@@ -203,23 +203,27 @@ fn_status_change() { # Handle when status changes
         fi
     done
 }
-resume_processes() { for pid in $pids; do if [ $pid -ne $current_pid ]; then
-    kill -CONT $pid
-    notify-send -a "Battery Notify" -t 2000 -r 9889 -u "CRITICAL" "Debugging ENDED, Resuming Regular Process"
-fi; done; }
-main() { # Main function
-    if is_laptop; then
-        rm -fr /tmp/hyprdots.batterynotify* # Cleaning the lock file
-        battery_full_threshold=${battery_full_threshold:-100}
-        battery_critical_threshold=${battery_critical_threshold:-10}
-        unplug_charger_threshold=${unplug_charger_threshold:-80}
-        battery_low_threshold=${battery_low_threshold:-20}
-        timer=${timer:-120}
-        notify=${notify:-1140}
-        interval=${interval:-5}
 
-        execute=${execute:-"systemctl suspend"}
-        cat <<EOF
+resume_processes() {
+    for pid in $pids; do if [ $pid -ne $current_pid ]; then
+        kill -CONT $pid
+        notify-send -a "Battery Notify" -t 2000 -r 9889 -u "CRITICAL" "Debugging ENDED, Resuming Regular Process"
+    fi; done
+}
+
+# Main function
+if is_laptop; then
+    rm -fr /tmp/hyprdots.batterynotify* # Cleaning the lock file
+    battery_full_threshold=${battery_full_threshold:-100}
+    battery_critical_threshold=${battery_critical_threshold:-10}
+    unplug_charger_threshold=${unplug_charger_threshold:-80}
+    battery_low_threshold=${battery_low_threshold:-20}
+    timer=${timer:-120}
+    notify=${notify:-1140}
+    interval=${interval:-5}
+
+    execute=${execute:-"systemctl suspend"}
+    cat <<EOF
 Script is running...
 Check $0 --help for options.
 
@@ -231,21 +235,19 @@ Check $0 --help for options.
 
 
 EOF
-        if $verbose; then
-            for line in "Verbose Mode is ON..." "" "" "" ""; do echo $line; done
-            current_pid=$$
-            pids=$(pgrep -f "/bin/bash $HOME/.config/hypr/scripts/batterynotify.sh")
-            for pid in $pids; do if [ $pid -ne $current_pid ]; then
-                kill -STOP $pid
-                notify-send -a "Battery Notify" -t 2000 -r 9889 -u "CRITICAL" "Debugging STARTED, Pausing Regular Process"
-            fi; done
-            trap resume_processes SIGINT
-        fi
-        fn_status_change # initiate the function
-        last_notified_percentage=$battery_percentage
-        prev_status=$battery_status
-
-        dbus-monitor --system "type='signal',interface='org.freedesktop.DBus.Properties',path='$(upower -e | grep battery)'" 2>/dev/null | while read -r battery_status_change; do fn_status_change; done
+    if $verbose; then
+        for line in "Verbose Mode is ON..." "" "" "" ""; do echo $line; done
+        current_pid=$$
+        pids=$(pgrep -f "/bin/bash $HOME/.config/hypr/scripts/batterynotify.sh")
+        for pid in $pids; do if [ $pid -ne $current_pid ]; then
+            kill -STOP $pid
+            notify-send -a "Battery Notify" -t 2000 -r 9889 -u "CRITICAL" "Debugging STARTED, Pausing Regular Process"
+        fi; done
+        trap resume_processes SIGINT
     fi
-}
-main
+    fn_status_change # initiate the function
+    last_notified_percentage=$battery_percentage
+    prev_status=$battery_status
+
+    dbus-monitor --system "type='signal',interface='org.freedesktop.DBus.Properties',path='$(upower -e | grep battery)'" 2>/dev/null | while read -r battery_status_change; do fn_status_change; done
+fi
