@@ -94,8 +94,8 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 
-bindsym XF86AudioMicMute exec --no-startup-id ~/bin/volumecontrol.sh mm && $refresh_i3status
-bindsym $mod+Shift+M exec --no-startup-id ~/bin/volumecontrol.sh mm && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id ~/bin/system_volumecontrol.sh mm 
+bindsym $mod+Shift+M exec --no-startup-id ~/bin/system_volumecontrol.sh mm 
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
