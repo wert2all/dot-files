@@ -1,5 +1,5 @@
 [general]
-import = [ "./tokyo-night-storm.toml" ] # or tokyo-night-storm.toml
+import = [ "./my.toml" ] 
 
 [env]
 TERM = "xterm-256color"
@@ -19,7 +19,7 @@ shape = "Block"
 
 [font]
 normal.family = "JetBrainsMono Nerd Font"
-size = 14
+size = 16
 
 [font.glyph_offset]
 x = 0
