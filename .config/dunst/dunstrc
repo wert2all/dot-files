@@ -136,19 +136,19 @@
 separator_color= frame
 
 [urgency_low]
-background = "#1d2021"
-foreground = "#d4be98"
+background = "#201f22"
+foreground = "#fbf1c7"
 frame_color = "#1d2021"
-icon = "/home/wert2all/.config/dunst/icons/hyprdots.svg"
+highlight="#4C4E56"
 
 [urgency_normal]
-background = "#1d2021"
-foreground = "#d4be98"
+background = "#201f22"
+foreground = "#fbf1c7"
 frame_color = "#1d2021"
-icon = "/home/wert2all/.config/dunst/icons/hyprdots.svg"
+highlight="#4C4E56"
 
 [urgency_critical]
-background = "#3c1f1e"
+background = "#201f22"
 foreground = "#ddc7a1"
 frame_color = "#ea6962"
 icon = "/home/wert2all/.config/dunst/icons/critical.svg"

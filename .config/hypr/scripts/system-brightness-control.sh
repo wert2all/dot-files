@@ -17,7 +17,7 @@ function send_notification {
     local brightness
     brightness=$(get_brightness)
 
-    dunstify "t2" -a "Brightness: $brightness%" -i "none" -h "int:value:$brightness" -r 91190 -t 800
+    dunstify "t2" -a "Brightness: $brightness%" -h "int:value:$brightness" -r 91190 -t 800
 }
 
 case $1 in

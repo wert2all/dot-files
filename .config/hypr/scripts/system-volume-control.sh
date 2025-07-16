@@ -6,7 +6,7 @@ ICON_DIR="$HOME/.config/dunst/icons/vol"
 # Sends a notification using dunstify
 # Usage: send_notification "title" "icon_path"
 send_notification() {
-    dunstify "t2" -a "${1}" -i "${2}" -r 91190 -t 800
+    dunstify "t2" -a "Volume: ${1}%" -h "int:value:${1}" -r 91190 -t 800
 }
 
 # Toggles mute for a given device type (mic or speaker) and sends a notification
@@ -41,9 +41,9 @@ toggle_mute() {
     mute_status=$(pactl "$get_cmd" "$default_device" | awk '{print $2}')
 
     if [ "$mute_status" = "yes" ]; then
-        send_notification "muted" "${ICON_DIR}/muted-${device_type}.svg"
+        dunstify "t2" -a "$device_type muted" -i "${ICON_DIR}/muted-${device_type}.svg" -r 91190 -t 800
     else
-        send_notification "unmuted" "${ICON_DIR}/unmuted-${device_type}.svg"
+        dunstify "t2" -a "$device_type unmuted" -i "${ICON_DIR}/unmuted-${device_type}.svg" -r 91190 -t 800
     fi
 }
 
@@ -52,9 +52,7 @@ toggle_mute() {
 change_volume() {
     pactl set-sink-volume @DEFAULT_SINK@ "$1"
     volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1)
-    # Round to the nearest 5 for icon selection
-    angle=$((((volume + 2) / 5) * 5))
-    send_notification "${volume}%" "${ICON_DIR}/vol-${angle}.svg"
+    send_notification "${volume}"
 }
 
 # Main script logic
