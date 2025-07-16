@@ -70,7 +70,7 @@ fn_percentage() {
         last_notified_percentage=$battery_percentage
     fi
 }
-fn_action() {                                                                                                                  #handles the $critical_action_command command
+fn_action() {                              #handles the $critical_action_command command
     count=$((critical_action_countdown_seconds > $MIN_TIMER_SECONDS ? critical_action_countdown_seconds : $MIN_TIMER_SECONDS)) # reset count
     nohup $critical_action_command
 }
@@ -177,89 +177,89 @@ show_help() {
 # Main function
 while [[ "$#" -gt 0 ]]; do
     case "$1" in
-    -f | --full)
-        if in_range "$2" "$MIN_FULL_THRESHOLD" "$MAX_FULL_THRESHOLD"; then
-            battery_full_threshold=$2
+        -f|--full)
+            if in_range "$2" "$MIN_FULL_THRESHOLD" "$MAX_FULL_THRESHOLD"; then
+                battery_full_threshold=$2
+                shift 2
+            else
+                echo "Error: --full must be between $MIN_FULL_THRESHOLD and $MAX_FULL_THRESHOLD." >&2
+                exit 1
+            fi
+            ;;
+        -c|--critical)
+            if in_range "$2" "$MIN_CRITICAL_THRESHOLD" "$MAX_CRITICAL_THRESHOLD"; then
+                battery_critical_threshold=$2
+                shift 2
+            else
+                echo "Error: --critical must be between $MIN_CRITICAL_THRESHOLD and $MAX_CRITICAL_THRESHOLD." >&2
+                exit 1
+            fi
+            ;;
+        -l|--low)
+            if in_range "$2" "$MIN_LOW_THRESHOLD" "$LOW_UNPLUG_BOUNDARY_THRESHOLD"; then
+                battery_low_threshold=$2
+                shift 2
+            else
+                echo "Error: --low must be between $MIN_LOW_THRESHOLD and $LOW_UNPLUG_BOUNDARY_THRESHOLD." >&2
+                exit 1
+            fi
+            ;;
+        -u|--unplug)
+            if in_range "$2" "$LOW_UNPLUG_BOUNDARY_THRESHOLD" "$MAX_UNPLUG_THRESHOLD"; then
+                unplug_charger_threshold=$2
+                shift 2
+            else
+                echo "Error: --unplug must be between $LOW_UNPLUG_BOUNDARY_THRESHOLD and $MAX_UNPLUG_THRESHOLD." >&2
+                exit 1
+            fi
+            ;;
+        -t|--timer)
+            if in_range "$2" "$MIN_TIMER_SECONDS" "$MAX_TIMER_SECONDS"; then
+                critical_action_countdown_seconds=$2
+                shift 2
+            else
+                echo "Error: --timer must be between $MIN_TIMER_SECONDS and $MAX_TIMER_SECONDS." >&2
+                exit 1
+            fi
+            ;;
+        -n|--notify)
+            if in_range "$2" "$MIN_NOTIFY_MINUTES" "$MAX_NOTIFY_MINUTES"; then
+                full_notify_interval_minutes=$2
+                shift 2
+            else
+                echo "Error: --notify must be between $MIN_NOTIFY_MINUTES and $MAX_NOTIFY_MINUTES." >&2
+                exit 1
+            fi
+            ;;
+        -i|--interval)
+            if in_range "$2" "$MIN_INTERVAL_PERCENT" "$MAX_INTERVAL_PERCENT"; then
+                notify_interval_percent=$2
+                shift 2
+            else
+                echo "Error: --interval must be between $MIN_INTERVAL_PERCENT and $MAX_INTERVAL_PERCENT." >&2
+                exit 1
+            fi
+            ;;
+        -v|--verbose)
+            is_verbose=true
+            shift
+            ;;
+        --undock)
+            notify_on_status_change=true
+            shift
+            ;;
+        -e|--execute)
+            critical_action_command=$2
             shift 2
-        else
-            echo "Error: --full must be between $MIN_FULL_THRESHOLD and $MAX_FULL_THRESHOLD." >&2
+            ;;
+        -h|--help)
+            show_help
+            ;;
+        *)
+            echo "Unknown option: $1" >&2
+            show_help
             exit 1
-        fi
-        ;;
-    -c | --critical)
-        if in_range "$2" "$MIN_CRITICAL_THRESHOLD" "$MAX_CRITICAL_THRESHOLD"; then
-            battery_critical_threshold=$2
-            shift 2
-        else
-            echo "Error: --critical must be between $MIN_CRITICAL_THRESHOLD and $MAX_CRITICAL_THRESHOLD." >&2
-            exit 1
-        fi
-        ;;
-    -l | --low)
-        if in_range "$2" "$MIN_LOW_THRESHOLD" "$LOW_UNPLUG_BOUNDARY_THRESHOLD"; then
-            battery_low_threshold=$2
-            shift 2
-        else
-            echo "Error: --low must be between $MIN_LOW_THRESHOLD and $LOW_UNPLUG_BOUNDARY_THRESHOLD." >&2
-            exit 1
-        fi
-        ;;
-    -u | --unplug)
-        if in_range "$2" "$LOW_UNPLUG_BOUNDARY_THRESHOLD" "$MAX_UNPLUG_THRESHOLD"; then
-            unplug_charger_threshold=$2
-            shift 2
-        else
-            echo "Error: --unplug must be between $LOW_UNPLUG_BOUNDARY_THRESHOLD and $MAX_UNPLUG_THRESHOLD." >&2
-            exit 1
-        fi
-        ;;
-    -t | --timer)
-        if in_range "$2" "$MIN_TIMER_SECONDS" "$MAX_TIMER_SECONDS"; then
-            critical_action_countdown_seconds=$2
-            shift 2
-        else
-            echo "Error: --timer must be between $MIN_TIMER_SECONDS and $MAX_TIMER_SECONDS." >&2
-            exit 1
-        fi
-        ;;
-    -n | --notify)
-        if in_range "$2" "$MIN_NOTIFY_MINUTES" "$MAX_NOTIFY_MINUTES"; then
-            full_notify_interval_minutes=$2
-            shift 2
-        else
-            echo "Error: --notify must be between $MIN_NOTIFY_MINUTES and $MAX_NOTIFY_MINUTES." >&2
-            exit 1
-        fi
-        ;;
-    -i | --interval)
-        if in_range "$2" "$MIN_INTERVAL_PERCENT" "$MAX_INTERVAL_PERCENT"; then
-            notify_interval_percent=$2
-            shift 2
-        else
-            echo "Error: --interval must be between $MIN_INTERVAL_PERCENT and $MAX_INTERVAL_PERCENT." >&2
-            exit 1
-        fi
-        ;;
-    -v | --verbose)
-        is_verbose=true
-        shift
-        ;;
-    --undock)
-        notify_on_status_change=true
-        shift
-        ;;
-    -e | --execute)
-        critical_action_command=$2
-        shift 2
-        ;;
-    -h | --help)
-        show_help
-        ;;
-    *)
-        echo "Unknown option: $1" >&2
-        show_help
-        exit 1
-        ;;
+            ;;
     esac
 done
 
