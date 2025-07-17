@@ -46,7 +46,7 @@ show_menu() {
     echo -e "${CYAN}╠════════════════════════════════════╣${NC}"
     echo -e "${CYAN}║${NC} ${YELLOW}1)${NC} ${GREEN}󰇮 Mail${NC}                          ${CYAN}║${NC}"
     echo -e "${CYAN}║${NC} ${YELLOW}2)${NC} ${BLUE}󰠮 Dashboard${NC}                     ${CYAN}║${NC}"
-    echo -e "${CYAN}║${NC} ${YELLOW}4)${NC} ${GREEN}󰠮 Obsidian${NC}                      ${CYAN}║${NC}"
+    echo -e "${CYAN}║${NC} ${YELLOW}3)${NC} ${GREEN}󰠮 Obsidian${NC}                      ${CYAN}║${NC}"
     echo -e "${CYAN}║${NC} ${YELLOW}5)${NC} ${RED}󰩈 Exit${NC}                          ${CYAN}║${NC}"
     echo -e "${CYAN}╚════════════════════════════════════╝${NC}"
     echo ""
@@ -65,7 +65,7 @@ handle_choice() {
         start_dashboard
         return 0
         ;;
-    4 | obsidian)
+    3 | obsidian)
         start_obsidian
         return 0
         ;;
