@@ -30,6 +30,7 @@ start_dashboard() {
     tmux send-keys -t $PROJECT:0 "pnpm install && pnpm start" C-m
     tmux new-window -t $PROJECT -d
 }
+
 start_obsidian() {
     echo -e "${GREEN}󰸻 Starting Obsidian...${NC}"
     cd ~/Documents/obsidian/ || {
@@ -37,6 +38,15 @@ start_obsidian() {
         exit 1
     }
     tmux new-session -s obsidian -d
+}
+
+start_whereisit() {
+    echo -e "${PURPLE}󰸻 Starting Obsidian...${NC}"
+    cd ~/work/hiddenstash/angular-whereisit/ || {
+        echo "Error: Could not change directory to ~/Documents/obsidian/"
+        exit 1
+    }
+    tmux new-session -s whereis -d
 }
 
 show_menu() {
@@ -47,6 +57,7 @@ show_menu() {
     echo -e "${CYAN}║${NC} ${YELLOW}1)${NC} ${GREEN}󰇮 Mail${NC}                          ${CYAN}║${NC}"
     echo -e "${CYAN}║${NC} ${YELLOW}2)${NC} ${BLUE}󰠮 Dashboard${NC}                     ${CYAN}║${NC}"
     echo -e "${CYAN}║${NC} ${YELLOW}3)${NC} ${GREEN}󰠮 Obsidian${NC}                      ${CYAN}║${NC}"
+    echo -e "${CYAN}║${NC} ${YELLOW}4)${NC} ${PURPLE}󰠮 WhereIsIt${NC}                      ${CYAN}║${NC}"
     echo -e "${CYAN}║${NC} ${YELLOW}5)${NC} ${RED}󰩈 Exit${NC}                          ${CYAN}║${NC}"
     echo -e "${CYAN}╚════════════════════════════════════╝${NC}"
     echo ""
@@ -67,6 +78,10 @@ handle_choice() {
         ;;
     3 | obsidian)
         start_obsidian
+        return 0
+        ;;
+    4 | whereisit)
+        start_whereisit
         return 0
         ;;
     5 | exit)
