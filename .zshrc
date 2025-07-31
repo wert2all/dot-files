@@ -1,24 +1,24 @@
 # read .env file
 if [ -f .env ]; then
-    set -a && source .env && set +a
+  set -a && source .env && set +a
 fi
 
 SSH_ENV="$HOME/.ssh/agent.env"
 
 # Source SSH settings, if applicable
 if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" >/dev/null
-    # check if the agent is running
-    ps -p "${SSH_AGENT_PID}" >/dev/null || {
-        init_ssh_agent.sh
-    }
+  . "${SSH_ENV}" >/dev/null
+  # check if the agent is running
+  ps -p "${SSH_AGENT_PID}" >/dev/null || {
+    sh init_ssh_agent.sh
+  }
 else
-    init_ssh_agent.sh
+  sh init_ssh_agent.sh
 fi
 
 # Add keys to the agent if it has no identities
 if ! ssh-add -l >/dev/null; then
-    ssh-add
+  ssh-add
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -42,13 +42,13 @@ export PATH=$HOME/go/bin/:$PATH
 export TMUX_TMPDIR=/tmp
 
 # zsh plugin manager
-source $HOME/.antidote/antidote.zsh
+source "$HOME"/.antidote/antidote.zsh
 
 # Set the root name of the plugins files (.txt and .zsh) antidote will use.
 zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
 
 # Ensure the .zsh_plugins.txt file exists so you can add plugins.
-[[ -f ${zsh_plugins}.txt ]] || touch ${zsh_plugins}.txt
+[[ -f ${zsh_plugins}.txt ]] || touch "${zsh_plugins}".txt
 
 # Lazy-load antidote from its functions directory.
 fpath=(/path/to/antidote/functions $fpath)
@@ -56,11 +56,11 @@ autoload -Uz antidote
 
 # Generate a new static file whenever .zsh_plugins.txt is updated.
 if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
-    antidote bundle <${zsh_plugins}.txt >|${zsh_plugins}.zsh
+  antidote bundle <"${zsh_plugins}".txt >|"${zsh_plugins}".zsh
 fi
 
 # Source your static plugins file.
-source ${zsh_plugins}.zsh
+source "${zsh_plugins}".zsh
 
 # NeoVim config
 alias vim=nvim
@@ -71,10 +71,10 @@ alias ll="eza -lh --icons=auto --sort=name --group-directories-first"
 # Git aliases
 
 gitCheckoutAndReset() {
-    if [ -n "$1" ]; then
-        git checkout $1
-        git reset --hard origin/$1
-    fi
+  if [ -n "$1" ]; then
+    git checkout "$1"
+    git reset --hard origin/"$1"
+  fi
 }
 
 alias gfa='git fetch --all --tags --prune --jobs=10'
