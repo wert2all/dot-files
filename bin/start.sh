@@ -13,8 +13,7 @@ NC='\033[0m' # No Color
 
 start_mail() {
     echo -e "${GREEN}󰸻 Starting Mail...${NC}"
-    tmux new-session -s mail -d
-    tmux send-keys -t mail:0 "mailspring --password-store=\"gnome-libsecret\" " C-m
+    tmux new-session -s mail -d "mailspring --password-store=\"gnome-libsecret\""
 }
 
 start_dashboard() {
@@ -26,8 +25,7 @@ start_dashboard() {
         exit 1
     }
 
-    tmux new-session -s $PROJECT -d
-    tmux send-keys -t $PROJECT:0 "pnpm install && pnpm start" C-m
+    tmux new-session -s $PROJECT -d "pnpm install && pnpm start"
     tmux new-window -t $PROJECT -d
 }
 
