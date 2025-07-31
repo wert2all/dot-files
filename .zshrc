@@ -3,17 +3,25 @@ if [ -f .env ]; then
   set -a && source .env && set +a
 fi
 
+# add key to ssh agent
 SSH_ENV="$HOME/.ssh/agent.env"
+
+init_ssh_agent() {
+  echo "Initialising new SSH agent..."
+  ssh-agent -s | sed 's/^echo/#echo/' >"${SSH_ENV}"
+  chmod 600 "${SSH_ENV}"
+  . "${SSH_ENV}" >/dev/null
+}
 
 # Source SSH settings, if applicable
 if [ -f "${SSH_ENV}" ]; then
   . "${SSH_ENV}" >/dev/null
   # check if the agent is running
   ps -p "${SSH_AGENT_PID}" >/dev/null || {
-    sh init_ssh_agent.sh
+    init_ssh_agent
   }
 else
-  sh init_ssh_agent.sh
+  init_ssh_agent
 fi
 
 # Add keys to the agent if it has no identities
@@ -42,7 +50,6 @@ export PATH=$HOME/go/bin/:$PATH
 export TMUX_TMPDIR=/tmp
 
 # zsh plugin manager
-source "$HOME"/.antidote/antidote.zsh
 
 # Set the root name of the plugins files (.txt and .zsh) antidote will use.
 zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
@@ -51,7 +58,7 @@ zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
 [[ -f ${zsh_plugins}.txt ]] || touch "${zsh_plugins}".txt
 
 # Lazy-load antidote from its functions directory.
-fpath=(/path/to/antidote/functions $fpath)
+fpath=("$HOME"/.antidote/functions $fpath)
 autoload -Uz antidote
 
 # Generate a new static file whenever .zsh_plugins.txt is updated.
