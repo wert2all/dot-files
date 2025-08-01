@@ -80,7 +80,6 @@ exec --no-startup-id i3-msg 'workspace 1; exec kitty;'
 
 # exec kitty with htop for scratchpad
 exec --no-startup-id kitty --class sp-htop -e tmux new-session -s spesial htop
-exec --no-startup-id kitty --class sp-obsidian -e tmux new-session -s spesial-obsidian "cd ~/Documents/obsidian/; nvim"
 
 #layouts
 exec_always "setxkbmap -layout us,ua -variant ,, -option grp:alt_shift_toggle"
@@ -227,7 +226,6 @@ bindsym $mod+Shift+s move scratchpad
 bindsym $mod+s scratchpad show
 
 bindsym $mod+t [class="sp-htop"] scratchpad show; move position center
-bindsym $mod+o [class="sp-obsidian"] scratchpad show; move position center
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
