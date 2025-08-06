@@ -57,6 +57,15 @@ start_dot_files() {
 
 }
 
+start_rpm() {
+  echo -e "${BLUE}󰸻 Starting rpm...${NC}"
+  cd ~/work/rpm.kiev.ua/ || {
+    echo "Error: Could not change directory to ~/work/rpm.kiev.ua/"
+    exit 1
+  }
+  tmux new-session -s rpm -d
+}
+
 show_menu() {
   echo ""
   echo -e "${CYAN}╔════════════════════════════════════╗${NC}"
@@ -65,8 +74,9 @@ show_menu() {
   echo -e "${CYAN}║${NC} ${YELLOW} 1)${NC} ${GREEN}󰇮 Mail${NC}                         ${CYAN}║${NC}"
   echo -e "${CYAN}║${NC} ${YELLOW} 2)${NC} ${PURPLE}󰠮 Obsidian${NC}                     ${CYAN}║${NC}"
   echo -e "${CYAN}║${NC} ${YELLOW} 3)${NC} ${BLUE}󰠮 dot-files${NC}                    ${CYAN}║${NC}"
-  echo -e "${CYAN}║${NC} ${YELLOW} 4)${NC} ${BLUE}󰠮 Dashboard${NC}                    ${CYAN}║${NC}"
-  echo -e "${CYAN}║${NC} ${YELLOW} 5)${NC} ${GREEN}󰠮 WhereIsIt${NC}                    ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 4)${NC} ${GREEN}󰠮 Dashboard${NC}                    ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 5)${NC} ${PURPLE}󰠮 WhereIsIt${NC}                    ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 6)${NC} ${BLUE}󰠮 rpm${NC}                          ${CYAN}║${NC}"
   echo -e "${CYAN}║${NC} ${YELLOW}10)${NC} ${RED}󰩈 Exit${NC}                         ${CYAN}║${NC}"
   echo -e "${CYAN}╚════════════════════════════════════╝${NC}"
   echo ""
@@ -95,6 +105,10 @@ handle_choice() {
     ;;
   5 | whereisit)
     start_whereisit
+    return 0
+    ;;
+  6 | rpm)
+    start_rpm
     return 0
     ;;
   10 | exit)
