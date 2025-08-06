@@ -44,5 +44,5 @@ fi
 session=$(tmux list-sessions -F '#{session_name}' | $LAUNCHER)
 
 if [ -n "$session" ]; then
-    tmux attach-session -t "$session"
+    kitty tmux attach-session -t "$session"
 fi
