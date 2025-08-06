@@ -54,7 +54,15 @@ start_dot_files() {
     exit 1
   }
   tmux new-session -s dot-files -d
+}
 
+start_neovim() {
+  echo -e "${BLUE}󰸻 Starting neovim...${NC}"
+  cd ~/.config/nvim/ || {
+    echo "Error: Could not change directory to ~/.config/nvim/"
+    exit 1
+  }
+  tmux new-session -s nvim -d
 }
 
 start_rpm() {
@@ -74,9 +82,12 @@ show_menu() {
   echo -e "${CYAN}║${NC} ${YELLOW} 1)${NC} ${GREEN}󰇮 Mail${NC}                         ${CYAN}║${NC}"
   echo -e "${CYAN}║${NC} ${YELLOW} 2)${NC} ${PURPLE}󰠮 Obsidian${NC}                     ${CYAN}║${NC}"
   echo -e "${CYAN}║${NC} ${YELLOW} 3)${NC} ${BLUE}󰠮 dot-files${NC}                    ${CYAN}║${NC}"
-  echo -e "${CYAN}║${NC} ${YELLOW} 4)${NC} ${GREEN}󰠮 Dashboard${NC}                    ${CYAN}║${NC}"
-  echo -e "${CYAN}║${NC} ${YELLOW} 5)${NC} ${PURPLE}󰠮 WhereIsIt${NC}                    ${CYAN}║${NC}"
-  echo -e "${CYAN}║${NC} ${YELLOW} 6)${NC} ${BLUE}󰠮 rpm${NC}                          ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 4)${NC} ${GREEN}󰠮 neovim${NC}                       ${CYAN}║${NC}"
+
+  echo -e "${CYAN}║${NC} ${YELLOW} 5)${NC} ${PURPLE}󰠮 Dashboard${NC}                    ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 6)${NC} ${BLUE}󰠮 WhereIsIt${NC}                    ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 7)${NC} ${GREEN}󰠮 rpm${NC}                          ${CYAN}║${NC}"
+
   echo -e "${CYAN}║${NC} ${YELLOW}10)${NC} ${RED}󰩈 Exit${NC}                         ${CYAN}║${NC}"
   echo -e "${CYAN}╚════════════════════════════════════╝${NC}"
   echo ""
@@ -99,15 +110,19 @@ handle_choice() {
     start_dot_files
     return 0
     ;;
-  4 | dashboard)
+  4 | neovim)
+    start_neovim
+    return 0
+    ;;
+  5 | dashboard)
     start_dashboard
     return 0
     ;;
-  5 | whereisit)
+  6 | whereisit)
     start_whereisit
     return 0
     ;;
-  6 | rpm)
+  7 | rpm)
     start_rpm
     return 0
     ;;
