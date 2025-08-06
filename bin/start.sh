@@ -52,11 +52,11 @@ show_menu() {
   echo -e "${CYAN}╔════════════════════════════════════╗${NC}"
   echo -e "${CYAN}║${BOLD}${WHITE}   󰀻    Application Launcher    󰀻   ${NC}${CYAN}║${NC}"
   echo -e "${CYAN}╠════════════════════════════════════╣${NC}"
-  echo -e "${CYAN}║${NC} ${YELLOW}1)${NC} ${GREEN}󰇮 Mail${NC}                          ${CYAN}║${NC}"
-  echo -e "${CYAN}║${NC} ${YELLOW}2)${NC} ${BLUE}󰠮 Dashboard${NC}                     ${CYAN}║${NC}"
-  echo -e "${CYAN}║${NC} ${YELLOW}3)${NC} ${GREEN}󰠮 Obsidian${NC}                      ${CYAN}║${NC}"
-  echo -e "${CYAN}║${NC} ${YELLOW}4)${NC} ${PURPLE}󰠮 WhereIsIt${NC}                     ${CYAN}║${NC}"
-  echo -e "${CYAN}║${NC} ${YELLOW}5)${NC} ${RED}󰩈 Exit${NC}                          ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 1)${NC} ${GREEN}󰇮 Mail${NC}                         ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 2)${NC} ${BLUE}󰠮 Dashboard${NC}                    ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 3)${NC} ${PURPLE}󰠮 Obsidian${NC}                     ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 4)${NC} ${GREEN}󰠮 WhereIsIt${NC}                    ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW}10)${NC} ${RED}󰩈 Exit${NC}                         ${CYAN}║${NC}"
   echo -e "${CYAN}╚════════════════════════════════════╝${NC}"
   echo ""
 }
@@ -82,7 +82,7 @@ handle_choice() {
     start_whereisit
     return 0
     ;;
-  5 | exit)
+  10 | exit)
     echo -e "${YELLOW}󰈆 Goodbye!${NC}"
     exit 0
     ;;
@@ -123,4 +123,3 @@ else
 fi
 
 exit 0
-
