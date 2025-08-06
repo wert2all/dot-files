@@ -63,10 +63,10 @@ show_menu() {
   echo -e "${CYAN}║${BOLD}${WHITE}   󰀻    Application Launcher    󰀻   ${NC}${CYAN}║${NC}"
   echo -e "${CYAN}╠════════════════════════════════════╣${NC}"
   echo -e "${CYAN}║${NC} ${YELLOW} 1)${NC} ${GREEN}󰇮 Mail${NC}                         ${CYAN}║${NC}"
-  echo -e "${CYAN}║${NC} ${YELLOW} 2)${NC} ${BLUE}󰠮 Dashboard${NC}                    ${CYAN}║${NC}"
-  echo -e "${CYAN}║${NC} ${YELLOW} 3)${NC} ${PURPLE}󰠮 Obsidian${NC}                     ${CYAN}║${NC}"
-  echo -e "${CYAN}║${NC} ${YELLOW} 4)${NC} ${GREEN}󰠮 WhereIsIt${NC}                    ${CYAN}║${NC}"
-  echo -e "${CYAN}║${NC} ${YELLOW} 5)${NC} ${BLUE}󰠮 dot-files${NC}                    ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 2)${NC} ${PURPLE}󰠮 Obsidian${NC}                     ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 3)${NC} ${BLUE}󰠮 dot-files${NC}                    ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 4)${NC} ${BLUE}󰠮 Dashboard${NC}                    ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 5)${NC} ${GREEN}󰠮 WhereIsIt${NC}                    ${CYAN}║${NC}"
   echo -e "${CYAN}║${NC} ${YELLOW}10)${NC} ${RED}󰩈 Exit${NC}                         ${CYAN}║${NC}"
   echo -e "${CYAN}╚════════════════════════════════════╝${NC}"
   echo ""
@@ -81,20 +81,20 @@ handle_choice() {
     start_mail
     return 0
     ;;
-  2 | dashboard)
-    start_dashboard
-    return 0
-    ;;
-  3 | obsidian)
+  2 | obsidian)
     start_obsidian
     return 0
     ;;
-  4 | whereisit)
-    start_whereisit
+  3 | dotfiles)
+    start_dot_files
+    return 0
+    ;;
+  4 | dashboard)
+    start_dashboard
     return 0
     ;;
   5 | whereisit)
-    start_dot_files
+    start_whereisit
     return 0
     ;;
   10 | exit)
