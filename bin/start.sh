@@ -41,10 +41,20 @@ start_obsidian() {
 start_whereisit() {
   echo -e "${PURPLE}󰸻 Starting Obsidian...${NC}"
   cd ~/work/hiddenstash/angular-whereisit/ || {
-    echo "Error: Could not change directory to ~/Documents/obsidian/"
+    echo "Error: Could not change directory to ~/work/hiddenstash/angular-whereisit/"
     exit 1
   }
   tmux new-session -s whereis -d
+}
+
+start_dot_files() {
+  echo -e "${BLUE}󰸻 Starting dot-files...${NC}"
+  cd ~/work/dot-files/ || {
+    echo "Error: Could not change directory to ~/work/dot-files/"
+    exit 1
+  }
+  tmux new-session -s dot-files -d
+
 }
 
 show_menu() {
@@ -56,6 +66,7 @@ show_menu() {
   echo -e "${CYAN}║${NC} ${YELLOW} 2)${NC} ${BLUE}󰠮 Dashboard${NC}                    ${CYAN}║${NC}"
   echo -e "${CYAN}║${NC} ${YELLOW} 3)${NC} ${PURPLE}󰠮 Obsidian${NC}                     ${CYAN}║${NC}"
   echo -e "${CYAN}║${NC} ${YELLOW} 4)${NC} ${GREEN}󰠮 WhereIsIt${NC}                    ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 5)${NC} ${BLUE}󰠮 dot-files${NC}                    ${CYAN}║${NC}"
   echo -e "${CYAN}║${NC} ${YELLOW}10)${NC} ${RED}󰩈 Exit${NC}                         ${CYAN}║${NC}"
   echo -e "${CYAN}╚════════════════════════════════════╝${NC}"
   echo ""
@@ -80,6 +91,10 @@ handle_choice() {
     ;;
   4 | whereisit)
     start_whereisit
+    return 0
+    ;;
+  5 | whereisit)
+    start_dot_files
     return 0
     ;;
   10 | exit)
