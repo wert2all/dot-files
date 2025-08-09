@@ -73,6 +73,12 @@ start_rpm() {
   }
   tmux new-session -s rpm -d
 }
+start_emulator() {
+  echo -e "${BLUE}󰸻 Starting select emulato...${NC}"
+  emulator -list-avds |
+    fzf --reverse --header start-emulator |
+    xargs tmux new-session -s emulator -d emulator -no-audio -no-snapshot-load -avd
+}
 
 show_menu() {
   echo ""
@@ -87,6 +93,8 @@ show_menu() {
   echo -e "${CYAN}║${NC} ${YELLOW} 5)${NC} ${PURPLE}󰠮 Dashboard${NC}                    ${CYAN}║${NC}"
   echo -e "${CYAN}║${NC} ${YELLOW} 6)${NC} ${BLUE}󰠮 WhereIsIt${NC}                    ${CYAN}║${NC}"
   echo -e "${CYAN}║${NC} ${YELLOW} 7)${NC} ${GREEN}󰠮 rpm${NC}                          ${CYAN}║${NC}"
+
+  echo -e "${CYAN}║${NC} ${YELLOW} 8)${NC} ${PURPLE}󰠮 start emulator${NC}                     ${CYAN}║${NC}"
 
   echo -e "${CYAN}║${NC} ${YELLOW}10)${NC} ${RED}󰩈 Exit${NC}                         ${CYAN}║${NC}"
   echo -e "${CYAN}╚════════════════════════════════════╝${NC}"
@@ -124,6 +132,10 @@ handle_choice() {
     ;;
   7 | rpm)
     start_rpm
+    return 0
+    ;;
+  8 | startemulator)
+    start_emulator
     return 0
     ;;
   10 | exit)
