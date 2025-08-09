@@ -94,7 +94,7 @@ show_menu() {
   echo -e "${CYAN}║${NC} ${YELLOW} 6)${NC} ${BLUE}󰠮 WhereIsIt${NC}                    ${CYAN}║${NC}"
   echo -e "${CYAN}║${NC} ${YELLOW} 7)${NC} ${GREEN}󰠮 rpm${NC}                          ${CYAN}║${NC}"
 
-  echo -e "${CYAN}║${NC} ${YELLOW} 8)${NC} ${PURPLE}󰠮 start emulator${NC}                     ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 8)${NC} ${PURPLE}󰠮 start emulator${NC}               ${CYAN}║${NC}"
 
   echo -e "${CYAN}║${NC} ${YELLOW}10)${NC} ${RED}󰩈 Exit${NC}                         ${CYAN}║${NC}"
   echo -e "${CYAN}╚════════════════════════════════════╝${NC}"
