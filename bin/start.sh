@@ -74,6 +74,20 @@ start_rpm() {
   tmux new-session -s rpm -d
 }
 
+start_smpl_translate() {
+  echo -e "${BLUE}󰸻 Starting smpl-translate...${NC}"
+  PROJECT="translate"
+
+  cd ~/work/smpl-translate/ || {
+    echo "Error: Could not change directory to ~/work/smpl-translate/"
+    exit 1
+  }
+
+  tmux new-session -s $PROJECT -d
+  tmux new-window -t $PROJECT -d
+  tmux new-window -t $PROJECT -d "pnpm install && pnpm start"
+}
+
 start_emulator() {
   echo -e "${BLUE}󰸻 Starting select emulato...${NC}"
   emulator -list-avds |
@@ -94,8 +108,9 @@ show_menu() {
   echo -e "${CYAN}║${NC} ${YELLOW} 5)${NC} ${PURPLE}󰠮 Dashboard${NC}                    ${CYAN}║${NC}"
   echo -e "${CYAN}║${NC} ${YELLOW} 6)${NC} ${BLUE}󰠮 WhereIsIt${NC}                    ${CYAN}║${NC}"
   echo -e "${CYAN}║${NC} ${YELLOW} 7)${NC} ${GREEN}󰠮 rpm${NC}                          ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 8)${NC} ${PURPLE}󰠮 smpl-translate${NC}               ${CYAN}║${NC}"
 
-  echo -e "${CYAN}║${NC} ${YELLOW} 8)${NC} ${PURPLE}󰠮 start emulator${NC}               ${CYAN}║${NC}"
+  echo -e "${CYAN}║${NC} ${YELLOW} 9)${NC} ${BLUE}󰠮 start emulator${NC}               ${CYAN}║${NC}"
 
   echo -e "${CYAN}║${NC} ${YELLOW}10)${NC} ${RED}󰩈 Exit${NC}                         ${CYAN}║${NC}"
   echo -e "${CYAN}╚════════════════════════════════════╝${NC}"
@@ -135,7 +150,11 @@ handle_choice() {
     start_rpm
     return 0
     ;;
-  8 | startemulator)
+  8 | starttranslate)
+    start_smpl_translate
+    return 0
+    ;;
+  9 | startemulator)
     start_emulator
     return 0
     ;;
