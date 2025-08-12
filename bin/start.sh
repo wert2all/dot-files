@@ -39,7 +39,7 @@ start_obsidian() {
 }
 
 start_whereisit() {
-  echo -e "${PURPLE}󰸻 Starting Obsidian...${NC}"
+  echo -e "${PURPLE}󰸻 Starting WhereIsIt...${NC}"
   cd ~/work/hiddenstash/angular-whereisit/ || {
     echo "Error: Could not change directory to ~/work/hiddenstash/angular-whereisit/"
     exit 1
