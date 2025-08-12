@@ -73,6 +73,7 @@ start_rpm() {
   }
   tmux new-session -s rpm -d
 }
+
 start_emulator() {
   echo -e "${BLUE}󰸻 Starting select emulato...${NC}"
   emulator -list-avds |
