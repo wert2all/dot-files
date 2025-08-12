@@ -43,6 +43,9 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+#maestro
+export PATH="$PATH":"$HOME/.maestro/bin"
+
 #go
 export PATH=$HOME/go/bin/:$PATH
 
