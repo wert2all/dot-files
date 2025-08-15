@@ -2,8 +2,8 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/wert2all/.gtkrc-2.0.mine"
-gtk-theme-name="Ark-Dark"
-gtk-icon-theme-name="Adwaita"
+gtk-theme-name="Ant-Bloody"
+gtk-icon-theme-name="Arc"
 gtk-font-name="CaskaydiaCove Nerd Font 12"
 gtk-cursor-theme-name="Bibata-Modern-Amber"
 gtk-cursor-theme-size=28
