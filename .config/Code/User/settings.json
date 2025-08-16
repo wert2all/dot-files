@@ -8,7 +8,7 @@
   //Editor
   "editor.linkedEditing": true,
   "editor.accessibilitySupport": "off",
-  "editor.fontFamily": "'GeistMono NF', 'Iosevka Nerd Font', 'JetbrainsMono Nerd Font', '0xProto Nerd Font Mono'",
+  "editor.fontFamily": "'0xProto Nerd Font Mono', 'Iosevka Nerd Font', 'GeistMono NF', 'JetbrainsMono Nerd Font', ",
   "editor.fontSize": 18,
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
@@ -91,7 +91,7 @@
   //Theme
   "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.preferredLightColorTheme": "Quiet Light",
-  "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
+  "workbench.preferredDarkColorTheme": "Terafox",
   "workbench.colorTheme": "Nightfox",
   "editor.copyWithSyntaxHighlighting": false,
   "diffEditor.ignoreTrimWhitespace": false,
@@ -118,5 +118,6 @@
     "git diff",
     "git show"
   ],
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "biome.suggestInstallingGlobally": false
 }
