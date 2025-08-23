@@ -1,8 +1,3 @@
-# read .env file
-if [ -f .env ]; then
-  set -a && source .env && set +a
-fi
-
 # add key to ssh agent
 SSH_ENV="$HOME/.ssh/agent.env"
 
@@ -28,6 +23,9 @@ fi
 if ! ssh-add -l >/dev/null; then
   ssh-add
 fi
+
+# set api keys of Ai services by pass
+export MISTRAL_API_KEY=$(pass show api/ai/mistral)
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
