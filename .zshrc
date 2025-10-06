@@ -160,3 +160,7 @@ setopt SHARE_HISTORY     # Share history between sessions
 
 #AI commit
 alias commit='ai-commit -provider=mistral -model=codestral-latest'
+
+#fzf support
+export FZF_DEFAULT_OPTS="--color=fg:#C0C0C0,bg:#333333"
+source <(fzf --zsh)
