@@ -14,7 +14,7 @@ sudo zypper install openSUSE-repos-Tumbleweed-NVIDIA
 sudo zypper install-new-recommends
 
 #install i3
-sudo zypper in i3 xfce4-power-manager lxsession polybar picom sddm maim rofi nitrogen
+sudo zypper in i3 xfce4-power-manager lxsession polybar picom sddm maim rofi nitrogen dunst
 sudo update-alternatives --set default-display-manager /usr/lib/X11/displaymanagers/sddm
 
 #install other software
