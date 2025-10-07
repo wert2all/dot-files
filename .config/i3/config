@@ -26,12 +26,12 @@ default_floating_border pixel 0
 hide_edge_borders smart
 
 # target                 title     bg    text   indicator  border
-client.focused           $lavender $base $text  $rosewater $lavender
-client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
-client.unfocused         $overlay0 $base $text  $rosewater $overlay0
-client.urgent            $peach    $base $peach $overlay0  $peach
-client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
-client.background        $base
+# client.focused           $lavender $base $text  $rosewater $lavender
+# client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+# client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+# client.urgent            $peach    $base $peach $overlay0  $peach
+# client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+# client.background        $base
 
 #gaps 
 
@@ -64,7 +64,7 @@ exec --no-startup-id lxpolkit
 # exec --no-startup-id nm-applet
 
 #dunst
-exec_always --no-startup-id "killall dunst; sleep 1; /usr/bin/dunst"
+# exec_always --no-startup-id "killall dunst; sleep 1; /usr/bin/dunst"
 
 #polybar
 exec_always --no-startup-id re-launch-polybar.sh
@@ -104,8 +104,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym XF86Go exec playerctl play-pause
 bindsym XF86Favorites exec playerctl next
 
-bindsym $mod+Shift+Return exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -115,6 +113,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec kitty
+# bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill

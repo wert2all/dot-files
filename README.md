@@ -3,3 +3,7 @@
 Current base color theme is catppuccin-macchiato.
 
 For apply theme, should execute `update.sh`
+
+## should fix
+
+- dunst, nitrogen
