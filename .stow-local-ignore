@@ -7,3 +7,4 @@ README.md
 nixos
 .gitignore
 bin/oh-my-posh
+after_install_opensuse.sh
