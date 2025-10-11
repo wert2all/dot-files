@@ -26,6 +26,7 @@ fi
 
 # set api keys of Ai services by pass
 export MISTRAL_API_KEY=$(pass show api/ai/mistral)
+export GEMINI_API_KEY=$(pass show api/ai/gemini)
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH

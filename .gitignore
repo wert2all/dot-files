@@ -5,4 +5,3 @@
 .local/share/applications/mimeapps.list
 .local/share/applications/jetbrains*
 bin/oh-my-posh
-.env
