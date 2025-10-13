@@ -18,11 +18,22 @@ TERMINAL="kitty"
 NVIM_ENTRY=" nvim"
 DOT_ENTRY="󰇘 dot-files"
 OBSIDIAN_ENTRY="󰠮 obsidian"
+
 PROJECT_ANSIBLE=" ansible"
+PROJECT_ANGULAR_HOUSEHOLD=" angular-household"
 
-PROJECTS=" ${NVIM_ENTRY}\n${DOT_ENTRY}\n${OBSIDIAN_ENTRY}\n${PROJECT_ANSIBLE}\n"
+PROJECTS_ARRAY=(
+  "${NVIM_ENTRY}"
+  "${DOT_ENTRY}"
+  "${OBSIDIAN_ENTRY}"
+  "${PROJECT_ANGULAR_HOUSEHOLD}"
+  "${PROJECT_ANSIBLE}"
+)
+IFS=$'\n'
+PROJECTS="${PROJECTS_ARRAY[*]}"
+unset IFS
 
-SELECTED=$(echo -en $PROJECTS | ${LAUNCHER})
+SELECTED=$(echo -en "$PROJECTS" | ${LAUNCHER})
 
 start_session() {
   local PROJECT="$1"
@@ -52,6 +63,9 @@ $OBSIDIAN_ENTRY)
   ;;
 $PROJECT_ANSIBLE)
   start_session "ansible" "${HOME}/work/infra/projects-ansible-config/"
+  ;;
+$PROJECT_ANGULAR_HOUSEHOLD)
+  start_session "angular-household" "${HOME}/work/angular-household/"
   ;;
 *)
   echo "Error: Unknown project '$SELECTED'."
