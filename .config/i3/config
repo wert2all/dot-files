@@ -87,6 +87,8 @@ exec_always "setxkbmap -layout us,ua -variant ,, -option grp:alt_shift_toggle"
 #screenshot
 bindsym $mod+Shift+t exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
 
+bindsym $mod+a exec --no-startup-id ~/bin/switch_projects.sh
+
 # Use pactl to adjust volume in PulseAudio
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
