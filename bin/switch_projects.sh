@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
 
-LAUNCHER="rofi"
+# Default launcher
+LAUNCHER="rofi -dmenu"
+
+# Check for command-line arguments
+if [ "$1" = "--rofi" ]; then
+  LAUNCHER="rofi -dmenu"
+elif [ "$1" = "--tofi" ]; then
+  LAUNCHER="tofi"
+elif [ -n "$1" ]; then
+  echo "Error: Unknown option '$1'. Use '--tofi' or '--rofi'." >&2
+  exit 1
+fi
+
 TERMINAL="kitty"
 
 NVIM_ENTRY=" nvim"
@@ -9,7 +21,7 @@ OBSIDIAN_ENTRY="󰠮 obsidian"
 
 PROJECTS=" ${NVIM_ENTRY}\n${DOT_ENTRY}\n${OBSIDIAN_ENTRY}\n"
 
-SELECTED=$(echo -en $PROJECTS | ${LAUNCHER} -dmenu)
+SELECTED=$(echo -en $PROJECTS | ${LAUNCHER})
 
 start_session() {
   local PROJECT="$1"
