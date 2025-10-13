@@ -18,8 +18,9 @@ TERMINAL="kitty"
 NVIM_ENTRY=" nvim"
 DOT_ENTRY="󰇘 dot-files"
 OBSIDIAN_ENTRY="󰠮 obsidian"
+PROJECT_ANSIBLE=" ansible"
 
-PROJECTS=" ${NVIM_ENTRY}\n${DOT_ENTRY}\n${OBSIDIAN_ENTRY}\n"
+PROJECTS=" ${NVIM_ENTRY}\n${DOT_ENTRY}\n${OBSIDIAN_ENTRY}\n${PROJECT_ANSIBLE}\n"
 
 SELECTED=$(echo -en $PROJECTS | ${LAUNCHER})
 
@@ -48,5 +49,12 @@ $DOT_ENTRY)
   ;;
 $OBSIDIAN_ENTRY)
   start_session "obsidian" "${HOME}/Documents/obsidian/"
+  ;;
+$PROJECT_ANSIBLE)
+  start_session "ansible" "${HOME}/work/infra/projects-ansible-config/"
+  ;;
+*)
+  echo "Error: Unknown project '$SELECTED'."
+  exit 1
   ;;
 esac
