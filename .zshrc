@@ -146,6 +146,8 @@ alias pfmt='pnpm run format'
 
 # pnpm end
 
+alias cat="bat --theme auto:system --theme-dark default --theme-light GitHub"
+
 # for sign git commits
 export GPG_TTY=$(tty)
 
