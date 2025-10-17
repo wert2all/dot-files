@@ -54,7 +54,7 @@
   insteadOf = "gh:"
 
 [oh-my-zsh]
-	git-commit-alias = 853680fd621a8907338e0eee080dc6cf754408bf
+	git-commit-alias = c6482fa5be724e9504c6ffe92203440e4c3239b5
 [alias]
 	build = "!a() {\nlocal _scope _attention _message\nwhile [ $# -ne 0 ]; do\ncase $1 in\n  -s | --scope )\n    if [ -z $2 ]; then\n      echo \"Missing scope!\"\n      return 1\n    fi\n    _scope=\"$2\"\n    shift 2\n    ;;\n  -a | --attention )\n    _attention=\"!\"\n    shift 1\n    ;;\n  * )\n    _message=\"${_message} $1\"\n    shift 1\n    ;;\nesac\ndone\ngit commit -m \"build${_scope:+(${_scope})}${_attention}:${_message}\"\n}; a"
 	chore = "!a() {\nlocal _scope _attention _message\nwhile [ $# -ne 0 ]; do\ncase $1 in\n  -s | --scope )\n    if [ -z $2 ]; then\n      echo \"Missing scope!\"\n      return 1\n    fi\n    _scope=\"$2\"\n    shift 2\n    ;;\n  -a | --attention )\n    _attention=\"!\"\n    shift 1\n    ;;\n  * )\n    _message=\"${_message} $1\"\n    shift 1\n    ;;\nesac\ndone\ngit commit -m \"chore${_scope:+(${_scope})}${_attention}:${_message}\"\n}; a"
