@@ -2,13 +2,10 @@
   "name": "sidebar",
   "layer": "top",
   "position": "left",
-  "modules-left": [
-    "clock"
-  ],
-  "modules-center": [
-    "hyprland/workspaces"
-  ],
+  "modules-left": ["clock"],
+  "modules-center": ["hyprland/workspaces"],
   "modules-right": [
+    "power-profiles-daemon",
     "cpu",
     "pulseaudio",
     "hyprland/language",
@@ -45,11 +42,7 @@
   "network": {
     "tooltip": true,
     "format-wifi": "{icon} {signalStrength}%",
-    "format-icons": [
-      "󰤟",
-      "󰤢",
-      "󰤥"
-    ],
+    "format-icons": ["󰤟", "󰤢", "󰤥"],
     //  "format-wifi": "<i class='fa-solid fa-wifi-slash'></i>",
     "rotate": 0,
     "format-ethernet": "󰈀 ",
@@ -62,30 +55,8 @@
   "battery": {
     "format": "{icon}",
     "format-icons": {
-      "charging": [
-        "󰢜",
-        "󰂆",
-        "󰂇",
-        "󰂈",
-        "󰢝",
-        "󰂉",
-        "󰢞",
-        "󰂊",
-        "󰂋",
-        "󰂅"
-      ],
-      "default": [
-        "󰁺",
-        "󰁻",
-        "󰁼",
-        "󰁽",
-        "󰁾",
-        "󰁿",
-        "󰂀",
-        "󰂁",
-        "󰂂",
-        "󰁹"
-      ],
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     },
     "format-full": "",
     "interval": 5,
@@ -102,11 +73,7 @@
     "format-muted": "󰝟",
     "format-icons": {
       "headphone": "",
-      "default": [
-        "󰖀",
-        "󰕾",
-        ""
-      ],
+      "default": ["󰖀", "󰕾", ""],
     },
     "scroll-step": 5, // %, can be a float
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
@@ -119,6 +86,17 @@
     "states": {
       "warning": 70,
       "critical": 90,
+    },
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": "",
     },
   },
 }
