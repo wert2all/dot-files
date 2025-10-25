@@ -53,6 +53,7 @@ tooltip {
 #cpu,
 #pulseaudio,
 #battery,
+#power-profiles-daemon,
 #custom-led {
   font-size: 28px;
 }
