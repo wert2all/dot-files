@@ -24,12 +24,6 @@ if ! ssh-add -l >/dev/null; then
   ssh-add
 fi
 
-# set api keys of Ai services by pass
-export MISTRAL_API_KEY=$(pass show api/ai/mistral)
-export GEMINI_API_KEY=$(pass show api/ai/gemini)
-export OPENROUTER_API_KEY=$(pass show api/ai/openrouter)
-export ANTHROPIC_API_KEY=$(pass show api/ai/claude)
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -43,9 +37,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export _JAVA_AWT_WM_NONREPARENTING=1
-
-#maestro
-export PATH="$PATH":"$HOME/.maestro/bin"
 
 #go
 export PATH=$HOME/go/bin/:$PATH
