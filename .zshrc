@@ -139,6 +139,13 @@ alias pfmt='pnpm run format'
 
 alias cat="bat --theme-dark default --theme-light GitHub"
 
+# tmux aliases
+alias tl='tmux list-sessions'
+alias ta='tmux attach -t'
+alias ts='tmux new-session -s'
+alias tksv='tmux kill-server'
+# end tmux
+
 # for sign git commits
 export GPG_TTY=$(tty)
 
