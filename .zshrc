@@ -168,3 +168,5 @@ alias tksv='tmux kill-server'
 alias cat="bat --theme-dark default --theme-light GitHub"
 alias dus="sudo du -hs \$(ls -A) | sort -h"
 alias ll="eza -lh --icons=auto --sort=name --group-directories-first"
+
+alias iap="source ~/bin/init_api_keys.sh"
