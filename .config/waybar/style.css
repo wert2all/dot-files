@@ -69,3 +69,14 @@ tooltip {
 #cpu.critical {
   background-color: @active;
 }
+
+#tray {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: @darker-bg;
+}
+
+#tray menu {
+  padding: 10px;
+  background-color: @darker-bg;
+}
