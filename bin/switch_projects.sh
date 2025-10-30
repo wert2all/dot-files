@@ -21,11 +21,13 @@ OBSIDIAN_ENTRY="󰠮 obsidian"
 
 PROJECT_ANSIBLE=" ansible"
 PROJECT_ANGULAR_HOUSEHOLD=" angular-household"
+PROJECT_ANGULAR_DEVFORGE="󰣪 angular-dev-forge"
 
 PROJECTS_ARRAY=(
   "${NVIM_ENTRY}"
   "${DOT_ENTRY}"
   "${OBSIDIAN_ENTRY}"
+  "${PROJECT_ANGULAR_DEVFORGE}"
   "${PROJECT_ANGULAR_HOUSEHOLD}"
   "${PROJECT_ANSIBLE}"
 )
@@ -66,6 +68,9 @@ $PROJECT_ANSIBLE)
   ;;
 $PROJECT_ANGULAR_HOUSEHOLD)
   start_session "angular-household" "${HOME}/work/angular-household/"
+  ;;
+$PROJECT_ANGULAR_DEVFORGE)
+  start_session "angular-dev-forge" "${HOME}/work/angular-dev-forge/"
   ;;
 *)
   echo "Error: Unknown project '$SELECTED'."
