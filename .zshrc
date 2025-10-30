@@ -64,13 +64,37 @@ fi
 # Source your static plugins file.
 source "${zsh_plugins}".zsh
 
+eval "$(zoxide init zsh)"
+
+# for sign git commits
+export GPG_TTY=$(tty)
+
+#fix kitty on ssh
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+
+# Prompt
+# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/gruvbox.omp.json)"
+
+# History (from https://github.com/mischavandenburg/dotfiles/blob/main/.zshrc)
+
+setopt HIST_IGNORE_SPACE # Don't save when prefixed with space
+setopt HIST_IGNORE_DUPS  # Don't save duplicate lines
+setopt SHARE_HISTORY     # Share history between sessions
+
+#AI commit
+alias commit='ai-commit -provider=mistral -model=codestral-latest'
+
+#fzf support
+export FZF_DEFAULT_OPTS="--color=fg:#C0C0C0,bg:#333333"
+source <(fzf --zsh)
+
+## -- Aliases -- ##
+
 # NeoVim config
 alias vim=nvim
 alias nvchad="NVIM_APPNAME=nvchad nvim"
-
-alias ll="eza -lh --icons=auto --sort=name --group-directories-first"
-
 export EDITOR=nvim
+
 # Git aliases
 
 gitCheckoutAndReset() {
@@ -110,10 +134,6 @@ alias gunwip='git rev-list --max-count=1 --format="%s" HEAD | grep -q "\--wip--"
 
 alias gcl='git clone --recurse-submodules'
 
-alias dus="sudo du -hs \$(ls -A) | sort -h"
-
-eval "$(zoxide init zsh)"
-
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
@@ -137,8 +157,6 @@ alias pfmt='pnpm run format'
 
 # pnpm end
 
-alias cat="bat --theme-dark default --theme-light GitHub"
-
 # tmux aliases
 alias tl='tmux list-sessions'
 alias ta='tmux attach -t'
@@ -146,24 +164,7 @@ alias ts='tmux new-session -s'
 alias tksv='tmux kill-server'
 # end tmux
 
-# for sign git commits
-export GPG_TTY=$(tty)
-
-#fix kitty on ssh
-[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
-
-# Prompt
-# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/gruvbox.omp.json)"
-
-# History (from https://github.com/mischavandenburg/dotfiles/blob/main/.zshrc)
-
-setopt HIST_IGNORE_SPACE # Don't save when prefixed with space
-setopt HIST_IGNORE_DUPS  # Don't save duplicate lines
-setopt SHARE_HISTORY     # Share history between sessions
-
-#AI commit
-alias commit='ai-commit -provider=mistral -model=codestral-latest'
-
-#fzf support
-export FZF_DEFAULT_OPTS="--color=fg:#C0C0C0,bg:#333333"
-source <(fzf --zsh)
+#other aliases
+alias cat="bat --theme-dark default --theme-light GitHub"
+alias dus="sudo du -hs \$(ls -A) | sort -h"
+alias ll="eza -lh --icons=auto --sort=name --group-directories-first"
