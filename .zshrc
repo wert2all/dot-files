@@ -97,6 +97,9 @@ export EDITOR=nvim
 
 # Git aliases
 
+# wtp - git worktree utility
+eval "$(wtp shell-init zsh)"
+
 gitCheckoutAndReset() {
   if [ -n "$1" ]; then
     git checkout "$1"
