@@ -100,6 +100,21 @@ export EDITOR=nvim
 # wtp - git worktree utility
 eval "$(wtp shell-init zsh)"
 
+gitWorktree() {
+  if [ -z "$1" ]; then
+    wtp list
+    return 0
+  fi
+
+  local branch="$1"
+  # Check if worktree doesn't exist
+  if ! git worktree list | grep -i "\[$branch\]"; then
+    wtp add -b "$branch" origin/main
+  fi
+
+  wtp cd "$branch"
+}
+
 gitCheckoutAndReset() {
   if [ -n "$1" ]; then
     git checkout "$1"
@@ -114,6 +129,7 @@ alias gl='git log --graph --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(bl
 
 alias gcb='git checkout -b'
 alias gcr="gitCheckoutAndReset"
+alias gwt="gitWorktree"
 
 alias gr="git reset --hard"
 alias grm="git reset --hard origin/main"
