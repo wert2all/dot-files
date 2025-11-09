@@ -115,6 +115,26 @@ gitWorktree() {
   wtp cd "$branch"
 }
 
+# Clean git worktrees (remove all except main and current)
+gwtremoveall() {
+  local main_worktree current_worktree
+
+  main_worktree=$(git worktree list | grep "\[main\]" | awk '{print $1}' | head -1)
+  current_worktree=$(git rev-parse --show-toplevel)
+
+  if [[ -z "$main_worktree" ]]; then
+    echo "No main worktree found"
+    return 1
+  fi
+
+  echo "Main worktree: $main_worktree"
+  echo "Current worktree: $current_worktree"
+  git worktree list | grep -vE "${main_worktree}|${current_worktree}" | awk '{print $1}' | while read -r worktree; do
+    echo "Removing worktree: $worktree"
+    git worktree remove -f "$worktree"
+  done
+}
+
 gitCheckoutAndReset() {
   if [ -n "$1" ]; then
     git checkout "$1"
@@ -130,6 +150,7 @@ alias gl='git log --graph --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(bl
 alias gcb='git checkout -b'
 alias gcr="gitCheckoutAndReset"
 alias gwt="gitWorktree"
+alias gwtrall="gwtremoveall"
 
 alias gr="git reset --hard"
 alias grm="git reset --hard origin/main"
