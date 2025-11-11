@@ -1,0 +1,57 @@
+---
+- name: Setup Development Environment
+  hosts: localhost
+  become: true
+  vars:
+    user_home: "{{ lookup('env', 'HOME') }}"
+    user_name: "{{ lookup('env', 'USER') }}"
+
+  tasks:
+    - name: Update package cache
+      package:
+        update_cache: yes
+      when: ansible_os_family == "Debian" or ansible_os_family == "RedHat"
+
+    - name: Install base packages
+      package:
+        name:
+          - git
+          - curl
+          - wget
+          - tmux
+          - neovim
+          - zsh
+          - fzf
+          - bat
+          - eza
+          - gpg
+          - go
+          - ssh
+        state: present
+
+    - name: Install zoxide
+      shell: |
+        curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+      args:
+        creates: "{{ user_home }}/.local/bin/zoxide"
+
+    - name: Install wtp (git worktree utility)
+      shell: |
+        go install github.com/aaronjensen/git-worktree-utility@latest
+      args:
+        creates: "{{ user_home }}/go/bin/wtp"
+
+    - name: Set zsh as default shell
+      user:
+        name: "{{ user_name }}"
+        shell: /bin/zsh
+
+    - name: Create SSH directory
+      file:
+        path: "{{ user_home }}/.ssh"
+        state: directory
+        mode: "0700"
+
+    - name: Rebuild font cache
+      shell: fc-cache -fv
+      changed_when: false
