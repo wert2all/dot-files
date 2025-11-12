@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "opencode/code-supernova",
+  "model": "opencode/big-pickle",
   "small_model": "mistral/pixtral-large-latest",
   "theme": "github",
   "autoupdate": true,
