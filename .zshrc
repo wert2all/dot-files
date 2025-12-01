@@ -204,6 +204,10 @@ alias ts='tmux new-session -s'
 alias tksv='tmux kill-server'
 # end tmux
 
+# php
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+# end php
+
 #other aliases
 alias cat="bat --theme-dark default --theme-light GitHub"
 alias dus="sudo du -hs \$(ls -A) | sort -h"
