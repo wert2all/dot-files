@@ -1,28 +1,4 @@
-# add key to ssh agent
-SSH_ENV="$HOME/.ssh/agent.env"
-
-init_ssh_agent() {
-  echo "Initialising new SSH agent..."
-  ssh-agent -s | sed 's/^echo/#echo/' >"${SSH_ENV}"
-  chmod 600 "${SSH_ENV}"
-  . "${SSH_ENV}" >/dev/null
-}
-
-# Source SSH settings, if applicable
-if [ -f "${SSH_ENV}" ]; then
-  . "${SSH_ENV}" >/dev/null
-  # check if the agent is running
-  ps -p "${SSH_AGENT_PID}" >/dev/null || {
-    init_ssh_agent
-  }
-else
-  init_ssh_agent
-fi
-
-# Add keys to the agent if it has no identities
-if ! ssh-add -l >/dev/null; then
-  ssh-add
-fi
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
