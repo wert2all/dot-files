@@ -2,13 +2,13 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "window.menuBarVisibility": "compact",
   "workbench.list.smoothScrolling": true,
-  "workbench.sideBar.location": "right",
+  "workbench.sideBar.location": "left",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
   //Editor
   "editor.linkedEditing": true,
   "editor.accessibilitySupport": "off",
-  "editor.fontFamily": "'0xProto Nerd Font Mono', 'Iosevka Nerd Font', 'GeistMono NF', 'JetbrainsMono Nerd Font', ",
+  "editor.fontFamily": "'Maple Mono NF','Iosevka Nerd Font', '0xProto Nerd Font Mono', 'JetbrainsMono Nerd Font'",
   "editor.fontSize": 18,
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
@@ -40,7 +40,7 @@
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 5,
-  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.showTabs": "none",
   //terminal
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
@@ -89,10 +89,9 @@
   "breadcrumbs.showTypeParameters": false,
   "breadcrumbs.showVariables": false,
   //Theme
-  "workbench.iconTheme": "catppuccin-macchiato",
-  "workbench.preferredLightColorTheme": "Quiet Light",
-  "workbench.preferredDarkColorTheme": "Terafox",
-  "workbench.colorTheme": "Nightfox",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.preferredDarkColorTheme": "Ayu Dark",
+
   "editor.copyWithSyntaxHighlighting": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.emptySelectionClipboard": false,
@@ -103,21 +102,24 @@
   "diffEditor.renderSideBySide": false,
   "editor.snippetSuggestions": "top",
   "editor.detectIndentation": false,
-  "window.nativeFullScreen": true,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "editor.guides.indentation": false,
   "window.customTitleBarVisibility": "auto",
-  "workbench.productIconTheme": "icons-octicons",
-
   "roo-cline.allowedCommands": [
+    "git log",
+    "git diff",
+    "git show",
     "npm test",
     "npm install",
     "tsc",
-    "git log",
-    "git diff",
-    "git show"
+    "git status",
+    "git",
+    "git add .",
+    "git add",
+    "git commit"
   ],
   "window.zoomLevel": 1,
-  "biome.suggestInstallingGlobally": false
+  "chat.disableAIFeatures": true,
+  "roo-cline.deniedCommands": [],
 }
