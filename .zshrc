@@ -190,3 +190,4 @@ alias dus="sudo du -hs \$(ls -A) | sort -h"
 alias ll="eza -lh --icons=auto --sort=name --group-directories-first"
 
 alias iap="source ~/bin/init_api_keys.sh"
+alias code="~/code/code"
