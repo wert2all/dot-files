@@ -1,18 +1,24 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "model": "opencode/big-pickle",
-  "small_model": "mistral/devstral-small-latest",
-  "theme": "github",
-  "autoupdate": true,
-  "mcp": {
-    "chrome-devtools": {
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "chrome-devtools-mcp@latest"
-      ],
-      "enabled": true
-    }
-  }
+	"$schema": "https://opencode.ai/config.json",
+	"model": "openrouter/xiaomi/mimo-v2-flash:free",
+	"small_model": "mistral/devstral-small-latest",
+	"theme": "github",
+	"autoupdate": true,
+	"provider": {
+		"openrouter": {
+			"models": {
+				"xiaomi/mimo-v2-flash:free": {}
+			}
+		}
+	},
+	"mcp": {
+		"chrome-devtools": {
+			"type": "local",
+			"command": ["npx", "-y", "chrome-devtools-mcp@latest"],
+			"enabled": true
+		}
+	},
+	"experimental": {
+		"batch_tool": true
+	}
 }
