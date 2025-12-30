@@ -12,7 +12,7 @@ fi
 
 # Start the swww daemon if it's not already running.
 if ! swww query >/dev/null 2>&1; then
-  swww-daemon
+  swww-daemon &
 fi
 
 # Create an array of all image files in the directory.
