@@ -57,9 +57,6 @@ setopt HIST_IGNORE_SPACE # Don't save when prefixed with space
 setopt HIST_IGNORE_DUPS  # Don't save duplicate lines
 setopt SHARE_HISTORY     # Share history between sessions
 
-#AI commit
-alias commit='ai-commit -provider=mistral -model=codestral-latest'
-
 #fzf support
 export FZF_DEFAULT_OPTS="--color=fg:#C0C0C0,bg:#333333"
 source <(fzf --zsh)
@@ -197,6 +194,7 @@ question() {
 
 # Use noglob to prevent zsh pattern matching with ?
 alias '?'='noglob question'
+alias commit='opencode run "$(cat ai/commit_changes.md)"'
 
 # end ai
 
