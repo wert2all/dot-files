@@ -201,8 +201,8 @@ question() {
   oc run --agent chat "$*"
 }
 
-alias '?'='noglob question'                          # AI chat with question
-alias gencom='oc run "$(cat ai/generate_commit.md)"' # Generate commit message
+alias '?'='noglob question'                                 # AI chat with question
+alias gencom='oc run "$(cat ~/.zsh/ai/generate_commit.md)"' # Generate commit message
 
 # end ai
 
