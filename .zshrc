@@ -181,14 +181,30 @@ alias tksv='tmux kill-server'
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 # end php
 
+iap() {
+  source ~/bin/init_api_keys.sh
+}
+
+check_api_keys() {
+  if [[ -z "$API_KEYS_LOADED" ]]; then
+    echo "Loading API keys first..."
+    iap
+  fi
+}
+
 # ai powered
+
+# load fabric completions
+fpath=(~/.zsh/completions $fpath)
+autoload -Uz compinit && compinit
+
+alias '?'='noglob question'                                 # AI chat with question
+alias gencom='oc run "$(cat ~/.zsh/ai/generate_commit.md)"' # Generate commit message
+alias fabric='fabric-ai'
 
 # opencode alias - ensure iap is sourced before running opencode
 oc() {
-  if [[ -z "$API_KEYS_LOADED" ]]; then
-    echo "Loading API keys first..."
-    source ~/bin/init_api_keys.sh
-  fi
+  check_api_keys
   opencode "$@"
 }
 
@@ -201,13 +217,16 @@ question() {
   oc run --agent chat "$*"
 }
 
-alias '?'='noglob question'                                 # AI chat with question
-alias gencom='oc run "$(cat ~/.zsh/ai/generate_commit.md)"' # Generate commit message
-alias fabric='fabric-ai'
-
-# load fabric completions
-fpath=(~/.zsh/completions $fpath)
-autoload -Uz compinit && compinit
+# Translation alias
+translate() {
+  if [ -z "$1" ]; then
+    echo "Usage: translate <lang_code>"
+    echo "Example: cat file.md | translate uk-ua"
+    return 1
+  fi
+  check_api_keys
+  fabric -v="lang_code:$1" -p translate
+}
 
 # end ai
 
@@ -216,5 +235,4 @@ alias cat="bat --theme-dark default --theme-light GitHub"
 alias dus="sudo du -hs \$(ls -A) | sort -h"
 alias ll="eza -lh --icons=auto --sort=name --group-directories-first"
 
-alias iap="source ~/bin/init_api_keys.sh"
 alias code="~/code/code"
