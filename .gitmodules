@@ -10,3 +10,6 @@
 [submodule ".zsh/zsh-you-should-use"]
 	path = .zsh/zsh-you-should-use
 	url = git@github.com:MichaelAquilina/zsh-you-should-use.git
+[submodule "Fabric"]
+	path = Fabric
+	url = git@github.com:danielmiessler/Fabric.git
