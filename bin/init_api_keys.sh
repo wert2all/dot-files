@@ -6,3 +6,5 @@ export OPENROUTER_API_KEY=$(pass show api/ai/openrouter)
 export ANTHROPIC_API_KEY=$(pass show api/ai/claude)
 export OPENCODE_API_KEY=$(pass show api/ai/opencode_zen)
 export CROWDIN_API_TOKEN=$(pass show api/crowdin)
+
+export API_KEYS_LOADED=1

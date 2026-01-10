@@ -183,17 +183,26 @@ alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 # ai powered
 
+# opencode alias - ensure iap is sourced before running opencode
+oc() {
+  if [[ -z "$API_KEYS_LOADED" ]]; then
+    echo "Loading API keys first..."
+    iap
+  fi
+  opencode "$@"
+}
+
 # Question mark alias for opencode with special symbol support
 question() {
   if [ $# -eq 0 ]; then
     echo "Usage: ? <your question>"
     return 1
   fi
-  opencode run --agent chat "$*"
+  oc run --agent chat "$*"
 }
 
-alias '?'='noglob question'                                # AI chat with question
-alias gencom='opencode run "$(cat ai/generate_commit.md)"' # Generate commit message
+alias '?'='noglob question'                          # AI chat with question
+alias gencom='oc run "$(cat ai/generate_commit.md)"' # Generate commit message
 
 # end ai
 
