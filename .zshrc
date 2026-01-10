@@ -192,9 +192,8 @@ question() {
   opencode run --agent chat "$*"
 }
 
-# Use noglob to prevent zsh pattern matching with ?
-alias '?'='noglob question'
-alias commit='opencode run "$(cat ai/commit_changes.md)"'
+alias '?'='noglob question'                               # AI chat with question
+alias commit='opencode run "$(cat ai/commit_changes.md)"' # Generate commit message
 
 # end ai
 
