@@ -203,6 +203,11 @@ question() {
 
 alias '?'='noglob question'                                 # AI chat with question
 alias gencom='oc run "$(cat ~/.zsh/ai/generate_commit.md)"' # Generate commit message
+alias fabric='fabric-ai'
+
+# load fabric completions
+fpath=(~/.zsh/completions $fpath)
+autoload -Uz compinit && compinit
 
 # end ai
 
