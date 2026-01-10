@@ -192,8 +192,8 @@ question() {
   opencode run --agent chat "$*"
 }
 
-alias '?'='noglob question'                               # AI chat with question
-alias commit='opencode run "$(cat ai/commit_changes.md)"' # Generate commit message
+alias '?'='noglob question'                                # AI chat with question
+alias gencom='opencode run "$(cat ai/generate_commit.md)"' # Generate commit message
 
 # end ai
 
