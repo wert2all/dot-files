@@ -1,3 +1,12 @@
 [submodule ".antidote"]
 	path = .antidote
 	url = git@github.com:mattmc3/antidote.git
+[submodule ".zsh/zsh-autosuggestions"]
+	path = .zsh/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule ".zsh/zsh-syntax-highlighting"]
+	path = .zsh/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+[submodule ".zsh/zsh-you-should-use"]
+	path = .zsh/zsh-you-should-use
+	url = git@github.com:MichaelAquilina/zsh-you-should-use.git
