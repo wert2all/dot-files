@@ -184,6 +184,22 @@ alias tksv='tmux kill-server'
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 # end php
 
+# ai powered
+
+# Question mark alias for opencode with special symbol support
+question() {
+  if [ $# -eq 0 ]; then
+    echo "Usage: ? <your question>"
+    return 1
+  fi
+  opencode run --agent chat "$*"
+}
+
+# Use noglob to prevent zsh pattern matching with ?
+alias '?'='noglob question'
+
+# end ai
+
 #other aliases
 alias cat="bat --theme-dark default --theme-light GitHub"
 alias dus="sudo du -hs \$(ls -A) | sort -h"
