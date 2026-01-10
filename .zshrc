@@ -187,7 +187,7 @@ alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 oc() {
   if [[ -z "$API_KEYS_LOADED" ]]; then
     echo "Loading API keys first..."
-    iap
+    source ~/bin/init_api_keys.sh
   fi
   opencode "$@"
 }
