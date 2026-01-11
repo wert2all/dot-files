@@ -1,0 +1,12 @@
+# PNPM aliases
+alias p='pnpm'
+alias pa='pnpm add'
+alias pad='pnpm add --save-dev'
+alias pin='pnpm install'
+alias pu='pnpm update'
+alias pui='pnpm update --interactive'
+alias puil='pnpm update --interactive --latest'
+alias prun='pnpm run'
+alias pst='pnpm start'
+alias pln='pnpm run lint'
+alias pfmt='pnpm run format'
