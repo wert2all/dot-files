@@ -200,7 +200,10 @@ autoload -Uz compinit && compinit
 
 alias '?'='noglob question'                                 # AI chat with question
 alias gencom='oc run "$(cat ~/.zsh/ai/generate_commit.md)"' # Generate commit message
-alias fabric='fabric-ai'
+
+if [ ! command -v fabric ] >/dev/null 2>&1; then
+  alias fabric='fabric-ai'
+fi
 
 # opencode alias - ensure iap is sourced before running opencode
 oc() {
