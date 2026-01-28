@@ -4,14 +4,11 @@
 	"small_model": "mistral/devstral-small-latest",
 	"theme": "ayu-dark",
 	"autoupdate": true,
+	"plugin": ["@plannotator/opencode@latest"],
 	"mcp": {
 		"chrome-devtools": {
 			"type": "local",
-			"command": [
-				"npx",
-				"-y",
-				"chrome-devtools-mcp@latest"
-			],
+			"command": ["npx", "-y", "chrome-devtools-mcp@latest"],
 			"enabled": true
 		}
 	},
