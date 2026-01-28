@@ -2,7 +2,7 @@
 	"$schema": "https://opencode.ai/config.json",
 	"model": "opencode/big-pickle",
 	"small_model": "mistral/devstral-small-latest",
-	"theme": "github",
+	"theme": "ayu-dark",
 	"autoupdate": true,
 	"mcp": {
 		"chrome-devtools": {
