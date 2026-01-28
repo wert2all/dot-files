@@ -4,13 +4,6 @@
 	"small_model": "mistral/devstral-small-latest",
 	"theme": "github",
 	"autoupdate": true,
-	"provider": {
-		"openrouter": {
-			"models": {
-				"xiaomi/mimo-v2-flash:free": {}
-			}
-		}
-	},
 	"mcp": {
 		"chrome-devtools": {
 			"type": "local",
