@@ -13,5 +13,4 @@ source "${zsh_plugins}".zsh
 
 # Tool initializations
 eval "$(zoxide init zsh)"
-eval "$(wtp shell-init zsh)"
 source <(fzf --zsh)
