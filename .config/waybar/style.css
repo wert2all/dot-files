@@ -1,9 +1,10 @@
-@define-color bg        #2a292d;
-@define-color light-bg  #4C4E56;
-@define-color darker-bg #201f22;
-@define-color color     #fbf1c7;
-
-@define-color active    #ff4c4c;
+@define-color bg            #2a292d;
+@define-color light-bg      #4C4E56;
+@define-color darker-bg     #201f22;
+@define-color text-main     #fbf1c7;
+@define-color accent-red    #ff4c4c;
+@define-color warn-orange   #e0b341;
+@define-color blink-gold    #e0af68;
 
 * {
   all: unset;
@@ -23,55 +24,46 @@ window > box {
 
 #workspaces button.active {
   font-size: 24px;
-  color: @active;
+  color: @accent-red;
 }
 
 .modules-right {
-  color: @color;
+  color: @text-main;
   margin-bottom: 15px;
-}
-
-tooltip {
-  background: @light-bg;
-  border: 0px solid @light-bg;
-}
-
-@keyframes blink {
-  to {
-    background-color: #e0af68;
-    /* color: white; */
-  }
-}
-
-#clock {
-  margin: 15px;
-  color: @active;
-  padding: 15px 10px;
-  margin: 0px;
 }
 
 #cpu,
 #pulseaudio,
 #battery,
 #power-profiles-daemon,
-#custom-led, #custom-vpn {
+#custom-led, 
+#custom-vpn {
   font-size: 28px;
+  padding: 0 10px;
+  margin: 0px;
 }
 
 #cpu {
   background-color: @light-bg;
 }
 
+#custom-vpn.connected {
+  background-color: @light-bg;
+  color: @text-main;
+}
+
 #cpu.warning {
-  background-color: #e0b341;
+  background-color: @warn-orange;
 }
 
 #cpu.critical {
-  background-color: @active;
+  background-color: @accent-red;
 }
 
-#custom-vpn.connected {
-    color: #a6e3a1; /* Зелений (для теми Catppuccin) */
+#clock {
+  color: @accent-red;
+  padding: 15px 10px;
+  margin: 0px;
 }
 
 #tray {
@@ -83,4 +75,15 @@ tooltip {
 #tray menu {
   padding: 10px;
   background-color: @darker-bg;
+}
+
+tooltip {
+  background: @light-bg;
+  border: 0px solid @light-bg;
+}
+
+@keyframes blink {
+  to {
+    background-color: @blink-gold;
+  }
 }
