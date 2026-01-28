@@ -2,8 +2,12 @@
   "name": "sidebar",
   "layer": "top",
   "position": "left",
-  "modules-left": ["clock"],
-  "modules-center": ["hyprland/workspaces"],
+  "modules-left": [
+    "clock"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
   "modules-right": [
     "power-profiles-daemon",
     "cpu",
@@ -11,7 +15,8 @@
     "hyprland/language",
     "custom/led",
     "battery",
-    "tray",
+    "custom/vpn",
+    "tray"
   ],
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -20,29 +25,33 @@
     "format": "{icon}",
     "format-icons": {
       "active": "󰁃",
-      "default": "·",
+      "default": "·"
     },
-    "sort-by-number": true,
+    "sort-by-number": true
   },
   "clock": {
-    "format": "{:%H\n%M}",
+    "format": "{:%H\n%M}"
   },
   "custom/led": {
     "format": "󰃞",
     "format-alt": "󰃠",
     "on-click": "~/bin/system-toggle-keyboard-brightness.sh",
     "tooltip": true,
-    "tooltip-format": "Switch brightness",
+    "tooltip-format": "Switch brightness"
   },
   "hyprland/language": {
     "format": "{}",
     "format-en": "en",
-    "format-uk": "ua",
+    "format-uk": "ua"
   },
   "network": {
     "tooltip": true,
     "format-wifi": "{icon} {signalStrength}%",
-    "format-icons": ["󰤟", "󰤢", "󰤥"],
+    "format-icons": [
+      "󰤟",
+      "󰤢",
+      "󰤥"
+    ],
     //  "format-wifi": "<i class='fa-solid fa-wifi-slash'></i>",
     "rotate": 0,
     "format-ethernet": "󰈀 ",
@@ -50,13 +59,35 @@
     "format-linked": "󰈀 {ifname} (No IP)",
     "format-disconnected": " ",
     "tooltip-format-disconnected": "Disconnected",
-    "interval": 2,
+    "interval": 2
   },
   "battery": {
     "format": "{icon}",
     "format-icons": {
-      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": [
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ],
+      "default": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ]
     },
     "format-full": "",
     "interval": 5,
@@ -64,8 +95,8 @@
     "states": {
       // "good": 95,
       "warning": 30,
-      "critical": 15,
-    },
+      "critical": 15
+    }
   },
   "pulseaudio": {
     "format": "{icon}",
@@ -73,10 +104,14 @@
     "format-muted": "󰝟",
     "format-icons": {
       "headphone": "",
-      "default": ["󰖀", "󰕾", ""],
+      "default": [
+        "󰖀",
+        "󰕾",
+        ""
+      ]
     },
     "scroll-step": 5, // %, can be a float
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
   },
   "cpu": {
     "format": "",
@@ -85,8 +120,8 @@
     "interval": 2,
     "states": {
       "warning": 70,
-      "critical": 90,
-    },
+      "critical": 90
+    }
   },
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -96,7 +131,13 @@
       "default": "",
       "performance": "",
       "balanced": "",
-      "power-saver": "",
-    },
+      "power-saver": ""
+    }
   },
+  "custom/vpn": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 5,
+    "exec": "~/bin/waybar-wg-status.sh"
+  }
 }

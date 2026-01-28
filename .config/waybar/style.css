@@ -54,7 +54,7 @@ tooltip {
 #pulseaudio,
 #battery,
 #power-profiles-daemon,
-#custom-led {
+#custom-led, #custom-vpn {
   font-size: 28px;
 }
 
@@ -68,6 +68,10 @@ tooltip {
 
 #cpu.critical {
   background-color: @active;
+}
+
+#custom-vpn.connected {
+    color: #a6e3a1; /* Зелений (для теми Catppuccin) */
 }
 
 #tray {
