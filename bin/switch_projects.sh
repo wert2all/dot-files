@@ -20,6 +20,7 @@ DOT_ENTRY="󰇘 dot-files"
 OBSIDIAN_ENTRY="󰠮 obsidian"
 
 PROJECT_ANSIBLE=" ansible"
+PROJECT_BOOTSTRAP="󰣪 bootstrap.sh"
 PROJECT_ANGULAR_HOUSEHOLD=" angular-household"
 PROJECT_ANGULAR_DEVFORGE="󰣪 angular-dev-forge"
 PROJECT_LARAVEL_DEVFORGE="󰣪 laravel-dev-forge"
@@ -32,6 +33,7 @@ PROJECTS_ARRAY=(
   "${PROJECT_LARAVEL_DEVFORGE}"
   "${PROJECT_ANGULAR_HOUSEHOLD}"
   "${PROJECT_ANSIBLE}"
+  "${PROJECT_BOOTSTRAP}"
 )
 IFS=$'\n'
 PROJECTS="${PROJECTS_ARRAY[*]}"
@@ -76,6 +78,9 @@ $PROJECT_ANGULAR_DEVFORGE)
   ;;
 $PROJECT_LARAVEL_DEVFORGE)
   start_session "laravel-dev-forge" "${HOME}/work/laravel-dev-forge/"
+  ;;
+$PROJECT_BOOTSTRAP)
+  start_session "bootstrap.sh" "${HOME}/work/bootstrap.sh/"
   ;;
 *)
   echo "Error: Unknown project '$SELECTED'."
