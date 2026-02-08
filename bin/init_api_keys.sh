@@ -8,5 +8,6 @@
 export MISTRAL_API_KEY=$(pass show api/ai/mistral)
 export OPENROUTER_API_KEY=$(pass show api/ai/openrouter)
 export OPENCODE_API_KEY=$(pass show api/ai/opencode_zen)
+export CONTEXT7_API_KEY=$(pass show api/ai/context7)
 
 export API_KEYS_LOADED=1
