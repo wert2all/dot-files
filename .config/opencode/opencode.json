@@ -4,17 +4,11 @@
 	"small_model": "openrouter/arcee-ai/trinity-mini:free",
 	"theme": "ayu-dark",
 	"autoupdate": true,
-	"plugin": [
-		"@plannotator/opencode@latest"
-	],
+	"plugin": ["@plannotator/opencode@latest"],
 	"mcp": {
 		"chrome-devtools": {
 			"type": "local",
-			"command": [
-				"npx",
-				"-y",
-				"chrome-devtools-mcp@latest"
-			],
+			"command": ["npx", "-y", "chrome-devtools-mcp@latest"],
 			"enabled": true
 		},
 		"context7": {
@@ -22,6 +16,14 @@
 			"url": "https://mcp.context7.com/mcp",
 			"headers": {
 				"CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+			},
+			"enabled": true
+		},
+		"github": {
+			"type": "remote",
+			"url": "https://api.githubcopilot.com/mcp/",
+			"headers": {
+				"Authorization": "Bearer {env:GITHUB_TOKEN}"
 			},
 			"enabled": true
 		}
