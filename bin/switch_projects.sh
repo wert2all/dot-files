@@ -22,6 +22,7 @@ OBSIDIAN_ENTRY="󰠮 obsidian"
 PROJECT_ANSIBLE=" ansible"
 PROJECT_BOOTSTRAP="󰣪 bootstrap.sh"
 PROJECT_ANGULAR_HOUSEHOLD=" angular-household"
+PROJECT_ANGULAR_DESK_LAN=" angular-desk-lan"
 PROJECT_ANGULAR_DEVFORGE="󰣪 angular-dev-forge"
 PROJECT_LARAVEL_DEVFORGE="󰣪 laravel-dev-forge"
 
@@ -32,6 +33,7 @@ PROJECTS_ARRAY=(
   "${PROJECT_ANGULAR_DEVFORGE}"
   "${PROJECT_LARAVEL_DEVFORGE}"
   "${PROJECT_ANGULAR_HOUSEHOLD}"
+  "${PROJECT_ANGULAR_DESK_LAN}"
   "${PROJECT_ANSIBLE}"
   "${PROJECT_BOOTSTRAP}"
 )
@@ -72,6 +74,9 @@ $PROJECT_ANSIBLE)
   ;;
 $PROJECT_ANGULAR_HOUSEHOLD)
   start_session "angular-household" "${HOME}/work/angular-household/"
+  ;;
+$PROJECT_ANGULAR_DESK_LAN)
+  start_session "angular-desk-lan" "${HOME}/work/angular-home-page/"
   ;;
 $PROJECT_ANGULAR_DEVFORGE)
   start_session "angular-dev-forge" "${HOME}/work/angular-dev-forge/"
