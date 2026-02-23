@@ -1,4 +1,3 @@
-[general]
 import = [ "./my.toml" ] 
 
 [env]
@@ -38,9 +37,6 @@ mouse = "Middle"
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
-
-[terminal.shell]
-program = "/bin/zsh"
 
 [window]
 decorations = "full"
