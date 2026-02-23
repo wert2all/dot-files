@@ -1,0 +1,25 @@
+vim.cmd("packadd nvim-treesitter")
+require("nvim-treesitter").setup({
+	ensure_installed = {
+		"vim",
+		"vimdoc",
+		"go",
+		"html",
+		"css",
+		"javascript",
+		"typescript",
+		"jsdoc",
+		"json",
+		"lua",
+		"markdown",
+		"markdown_inline",
+		"typescript",
+		"bash",
+		"lua",
+		"angular",
+		"bash",
+		"scss",
+		"yaml",
+		"php",
+	},
+})
