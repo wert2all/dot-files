@@ -1,7 +1,7 @@
 # Editor aliases
 alias vim=nvim
 alias nvchad="NVIM_APPNAME=nvchad nvim"
-alias v6="NVIM_APPNAME=astronvim_v6 nvim"
+alias n12="NVIM_APPNAME=n12 nvim"
 
 # Utility aliases
 alias cat="bat --theme-dark default --theme-light GitHub"
