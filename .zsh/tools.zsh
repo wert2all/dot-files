@@ -12,3 +12,5 @@ export FZF_DEFAULT_OPTS="--color=fg:#C0C0C0,bg:#333333"
 # Load completions
 fpath=(~/.zsh/completions $fpath)
 autoload -Uz compinit && compinit
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
