@@ -26,5 +26,3 @@ alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commi
 alias gunwip='git rev-list --max-count=1 --format="%s" HEAD | grep -q "\--wip--" && git reset HEAD~1'
 
 alias gcl='git clone --recurse-submodules'
-alias gwt="gitWorktree"
-alias gwtrall="gwtremoveall"
