@@ -1,7 +1,6 @@
 # Editor aliases
 alias vim=nvim
 alias nvchad="NVIM_APPNAME=nvchad nvim"
-alias n12="NVIM_APPNAME=n12 nvim"
 
 # Utility aliases
 alias cat="bat --theme default"
