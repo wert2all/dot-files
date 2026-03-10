@@ -37,10 +37,22 @@ window > box {
 #battery,
 #power-profiles-daemon,
 #custom-led, 
-#custom-vpn {
+#custom-vpn,
+#custom-voice-recording {
   font-size: 28px;
   padding: 0 10px;
   margin: 0px;
+}
+
+#custom-voice-recording {
+  color: @accent-red;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
 }
 
 #cpu {
