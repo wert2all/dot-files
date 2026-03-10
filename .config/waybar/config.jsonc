@@ -13,6 +13,7 @@
     "cpu",
     "pulseaudio",
     "hyprland/language",
+    "custom/voice-recording",
     "custom/led",
     "battery",
     "custom/vpn",
@@ -31,6 +32,12 @@
   },
   "clock": {
     "format": "{:%H\n%M}"
+  },
+  "custom/voice-recording": {
+    "return-type": "json",
+    "interval": 1,
+    "exec": "~/.config/waybar/scripts/voice-recording.sh",
+    "tooltip": false
   },
   "custom/led": {
     "format": "󰃞",
