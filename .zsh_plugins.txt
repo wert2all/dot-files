@@ -1,8 +1,5 @@
 sindresorhus/pure
 
-getantidote/use-omz
-ohmyzsh/ohmyzsh path:lib
-
 chrissicool/zsh-256color
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
