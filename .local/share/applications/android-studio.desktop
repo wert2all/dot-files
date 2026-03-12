@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Android Studio
+Icon=/home/wert2all/android-studio/bin/studio.png
+Exec=/home/wert2all/android-studio/bin/studio
+Terminal=false
+Categories=Development;IDE;
+StartupNotify=true
+StartupWMClass=jetbrains-studio
