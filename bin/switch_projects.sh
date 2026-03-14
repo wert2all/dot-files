@@ -21,9 +21,12 @@ OBSIDIAN_ENTRY="󰠮 obsidian"
 
 PROJECT_ANSIBLE=" ansible"
 PROJECT_BOOTSTRAP="󰣪 bootstrap.sh"
+
 PROJECT_ANGULAR_HOUSEHOLD=" angular-household"
 PROJECT_ANGULAR_DESK_LAN=" angular-desk-lan"
 PROJECT_ANGULAR_DEVFORGE="󰣪 angular-dev-forge"
+PROJECT_ANGULAR_WHEREISIT="󰣪 angular-whereisit"
+
 PROJECT_LARAVEL_DEVFORGE="󰣪 laravel-dev-forge"
 
 PROJECTS_ARRAY=(
@@ -34,6 +37,7 @@ PROJECTS_ARRAY=(
   "${PROJECT_LARAVEL_DEVFORGE}"
   "${PROJECT_ANGULAR_HOUSEHOLD}"
   "${PROJECT_ANGULAR_DESK_LAN}"
+  "${PROJECT_ANGULAR_WHEREISIT}"
   "${PROJECT_ANSIBLE}"
   "${PROJECT_BOOTSTRAP}"
 )
@@ -86,6 +90,9 @@ $PROJECT_LARAVEL_DEVFORGE)
   ;;
 $PROJECT_BOOTSTRAP)
   start_session "bootstrap.sh" "${HOME}/work/bootstrap.sh/"
+  ;;
+$PROJECT_ANGULAR_WHEREISIT)
+  start_session "angular-whereisit" "${HOME}/work/hiddenstash/angular-whereisit/"
   ;;
 *)
   echo "Error: Unknown project '$SELECTED'."
