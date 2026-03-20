@@ -1,7 +1,7 @@
 ---
 description: chat and answer questions
 mode: all
-model: mistral/devstral-medium-latest
+model: nvidia/openai/gpt-oss-120b
 tools:
   bash: false
   wrire: false
