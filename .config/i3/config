@@ -76,7 +76,7 @@ exec_always --no-startup-id picom -f
 exec --no-startup-id nitrogen --restore &
 
 #auto start
-exec --no-startup-id i3-msg 'workspace 1; exec kitty;'
+# exec --no-startup-id i3-msg 'workspace 1; exec kitty;'
 
 # exec kitty with htop for scratchpad
 exec --no-startup-id kitty --class sp-htop -e tmux new-session -s spesial htop
