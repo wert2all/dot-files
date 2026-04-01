@@ -28,6 +28,7 @@ PROJECT_ANGULAR_DEVFORGE="󰣪 angular-dev-forge"
 PROJECT_ANGULAR_WHEREISIT="󰣪 angular-whereisit"
 
 PROJECT_LARAVEL_DEVFORGE="󰣪 laravel-dev-forge"
+PROJECT_LARAVEL_WHEREISIT="󰣪 laravel-whereisit"
 
 PROJECTS_ARRAY=(
   "${NVIM_ENTRY}"
@@ -38,6 +39,7 @@ PROJECTS_ARRAY=(
   "${PROJECT_ANGULAR_HOUSEHOLD}"
   "${PROJECT_ANGULAR_DESK_LAN}"
   "${PROJECT_ANGULAR_WHEREISIT}"
+  "${PROJECT_LARAVEL_WHEREISIT}"
   "${PROJECT_ANSIBLE}"
   "${PROJECT_BOOTSTRAP}"
 )
@@ -93,6 +95,9 @@ $PROJECT_BOOTSTRAP)
   ;;
 $PROJECT_ANGULAR_WHEREISIT)
   start_session "angular-whereisit" "${HOME}/work/hiddenstash/angular-whereisit/"
+  ;;
+$PROJECT_LARAVEL_WHEREISIT)
+  start_session "laravel-whereisit" "${HOME}/work/hiddenstash/laravel-whereisit/"
   ;;
 *)
   echo "Error: Unknown project '$SELECTED'."
