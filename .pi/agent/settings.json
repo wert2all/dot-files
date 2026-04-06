@@ -1,6 +1,9 @@
 {
   "lastChangelogVersion": "0.65.0",
   "defaultProvider": "nvidia",
-  "defaultModel": "moonshotai/kimi-k2.5",
-  "defaultThinkingLevel": "medium"
+  "defaultModel": "openai/gpt-oss-120b",
+  "defaultThinkingLevel": "medium",
+  "enabledModels": [
+    "nvidia/*"
+  ]
 }
