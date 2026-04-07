@@ -1,9 +1,7 @@
 {
-  "lastChangelogVersion": "0.65.0",
+  "lastChangelogVersion": "0.65.2",
   "defaultProvider": "nvidia",
   "defaultModel": "openai/gpt-oss-120b",
   "defaultThinkingLevel": "medium",
-  "enabledModels": [
-    "nvidia/*"
-  ]
+  "enabledModels": []
 }
