@@ -7,7 +7,12 @@
       "models": [
         {
           "id": "openai/gpt-oss-120b",
-          "name": "[NVIDIA] GPT-OSS-120B"
+          "name": "[NVIDIA] GPT-OSS-120B",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ]
         },
         {
           "id": "moonshotai/kimi-k2.5",
