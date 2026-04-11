@@ -33,6 +33,15 @@
           ]
         },
         {
+          "id": "minimaxai/minimax-m2.5",
+          "name": "[NVIDIA] MiniMax m2.5",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ]
+        },
+        {
           "id": "z-ai/glm5",
           "name": "[NVIDIA] GLM-5",
           "reasoning": true,
