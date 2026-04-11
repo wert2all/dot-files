@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.65.2",
+  "lastChangelogVersion": "0.66.1",
   "defaultProvider": "nvidia",
-  "defaultModel": "openai/gpt-oss-120b",
+  "defaultModel": "z-ai/glm5",
   "defaultThinkingLevel": "high",
   "enabledModels": [],
   "hideThinkingBlock": false
