@@ -33,6 +33,15 @@
           ]
         },
         {
+          "id": "minimaxai/minimax-m2.7",
+          "name": "[NVIDIA] MiniMax m2.7",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ]
+        },
+        {
           "id": "minimaxai/minimax-m2.5",
           "name": "[NVIDIA] MiniMax m2.5",
           "reasoning": true,
