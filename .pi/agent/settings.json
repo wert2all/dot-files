@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.67.0",
+  "lastChangelogVersion": "0.67.1",
   "defaultProvider": "nvidia",
-  "defaultModel": "openai/gpt-oss-120b",
+  "defaultModel": "moonshotai/kimi-k2.5",
   "enabledModels": [
     "openrouter/minimax/minimax-m2.5:free",
     "nvidia/minimaxai/minimax-m2.5",
