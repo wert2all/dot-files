@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.66.1",
+  "lastChangelogVersion": "0.67.0",
   "defaultProvider": "nvidia",
   "defaultModel": "moonshotai/kimi-k2.5",
   "enabledModels": [
@@ -9,14 +9,14 @@
     "nvidia/z-ai/glm5",
     "nvidia/openai/gpt-oss-120b",
     "nvidia/moonshotai/kimi-k2.5",
-    "nvidia/qwen/qwen3-coder-480b-a35b-instruct",
-    "nvidia/mistralai/mistral-large-3-675b-instruct-2512"
+    "nvidia/qwen/qwen3-coder-480b-a35b-instruct"
   ],
   "defaultThinkingLevel": "high",
   "theme": "midnight-ocean",
   "packages": [
     "../../work/dot-files/.pi/ext/questionnaire.ts",
     "../../work/dot-files/.pi/ext/minimal.ts",
-    "../../.local/share/pnpm/global/5/node_modules/pi-mcp-adapter"
+    "../../.local/share/pnpm/global/5/node_modules/pi-mcp-adapter",
+    "git:github.com/ferologics/pi-notify"
   ]
 }
