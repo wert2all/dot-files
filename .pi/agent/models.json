@@ -57,6 +57,14 @@
           "input": [
             "text"
           ]
+        },
+        {
+          "id": "deepseek-ai/deepseek-v3.2",
+          "name": "[NVIDIA] DeepSeek 3.2",
+          "reasoning": true,
+          "input": [
+            "text"
+          ]
         }
       ]
     }
