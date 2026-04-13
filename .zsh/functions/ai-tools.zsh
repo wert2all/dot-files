@@ -30,3 +30,5 @@ translate() {
   check_api_keys
   fabric -v="lang_code:$1" -p translate
 }
+
+export PI_NOTIFY_SOUND_CMD='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
