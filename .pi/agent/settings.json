@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.67.0",
+  "lastChangelogVersion": "0.67.1",
   "defaultProvider": "nvidia",
   "defaultModel": "moonshotai/kimi-k2.5",
   "enabledModels": [
