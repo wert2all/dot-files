@@ -36,4 +36,8 @@ pi() {
   ~/.local/share/pnpm/pi "$@"
 }
 
+pi_quick() {
+  pi -p --provider nvidia --model openai/gpt-oss-120b "$@"
+}
+
 export PI_NOTIFY_SOUND_CMD='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
