@@ -16,6 +16,7 @@
   "packages": [
     "../../work/dot-files/.pi/ext/notify.ts",
     "../../work/dot-files/.pi/ext/questionnaire.ts",
-    "../../work/dot-files/.pi/ext/minimal.ts"
+    "../../work/dot-files/.pi/ext/minimal.ts",
+    "../../.local/share/pnpm/global/5/node_modules/pi-mcp-adapter"
   ]
 }
