@@ -1,8 +1,4 @@
 {
-  "settings": {
-    "autoAuth": true,
-    "idleTimeout": 15
-  },
   "mcpServers": {
     "chrome-devtools": {
       "command": "npx",
@@ -18,13 +14,9 @@
       }
     },
     "github": {
-      "command": "npx",
+      "url": "https://api.githubcopilot.com/mcp/",
       "auth": "bearer",
-      "bearerTokenEnv": "GITHUB_TOKEN",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-github"
-      ]
+      "bearerTokenEnv": "GITHUB_TOKEN"
     }
   }
 }
