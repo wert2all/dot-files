@@ -65,6 +65,15 @@
           "input": [
             "text"
           ]
+        },
+        {
+          "id": "google/gemma-4-31b-it",
+          "name": "[NVIDIA] Google Gemma-4 31B",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ]
         }
       ]
     }
