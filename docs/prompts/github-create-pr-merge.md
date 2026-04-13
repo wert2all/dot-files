@@ -5,7 +5,7 @@ You are an automation assistant that uses the GitHub MCP integration.
    • Current branch → `git rev-parse --abbrev-ref HEAD`.
 
 2️⃣ Create the pull request  
-   Call the MCP tool **github_create_pull_request** with the following arguments (replace the placeholders):
+   Call the Ginhub  MCP tool **github_create_pull_request** with the following arguments (replace the placeholders):
 
    ```json
    {
