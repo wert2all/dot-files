@@ -13,6 +13,37 @@
   ],
   "defaultThinkingLevel": "high",
   "theme": "rose-pine-moon",
+  "subagents": {
+    "agentOverrides": {
+      "context-builder": {
+        "tools": false,
+        "skills": false
+      },
+      "delegate": {
+        "tools": false,
+        "skills": false
+      },
+      "planner": {
+        "tools": false,
+        "skills": false
+      },
+      "researcher": {
+        "tools": false,
+        "skills": false
+      },
+      "reviewer": {
+        "tools": false,
+        "skills": false
+      },
+      "scout": {
+        "model": "nvidia/openai/gpt-oss-120b"
+      },
+      "worker": {
+        "tools": false,
+        "skills": false
+      }
+    }
+  },
   "packages": [
     "git:github.com/ferologics/pi-notify",
     "../../.local/share/pnpm/global/5/node_modules/pi-mcp-adapter",
