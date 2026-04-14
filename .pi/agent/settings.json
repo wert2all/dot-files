@@ -39,8 +39,8 @@
         "model": "nvidia/openai/gpt-oss-120b"
       },
       "worker": {
-        "tools": false,
-        "skills": false
+        "model": "nvidia/moonshotai/kimi-k2.5",
+        "thinking": "high"
       }
     }
   },
