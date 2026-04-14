@@ -12,7 +12,7 @@
     "nvidia/qwen/qwen3-coder-480b-a35b-instruct"
   ],
   "defaultThinkingLevel": "high",
-  "theme": "dark",
+  "theme": "rose-pine-moon",
   "packages": [
     "git:github.com/ferologics/pi-notify",
     "../../.local/share/pnpm/global/5/node_modules/pi-mcp-adapter",
