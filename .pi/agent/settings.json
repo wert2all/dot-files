@@ -16,6 +16,7 @@
   "packages": [
     "git:github.com/ferologics/pi-notify",
     "../../.local/share/pnpm/global/5/node_modules/pi-mcp-adapter",
+    "../../.local/share/pnpm/global/5/node_modules/pi-web-access",
     "../../.local/share/pnpm/global/5/node_modules/pi-subagents"
   ]
 }

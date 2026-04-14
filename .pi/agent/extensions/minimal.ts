@@ -13,7 +13,7 @@ import { basename } from "path";
 
 export default function (pi: ExtensionAPI) {
 	pi.on("session_start", async (_event, ctx) => {
-		applyExtensionDefaults(import.meta.url, ctx);
+		applyExtensionDefaults(ctx);
 		ctx.ui.setFooter((_tui, theme, _footerData) => ({
 			dispose: () => { },
 			invalidate() { },
@@ -48,50 +48,8 @@ export default function (pi: ExtensionAPI) {
  *     // ... rest of handler
  *   });
  */
-function applyExtensionDefaults(fileUrl: string, ctx: ExtensionContext): void {
-	applyExtensionTheme(fileUrl, ctx);
+function applyExtensionDefaults(ctx: ExtensionContext): void {
 	applyExtensionTitle(ctx);
-}
-
-/**
- * Apply the mapped theme for an extension on session boot.
- *
- * @param fileUrl   Pass `import.meta.url` from the calling extension file.
- * @param ctx       The ExtensionContext from the session_start handler.
- * @returns         true if the theme was applied successfully, false otherwise.
- */
-export function applyExtensionTheme(
-	fileUrl: string,
-	ctx: ExtensionContext,
-): boolean {
-	if (!ctx.hasUI) return false;
-
-	const name = extensionName(fileUrl);
-
-	// If there are multiple extensions stacked in 'ipi', they each fire session_start
-	// and try to apply their own mapped theme. The LAST one to fire wins.
-	// Since system-select is last in the ipi alias array, it was setting 'catppuccin-mocha'.
-
-	// We want to skip theme application for all secondary extensions if they are stacked,
-	// so the primary extension (first in the array) dictates the theme.
-	const primaryExt = primaryExtensionName();
-	if (primaryExt && primaryExt !== name) {
-		return true; // Pretend we succeeded, but don't overwrite the primary theme
-	}
-
-	let themeName = THEME_MAP[name];
-
-	if (!themeName) {
-		themeName = "synthwave";
-	}
-
-	const result = ctx.ui.setTheme(themeName);
-
-	if (!result.success && themeName !== "synthwave") {
-		return ctx.ui.setTheme("synthwave").success;
-	}
-
-	return result.success;
 }
 
 /**
