@@ -40,4 +40,14 @@ pi_quick() {
   pi -p --provider nvidia --model openai/gpt-oss-120b "$@"
 }
 
+# aicom - AI commit message generator
+# Uses a temp file to handle large staged diffs
+aicom() {
+  local diff_file
+  diff_file=$(mktemp)
+  git diff --cached >"$diff_file"
+  pi_quick @~/.zsh/ai/commit_changes.md "$(cat "$diff_file")"
+  rm -f "$diff_file"
+}
+
 export PI_NOTIFY_SOUND_CMD='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
