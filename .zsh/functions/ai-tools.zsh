@@ -11,15 +11,6 @@ oc() {
   opencode "$@"
 }
 
-# Question mark alias for opencode with special symbol support
-question() {
-  if [ $# -eq 0 ]; then
-    echo "Usage: ? <your question>"
-    return 1
-  fi
-  oc run --agent chat "$*"
-}
-
 # Translation alias
 translate() {
   if [ -z "$1" ]; then
@@ -37,7 +28,16 @@ pi() {
 }
 
 pi_quick() {
-  pi -p --provider nvidia --model openai/gpt-oss-120b "$@"
+  pi -p --provider ${PI_QUICK_PROVIDER} --model ${PI_QUICK_MODEL} "$@"
+}
+
+# Question mark alias for opencode with special symbol support
+question() {
+  if [ $# -eq 0 ]; then
+    echo "Usage: ? <your question>"
+    return 1
+  fi
+  pi_quick "$*"
 }
 
 # aicom - AI commit message generator
@@ -49,5 +49,3 @@ aicom() {
   pi_quick @~/.zsh/ai/commit_changes.md "$(cat "$diff_file")"
   rm -f "$diff_file"
 }
-
-export PI_NOTIFY_SOUND_CMD='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'

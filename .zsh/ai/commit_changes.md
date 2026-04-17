@@ -4,8 +4,8 @@ Generate a commit message following the Conventional Commits specification and c
 Given the following `git diff --cached` output, produce a concise commit message 
 
 ## Workflow
-  2. Generate a commit message following the Conventional Commits specification
-  3. Commit the changes
+  1. Generate a commit message following the Conventional Commits specification
+  2. Commit the changes
 
 # Important
 - Do NOT stage or add any files
