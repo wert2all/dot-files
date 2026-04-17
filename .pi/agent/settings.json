@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.67.5",
+  "lastChangelogVersion": "0.67.6",
   "defaultProvider": "nvidia",
   "defaultModel": "moonshotai/kimi-k2.5",
   "defaultThinkingLevel": "high",
@@ -50,7 +50,6 @@
   "packages": [
     "git:github.com/ferologics/pi-notify",
     "../../.local/share/pnpm/global/5/node_modules/pi-mcp-adapter",
-    "../../.local/share/pnpm/global/5/node_modules/pi-web-access",
-    "../../work/pi/agents"
+    "../../.local/share/pnpm/global/5/node_modules/pi-web-access"
   ]
 }
