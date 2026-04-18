@@ -46,6 +46,6 @@ aicom() {
   local diff_file
   diff_file=$(mktemp)
   git diff --cached >"$diff_file"
-  pi_quick @~/.zsh/ai/commit_changes.md "$(cat "$diff_file")"
+  pi_quick @~/.zsh/ai/commit_changes.md <"$diff_file"
   rm -f "$diff_file"
 }
