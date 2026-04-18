@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.67.6",
+  "lastChangelogVersion": "0.67.68",
   "defaultProvider": "nvidia",
   "defaultModel": "moonshotai/kimi-k2.5",
   "defaultThinkingLevel": "high",
@@ -19,24 +19,19 @@
   "subagents": {
     "agentOverrides": {
       "context-builder": {
-        "tools": false,
-        "skills": false
+        "disabled": true
       },
       "delegate": {
-        "tools": false,
-        "skills": false
+        "disabled": true
       },
       "planner": {
-        "tools": false,
-        "skills": false
+        "disabled": true
       },
       "researcher": {
-        "tools": false,
-        "skills": false
+        "disabled": true
       },
       "reviewer": {
-        "tools": false,
-        "skills": false
+        "desabled": true
       },
       "scout": {
         "model": "nvidia/openai/gpt-oss-120b"
@@ -49,8 +44,8 @@
   },
   "packages": [
     "git:github.com/ferologics/pi-notify",
-    "../../.local/share/pnpm/global/5/node_modules/pi-mcp-adapter",
-    "../../.local/share/pnpm/global/5/node_modules/pi-web-access",
-    "../../work/pi/agents"
+    "git:github.com/nicobailon/pi-subagents",
+    "git:github.com/nicobailon/pi-web-access",
+    "git:github.com/nicobailon/pi-mcp-adapter"
   ]
 }
