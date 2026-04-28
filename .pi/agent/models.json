@@ -59,6 +59,14 @@
           ]
         },
         {
+          "id": "z-ai/glm5.1",
+          "name": "[NVIDIA] GLM-5.1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ]
+        },
+        {
           "id": "deepseek-ai/deepseek-v3.2",
           "name": "[NVIDIA] DeepSeek 3.2",
           "reasoning": true,
