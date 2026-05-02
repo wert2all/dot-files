@@ -11,5 +11,6 @@ export OPENCODE_API_KEY=$(pass show api/ai/opencode_zen)
 export CONTEXT7_API_KEY=$(pass show api/ai/context7)
 export GITHUB_TOKEN=$(pass show token/github/opencode)
 export NVIDIA_API_KEY=$(pass show api/ai/nvidia)
+export POOLSIDE_API_KEY=$(pass show api/ai/poolside)
 
 export API_KEYS_LOADED=1

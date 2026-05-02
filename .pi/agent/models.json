@@ -1,5 +1,21 @@
 {
   "providers": {
+    "poolside": {
+      "baseUrl": "https://inference.poolside.ai/v1",
+      "api": "openai-completions",
+      "apiKey": "POOLSIDE_API_KEY",
+      "models": [
+        {
+          "id": "poolside/laguna-m.1",
+          "name": "Poolside Laguna-m.1",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ]
+        }
+      ]
+    },
     "nvidia": {
       "baseUrl": "https://integrate.api.nvidia.com/v1",
       "api": "openai-completions",
