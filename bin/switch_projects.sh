@@ -23,7 +23,10 @@ PROJECT_ANSIBLE=" ansible"
 PROJECT_BOOTSTRAP="󰣪 bootstrap.sh"
 
 PROJECT_ANGULAR_HOUSEHOLD=" angular-household"
+
 PROJECT_ANGULAR_DESK_LAN=" angular-desk-lan"
+PROJECT_GQL_MIDDLEWARE=" gql-middleware"
+
 PROJECT_ANGULAR_DEVFORGE="󰣪 angular-dev-forge"
 PROJECT_ANGULAR_WHEREISIT="󰣪 angular-whereisit"
 
@@ -38,6 +41,7 @@ PROJECTS_ARRAY=(
   "${PROJECT_LARAVEL_DEVFORGE}"
   "${PROJECT_ANGULAR_HOUSEHOLD}"
   "${PROJECT_ANGULAR_DESK_LAN}"
+  "${PROJECT_GQL_MIDDLEWARE}"
   "${PROJECT_ANGULAR_WHEREISIT}"
   "${PROJECT_LARAVEL_WHEREISIT}"
   "${PROJECT_ANSIBLE}"
@@ -83,6 +87,9 @@ $PROJECT_ANGULAR_HOUSEHOLD)
   ;;
 $PROJECT_ANGULAR_DESK_LAN)
   start_session "angular-desk-lan" "${HOME}/work/angular-home-page/"
+  ;;
+$PROJECT_GQL_MIDDLEWARE)
+  start_session "gql-middleware" "${HOME}/work/gql-middleware/"
   ;;
 $PROJECT_ANGULAR_DEVFORGE)
   start_session "angular-dev-forge" "${HOME}/work/angular-dev-forge/"

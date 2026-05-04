@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.71.1",
-  "defaultProvider": "poolside",
-  "defaultModel": "poolside/laguna-m.1",
+  "lastChangelogVersion": "0.72.1",
+  "defaultProvider": "nvidia",
+  "defaultModel": "z-ai/glm-5.1",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
