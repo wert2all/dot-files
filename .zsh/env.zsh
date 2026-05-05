@@ -46,5 +46,5 @@ export GPG_TTY=$(tty)
 
 # pi codding agent
 export PI_NOTIFY_SOUND_CMD='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
-export PI_QUICK_PROVIDER='nvidia'
-export PI_QUICK_MODEL='openai/gpt-oss-120b'
+export PI_QUICK_PROVIDER='opencode-go'
+export PI_QUICK_MODEL='deepseek-v4-flash'

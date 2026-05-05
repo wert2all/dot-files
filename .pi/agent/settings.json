@@ -1,20 +1,21 @@
 {
-  "lastChangelogVersion": "0.72.1",
-  "defaultProvider": "nvidia",
-  "defaultModel": "z-ai/glm-5.1",
+  "lastChangelogVersion": "0.73.0",
+  "defaultProvider": "opencode-go",
+  "defaultModel": "mimo-v2.5",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
   "theme": "rose-pine-moon",
   "enabledModels": [
-    "openrouter/minimax/minimax-m2.5:free",
-    "openrouter/poolside/laguna-m.1:free",
-    "nvidia/minimaxai/minimax-m2.7",
-    "nvidia/openai/gpt-oss-120b",
-    "nvidia/qwen/qwen3-coder-480b-a35b-instruct",
-    "nvidia/z-ai/glm-5.1",
-    "poolside/poolside/laguna-m.1",
-    "nvidia/moonshotai/kimi-k2.6"
+    "opencode-go/kimi-k2.6",
+    "opencode-go/glm-5.1",
+    "opencode-go/deepseek-v4-pro",
+    "opencode-go/deepseek-v4-flash",
+    "opencode-go/mimo-v2.5-pro",
+    "opencode-go/mimo-v2.5",
+    "opencode-go/minimax-m2.7",
+    "opencode/minimax-m2.5-free",
+    "opencode/big-pickle"
   ],
   "subagents": {
     "agentOverrides": {
