@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.73.0",
   "defaultProvider": "opencode-go",
-  "defaultModel": "mimo-v2.5",
+  "defaultModel": "kimi-k2.6",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
