@@ -34,12 +34,13 @@ export TMUX_TMPDIR=/tmp
 # Editor
 export EDITOR=nvim
 
-# PNPM
-export PNPM_HOME="$HOME/.local/share/pnpm"
+# pnpm
+export PNPM_HOME="/home/wert2all/.local/share/pnpm"
 case ":$PATH:" in
-*":$PNPM_HOME:"*) ;;
-*) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME/bin:"*) ;;
+*) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
+# pnpm end
 
 # GPG for git signing
 export GPG_TTY=$(tty)
