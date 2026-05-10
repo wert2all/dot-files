@@ -19,3 +19,4 @@ for file in ~/.zsh/aliases/*.zsh; do
 done
 unset file
 
+
