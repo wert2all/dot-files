@@ -54,6 +54,16 @@
       "skillFolderHash": "6e49c02b7e2b2f656556815df470bdec4d7e9c8b",
       "installedAt": "2026-04-11T09:52:35.658Z",
       "updatedAt": "2026-04-11T09:52:35.658Z"
+    },
+    "to-issues": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mattpocock/skills.git",
+      "skillPath": "skills/engineering/to-issues/SKILL.md",
+      "skillFolderHash": "b38c5aa6ae5d6903e60d3f74a7aafd32d02f2c06",
+      "pluginName": "mattpocock-skills",
+      "installedAt": "2026-05-16T18:46:51.391Z",
+      "updatedAt": "2026-05-16T18:46:51.391Z"
     }
   },
   "dismissed": {

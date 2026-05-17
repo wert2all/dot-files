@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.74.0",
   "defaultProvider": "opencode-go",
-  "defaultModel": "kimi-k2.6",
+  "defaultModel": "deepseek-v4-flash",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
@@ -15,7 +15,8 @@
     "opencode-go/mimo-v2.5",
     "opencode-go/minimax-m2.7",
     "opencode/minimax-m2.5-free",
-    "opencode/big-pickle"
+    "opencode/big-pickle",
+    "nvidia/minimaxai/minimax-m2.7"
   ],
   "subagents": {
     "agentOverrides": {
