@@ -1,36 +1,46 @@
 {
-	"$schema": "https://opencode.ai/config.json",
-	"model": "opencode-go/kimi-k2.6",
-	"small_model": "opencode-go/deepseek-v4-flash",
-	"autoupdate": false,
-	"mcp": {
-		"chrome-devtools": {
-			"type": "local",
-			"command": [
-				"npx",
-				"-y",
-				"chrome-devtools-mcp@latest"
-			],
-			"enabled": true
-		},
-		"context7": {
-			"type": "remote",
-			"url": "https://mcp.context7.com/mcp",
-			"headers": {
-				"CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
-			},
-			"enabled": true
-		},
-		"github": {
-			"type": "remote",
-			"url": "https://api.githubcopilot.com/mcp/",
-			"headers": {
-				"Authorization": "Bearer {env:GITHUB_TOKEN}"
-			},
-			"enabled": true
-		}
-	},
-	"experimental": {
-		"batch_tool": true
-	}
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode/minimax-m2.5-free",
+  "small_model": "opencode/deepseek-v4-flash-free",
+  "autoupdate": false,
+  "mcp": {
+    "chrome-devtools": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ],
+      "enabled": true
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+      },
+      "enabled": true
+    },
+    "github": {
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer {env:GITHUB_TOKEN}"
+      },
+      "enabled": true
+    }
+  },
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (local)",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {}
+    }
+  },
+  "experimental": {
+    "batch_tool": true
+  }
 }
