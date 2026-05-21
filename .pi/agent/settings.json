@@ -1,22 +1,16 @@
 {
   "lastChangelogVersion": "0.75.1",
-  "defaultProvider": "local",
-  "defaultModel": "qwen3.5:4b",
+  "defaultProvider": "nvidia",
+  "defaultModel": "z-ai/glm-5.1",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
   "theme": "rose-pine-moon",
   "enabledModels": [
+    "nvidia/minimaxai/minimax-m2.7",
     "opencode-go/kimi-k2.6",
-    "opencode-go/glm-5.1",
-    "opencode-go/deepseek-v4-pro",
-    "opencode-go/deepseek-v4-flash",
-    "opencode-go/mimo-v2.5-pro",
-    "opencode-go/mimo-v2.5",
-    "opencode-go/minimax-m2.7",
-    "opencode/minimax-m2.5-free",
     "opencode/big-pickle",
-    "nvidia/minimaxai/minimax-m2.7"
+    "opencode/minimax-m2.5-free"
   ],
   "subagents": {
     "agentOverrides": {
