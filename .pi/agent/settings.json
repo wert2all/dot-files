@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.75.1",
-  "defaultProvider": "nvidia",
-  "defaultModel": "z-ai/glm-5.1",
+  "lastChangelogVersion": "0.75.4",
+  "defaultProvider": "opencode",
+  "defaultModel": "big-pickle",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,

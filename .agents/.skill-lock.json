@@ -64,6 +64,15 @@
       "pluginName": "mattpocock-skills",
       "installedAt": "2026-05-16T18:46:51.391Z",
       "updatedAt": "2026-05-16T18:46:51.391Z"
+    },
+    "modern-web-guidance": {
+      "source": "GoogleChrome/modern-web-guidance",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/GoogleChrome/modern-web-guidance.git",
+      "skillPath": "skills/modern-web-guidance/SKILL.md",
+      "skillFolderHash": "8729a5e725e655ba8688a93828e03131fb13857e",
+      "installedAt": "2026-05-21T21:51:01.341Z",
+      "updatedAt": "2026-05-21T21:51:01.341Z"
     }
   },
   "dismissed": {
