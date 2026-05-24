@@ -33,7 +33,7 @@ hide_edge_borders smart
 # client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 # client.background        $base
 
-#gaps 
+#gaps
 
 gaps inner 15
 gaps outer 0
@@ -87,7 +87,7 @@ exec_always "setxkbmap -layout us,ua -variant ,, -option grp:alt_shift_toggle"
 #screenshot
 bindsym $mod+Shift+t exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
 
-bindsym $mod+a exec --no-startup-id ~/bin/switch_projects.sh
+bindsym $mod+a exec --no-startup-id ~/bin/dm/switch_projects.sh
 
 # Use pactl to adjust volume in PulseAudio
 
@@ -95,8 +95,8 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 
-bindsym XF86AudioMicMute exec --no-startup-id ~/.config/hypr/scripts/system-volume-control.sh mm 
-bindsym $mod+Shift+m exec --no-startup-id ~/.config/hypr/scripts/system-volume-control.sh mm 
+bindsym XF86AudioMicMute exec --no-startup-id ~/.config/hypr/scripts/system-volume-control.sh mm
+bindsym $mod+Shift+m exec --no-startup-id ~/.config/hypr/scripts/system-volume-control.sh mm
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
