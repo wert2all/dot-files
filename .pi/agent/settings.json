@@ -10,7 +10,9 @@
     "nvidia/minimaxai/minimax-m2.7",
     "opencode-go/kimi-k2.6",
     "opencode/big-pickle",
-    "opencode/minimax-m2.5-free"
+    "opencode/minimax-m2.5-free",
+    "opencode/deepseek-v4-flash-free",
+    "nvidia/deepseek-ai/deepseek-v4-pro"
   ],
   "subagents": {
     "agentOverrides": {
