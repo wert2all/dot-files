@@ -19,6 +19,63 @@
     "opencode-go/glm-5.1",
     "opencode-go/minimax-m2.7"
   ],
+  "modelMeta": {
+    "config": {
+      "enabled": true,
+      "badges": {
+        "pay": " ",
+        "free": "",
+        "fast": "󱄟",
+        "standart": "󰾆"
+      }
+    },
+    "models": {
+      "opencode-go/kimi-k2.6": {
+        "type": "pay",
+        "speed": "standart"
+      },
+      "opencode-go/mimo-v2.5-pro": {
+        "type": "pay",
+        "speed": "standart"
+      },
+      "opencode-go/glm-5.1": {
+        "type": "pay",
+        "speed": "standart"
+      },
+      "opencode-go/minimax-m2.7": {
+        "type": "pay",
+        "speed": "standart"
+      },
+      "opencode/big-pickle": {
+        "type": "free",
+        "speed": "fast"
+      },
+      "opencode/deepseek-v4-flash-free": {
+        "type": "free",
+        "speed": "fast"
+      },
+      "openrouter/moonshotai/kimi-k2.6:free": {
+        "type": "free",
+        "speed": "standart"
+      },
+      "nvidia/z-ai/glm-5.1": {
+        "type": "free",
+        "speed": "standart"
+      },
+      "nvidia/minimaxai/minimax-m2.7": {
+        "type": "free",
+        "speed": "standart"
+      },
+      "nvidia/moonshotai/kimi-k2.6": {
+        "type": "free",
+        "speed": "standart"
+      },
+      "nvidia/deepseek-ai/deepseek-v4-pro": {
+        "type": "free",
+        "speed": "standart"
+      }
+    }
+  },
   "subagents": {
     "agentOverrides": {
       "context-builder": {
