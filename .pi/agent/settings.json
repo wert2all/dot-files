@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.78.0",
   "defaultProvider": "nvidia",
-  "defaultModel": "z-ai/glm-5.1",
+  "defaultModel": "minimaxai/minimax-m2.7",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
@@ -49,6 +49,7 @@
     "git:github.com/ferologics/pi-notify",
     "git:github.com/nicobailon/pi-subagents",
     "git:github.com/nicobailon/pi-web-access",
-    "git:github.com/nicobailon/pi-mcp-adapter"
+    "git:github.com/nicobailon/pi-mcp-adapter",
+    "npm:@juicesharp/rpiv-ask-user-question"
   ]
 }
