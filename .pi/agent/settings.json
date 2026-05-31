@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.78.0",
   "defaultProvider": "nvidia",
-  "defaultModel": "moonshotai/kimi-k2.6",
+  "defaultModel": "z-ai/glm-5.1",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,

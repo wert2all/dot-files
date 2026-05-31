@@ -16,7 +16,7 @@
     "nvidia": {
       "baseUrl": "https://integrate.api.nvidia.com/v1",
       "api": "openai-completions",
-      "apiKey": "$NVIDIA_API_KEY",
+      "apiKey": "!command pass show api/ai/nvidia",
       "models": [
         {
           "id": "openai/gpt-oss-120b",
