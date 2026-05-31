@@ -24,7 +24,7 @@ translate() {
 
 pi() {
   check_api_keys
-  ~/.local/share/pnpm/pi "$@"
+  ~/.local/share/pnpm/bin/pi "$@"
 }
 
 pi_quick() {

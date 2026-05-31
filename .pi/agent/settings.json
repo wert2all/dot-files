@@ -1,18 +1,23 @@
 {
-  "lastChangelogVersion": "0.75.4",
-  "defaultProvider": "opencode",
-  "defaultModel": "big-pickle",
+  "lastChangelogVersion": "0.78.0",
+  "defaultProvider": "nvidia",
+  "defaultModel": "moonshotai/kimi-k2.6",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
   "theme": "rose-pine-moon",
   "enabledModels": [
-    "nvidia/minimaxai/minimax-m2.7",
-    "opencode-go/kimi-k2.6",
+    "openrouter/moonshotai/kimi-k2.6:free",
     "opencode/big-pickle",
-    "opencode/minimax-m2.5-free",
     "opencode/deepseek-v4-flash-free",
-    "nvidia/deepseek-ai/deepseek-v4-pro"
+    "nvidia/minimaxai/minimax-m2.7",
+    "nvidia/deepseek-ai/deepseek-v4-pro",
+    "nvidia/moonshotai/kimi-k2.6",
+    "nvidia/z-ai/glm-5.1",
+    "opencode-go/kimi-k2.6",
+    "opencode-go/mimo-v2.5-pro",
+    "opencode-go/glm-5.1",
+    "opencode-go/minimax-m2.7"
   ],
   "subagents": {
     "agentOverrides": {
