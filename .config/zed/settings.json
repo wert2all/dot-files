@@ -1,17 +1,14 @@
 {
   "autosave": "on_window_change",
-
   //buffer
   "buffer_font_family": "Maple Mono NF",
   "buffer_font_size": 18,
   "ui_font_size": 20,
   "ui_font_family": "CaskaydiaCove Nerd Font",
   "buffer_line_height": "comfortable",
-
   //agent buffer
   "agent_buffer_font_size": 20,
   "agent_ui_font_size": 20,
-
   //theme
   "icon_theme": "Warm Charmed Icons",
   "theme": "Aura Dark",
@@ -39,7 +36,6 @@
       },
     },
   },
-
   "title_bar": {
     "show_onboarding_banner": false,
     "show_project_items": false,
@@ -90,45 +86,39 @@
   "indent_guides": {
     "enabled": false,
   },
-
   "cursor_shape": "block",
   "cursor_blink": false,
   "selection_highlight": false,
   "seed_search_query_from_cursor": "never",
   "show_whitespaces": "none",
-  // "drag_and_drop_selection": {
-  //   "enabled": false,
-  // },
-  // "current_line_highlight": "none",
-  // "tab_size": 2,
-  // "auto_indent": false,
-  // "auto_indent_on_paste": false,
-  // "show_completions_on_input": false,
-  // "show_completion_documentation": false,
-  // "inline_code_actions": false,
-  // "lsp_document_colors": "none",
-  // "hover_popover_enabled": false,
-  // "format_on_save": "on",
-
+  "drag_and_drop_selection": {
+    "enabled": false,
+  },
+  "current_line_highlight": "line",
+  "tab_size": 2,
+  "auto_indent": "preserve_indent",
+  "auto_indent_on_paste": false,
+  "show_completions_on_input": false,
+  "show_completion_documentation": false,
+  "inline_code_actions": false,
+  "lsp_document_colors": "none",
+  "hover_popover_enabled": false,
+  "format_on_save": "on",
   // "extend_comment_on_newline": false,
-  // "horizontal_scroll_margin": 1,
-  // "vertical_scroll_margin": 1,
-
+  "horizontal_scroll_margin": 1,
+  "vertical_scroll_margin": 1,
   "centered_layout": {
     "right_padding": 0.15,
     "left_padding": 0.15,
   },
-
   "git": {
     "inline_blame": {
       "enabled": false,
     },
   },
-
   "session": {
     "restore_unsaved_buffers": false,
   },
-
   "vim_mode": false,
   "auto_update": false,
   "when_closing_with_no_tabs": "keep_window_open",
@@ -136,7 +126,6 @@
   "close_on_file_delete": true,
   "restore_on_file_reopen": false,
   "restore_on_startup": "empty_tab",
-
   "telemetry": {
     "diagnostics": true,
     "metrics": false,
