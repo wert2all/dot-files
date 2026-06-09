@@ -7,3 +7,4 @@
 bin/oh-my-posh
 .gnupg/trustdb.gpg
 .gnupg/pubring.kbx
+.pi/agent/trust.json
