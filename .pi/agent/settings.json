@@ -1,13 +1,12 @@
 {
-  "lastChangelogVersion": "0.79.1",
-  "defaultProvider": "opencode-go",
-  "defaultModel": "glm-5.1",
+  "lastChangelogVersion": "0.79.6",
+  "defaultProvider": "opencode",
+  "defaultModel": "big-pickle",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
   "theme": "rose-pine-moon",
   "enabledModels": [
-    "openrouter/moonshotai/kimi-k2.6:free",
     "openrouter/openrouter/owl-alpha",
     "opencode/big-pickle",
     "opencode/deepseek-v4-flash-free",
@@ -59,10 +58,6 @@
       "openrouter/openrouter/owl-alpha": {
         "type": "free",
         "speed": "fast"
-      },
-      "openrouter/moonshotai/kimi-k2.6:free": {
-        "type": "free",
-        "speed": "standart"
       },
       "nvidia/z-ai/glm-5.1": {
         "type": "free",
