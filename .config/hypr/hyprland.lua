@@ -53,3 +53,6 @@ require("keybindings")
 require("animations")
 require("rules")
 require("theme")
+
+-- HyprMod managed settings
+require("hyprland-gui")
