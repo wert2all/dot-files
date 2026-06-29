@@ -130,7 +130,8 @@ function generateStatuses(statuses: ReadonlyMap<string, string>): string {
 function getContextUsage(usage: ContextUsage | undefined) {
   const pct = usage && usage.percent !== null ? usage.percent : 0;
   const filled = Math.round(pct / 10);
-  const bar = "#".repeat(filled) + "-".repeat(10 - filled);
+  const bar =
+    "#".repeat(filled) + "-".repeat(10 - (filled <= 10 ? filled : 10));
   return `[${bar}] ${Math.round(pct)}% `;
 }
 

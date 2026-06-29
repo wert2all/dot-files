@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.79.6",
-  "defaultProvider": "opencode",
-  "defaultModel": "big-pickle",
+  "lastChangelogVersion": "0.80.2",
+  "defaultProvider": "nvidia",
+  "defaultModel": "minimaxai/minimax-m2.7",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
@@ -18,7 +18,9 @@
     "opencode-go/kimi-k2.6",
     "opencode-go/mimo-v2.5-pro",
     "opencode-go/glm-5.1",
-    "opencode-go/minimax-m2.7"
+    "opencode-go/minimax-m2.7",
+    "nvidia/minimaxai/minimax-m3",
+    "opencode-go/kimi-k2.7-code"
   ],
   "modelMeta": {
     "config": {
@@ -31,6 +33,10 @@
       }
     },
     "models": {
+      "opencode-go/kimi-k2.7-code": {
+        "type": "pay",
+        "speed": "standart"
+      },
       "opencode-go/kimi-k2.6": {
         "type": "pay",
         "speed": "standart"
