@@ -42,10 +42,15 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# NVM
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
 # GPG for git signing
 export GPG_TTY=$(tty)
 
 # pi codding agent
 export PI_NOTIFY_SOUND_CMD='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
-export PI_QUICK_PROVIDER='openrouter'
-export PI_QUICK_MODEL='openrouter/owl-alpha'
+export PI_QUICK_PROVIDER='opencode'
+export PI_QUICK_MODEL='deepseek-v4-flash-free'
