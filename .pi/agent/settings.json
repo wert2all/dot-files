@@ -1,13 +1,12 @@
 {
   "lastChangelogVersion": "0.80.2",
-  "defaultProvider": "nvidia",
-  "defaultModel": "minimaxai/minimax-m2.7",
+  "defaultProvider": "opencode",
+  "defaultModel": "big-pickle",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
   "theme": "rose-pine-moon",
   "enabledModels": [
-    "openrouter/openrouter/owl-alpha",
     "opencode/big-pickle",
     "opencode/deepseek-v4-flash-free",
     "nvidia/minimaxai/minimax-m2.7",
