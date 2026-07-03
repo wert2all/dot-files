@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.80.3",
   "defaultProvider": "nvidia",
-  "defaultModel": "minimaxai/minimax-m3",
+  "defaultModel": "z-ai/glm-5.2",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
@@ -13,7 +13,6 @@
     "nvidia/minimaxai/minimax-m3",
     "nvidia/deepseek-ai/deepseek-v4-pro",
     "nvidia/moonshotai/kimi-k2.6",
-    "nvidia/z-ai/glm-5.1",
     "nvidia/z-ai/glm-5.2",
     "nvidia/openai/gpt-oss-120b",
     "opencode-go/kimi-k2.6",
@@ -63,10 +62,6 @@
       "openrouter/openrouter/owl-alpha": {
         "type": "free",
         "speed": "fast"
-      },
-      "nvidia/z-ai/glm-5.1": {
-        "type": "free",
-        "speed": "standart"
       },
       "nvidia/z-ai/glm-5.2": {
         "type": "free",
