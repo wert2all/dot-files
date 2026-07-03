@@ -77,6 +77,14 @@
           ]
         },
         {
+          "id": "deepseek-ai/deepseek-v4-flash",
+          "name": "[NVIDIA] DeepSeek 4-flash",
+          "reasoning": true,
+          "input": [
+            "text"
+          ]
+        },
+        {
           "id": "google/gemma-4-31b-it",
           "name": "[NVIDIA] Google Gemma-4 31B",
           "reasoning": true,
