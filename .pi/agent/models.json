@@ -45,14 +45,6 @@
           ]
         },
         {
-          "id": "z-ai/glm-5.1",
-          "name": "[NVIDIA] GLM-5.1",
-          "reasoning": true,
-          "input": [
-            "text"
-          ]
-        },
-        {
           "id": "z-ai/glm-5.2",
           "name": "[NVIDIA] GLM-5.2",
           "reasoning": true,
