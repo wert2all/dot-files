@@ -1,18 +1,20 @@
 {
   "lastChangelogVersion": "0.80.3",
-  "defaultProvider": "nvidia",
-  "defaultModel": "z-ai/glm-5.2",
+  "defaultProvider": "opencode",
+  "defaultModel": "big-pickle",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
   "theme": "rose-pine-moon",
   "enabledModels": [
     "opencode/big-pickle",
-    "opencode/deepseek-v4-flash-free",
     "nvidia/minimaxai/minimax-m3",
     "nvidia/deepseek-ai/deepseek-v4-pro",
     "nvidia/moonshotai/kimi-k2.6",
-    "nvidia/z-ai/glm-5.2"
+    "nvidia/z-ai/glm-5.2",
+    "opencode-go/kimi-k2.7-code",
+    "opencode-go/glm-5.2",
+    "opencode-go/mimo-v2.5"
   ],
   "modelMeta": {
     "config": {
@@ -25,6 +27,10 @@
       }
     },
     "models": {
+      "opencode-go/mimo-v2.5": {
+        "type": "pay",
+        "speed": "fast"
+      },
       "opencode-go/kimi-k2.7-code": {
         "type": "pay",
         "speed": "standart"
@@ -38,6 +44,10 @@
         "speed": "standart"
       },
       "opencode-go/glm-5.1": {
+        "type": "pay",
+        "speed": "standart"
+      },
+      "opencode-go/glm-5.2": {
         "type": "pay",
         "speed": "standart"
       },
