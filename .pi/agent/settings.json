@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.80.3",
-  "defaultProvider": "opencode",
-  "defaultModel": "big-pickle",
+  "defaultProvider": "nvidia",
+  "defaultModel": "z-ai/glm-5.2",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
@@ -9,12 +9,7 @@
   "enabledModels": [
     "opencode/big-pickle",
     "nvidia/minimaxai/minimax-m3",
-    "nvidia/deepseek-ai/deepseek-v4-pro",
-    "nvidia/moonshotai/kimi-k2.6",
-    "nvidia/z-ai/glm-5.2",
-    "opencode-go/kimi-k2.7-code",
-    "opencode-go/glm-5.2",
-    "opencode-go/mimo-v2.5"
+    "nvidia/z-ai/glm-5.2"
   ],
   "modelMeta": {
     "config": {
