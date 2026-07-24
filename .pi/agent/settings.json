@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.80.7",
-  "defaultProvider": "nvidia",
-  "defaultModel": "z-ai/glm-5.2",
+  "lastChangelogVersion": "0.82.0",
+  "defaultProvider": "opencode",
+  "defaultModel": "big-pickle",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
@@ -10,8 +10,8 @@
     "opencode/big-pickle",
     "nvidia/minimaxai/minimax-m3",
     "nvidia/z-ai/glm-5.2",
-    "opencode-go/glm-5.2",
-    "opencode-go/kimi-k2.7-code"
+    "openrouter/cohere/north-mini-code:free",
+    "nvidia/deepseek-ai/deepseek-v4-flash"
   ],
   "modelMeta": {
     "config": {
