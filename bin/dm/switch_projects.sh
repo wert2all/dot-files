@@ -25,23 +25,17 @@ PROJECT_BOOTSTRAP="󰣪 bootstrap.sh"
 PROJECT_ANGULAR_HOUSEHOLD=" angular-household"
 
 PROJECT_ANGULAR_DESK_LAN=" angular-desk-lan"
-PROJECT_GQL_MIDDLEWARE=" gql-middleware"
 
-PROJECT_ANGULAR_DEVFORGE="󰣪 angular-dev-forge"
 PROJECT_ANGULAR_WHEREISIT="󰣪 angular-whereisit"
 
-PROJECT_LARAVEL_DEVFORGE="󰣪 laravel-dev-forge"
 PROJECT_LARAVEL_WHEREISIT="󰣪 laravel-whereisit"
 
 PROJECTS_ARRAY=(
   "${NVIM_ENTRY}"
   "${DOT_ENTRY}"
   "${OBSIDIAN_ENTRY}"
-  "${PROJECT_ANGULAR_DEVFORGE}"
-  "${PROJECT_LARAVEL_DEVFORGE}"
   "${PROJECT_ANGULAR_HOUSEHOLD}"
   "${PROJECT_ANGULAR_DESK_LAN}"
-  "${PROJECT_GQL_MIDDLEWARE}"
   "${PROJECT_ANGULAR_WHEREISIT}"
   "${PROJECT_LARAVEL_WHEREISIT}"
   "${PROJECT_ANSIBLE}"
@@ -87,15 +81,6 @@ $PROJECT_ANGULAR_HOUSEHOLD)
   ;;
 $PROJECT_ANGULAR_DESK_LAN)
   start_session "angular-desk-lan" "${HOME}/work/angular-home-page/"
-  ;;
-$PROJECT_GQL_MIDDLEWARE)
-  start_session "gql-middleware" "${HOME}/work/gql-middleware/"
-  ;;
-$PROJECT_ANGULAR_DEVFORGE)
-  start_session "angular-dev-forge" "${HOME}/work/angular-dev-forge/"
-  ;;
-$PROJECT_LARAVEL_DEVFORGE)
-  start_session "laravel-dev-forge" "${HOME}/work/laravel-dev-forge/"
   ;;
 $PROJECT_BOOTSTRAP)
   start_session "bootstrap.sh" "${HOME}/work/bootstrap.sh/"
