@@ -95,6 +95,22 @@
           ]
         }
       ]
+    },
+    "kenari": {
+      "baseUrl": "https://kenari.id/v1",
+      "api": "openai-completions",
+      "apiKey": "!command pass show api/ai/kenari",
+      "models": [
+        {
+          "id": "kimi-k2-7-code:free",
+          "name": "[Kenari] Kimi k2.7 code",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ]
+        }
+      ]
     }
   }
 }

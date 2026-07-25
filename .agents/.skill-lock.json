@@ -114,6 +114,15 @@
       "pluginName": "mattpocock-skills",
       "installedAt": "2026-07-08T18:38:24.365Z",
       "updatedAt": "2026-07-08T18:38:24.365Z"
+    },
+    "prompt-engineer": {
+      "source": "jeffallan/claude-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/jeffallan/claude-skills.git",
+      "skillPath": "skills/prompt-engineer/SKILL.md",
+      "skillFolderHash": "3c306a45231f1ce2891b1a89132b558a31cd744d",
+      "installedAt": "2026-07-25T19:54:57.832Z",
+      "updatedAt": "2026-07-25T19:54:57.832Z"
     }
   },
   "dismissed": {
