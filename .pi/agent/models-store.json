@@ -549,7 +549,7 @@
         "maxTokens": 131072
       }
     ],
-    "checkedAt": 1784962603010,
+    "checkedAt": 1784995713403,
     "lastModified": 1784920531000
   },
   "openrouter": {
@@ -7133,7 +7133,7 @@
         }
       }
     ],
-    "checkedAt": 1784962602996,
+    "checkedAt": 1784995713417,
     "lastModified": 1784920538000
   },
   "opencode": {
@@ -8790,7 +8790,7 @@
         "maxTokens": 65536
       }
     ],
-    "checkedAt": 1784962603016,
+    "checkedAt": 1784995713405,
     "lastModified": 1784920535000
   },
   "opencode-go": {
@@ -9234,7 +9234,7 @@
         "maxTokens": 65536
       }
     ],
-    "checkedAt": 1784962603013,
+    "checkedAt": 1784995713353,
     "lastModified": 1784920536000
   }
 }
