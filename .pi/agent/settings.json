@@ -104,10 +104,10 @@
   },
   "subagents": {
     "agentOverrides": {
-      "context-builder": {
+      "advisor": {
         "disabled": true
       },
-      "delegate": {
+      "oracle": {
         "disabled": true
       },
       "planner": {
@@ -116,20 +116,17 @@
       "researcher": {
         "disabled": true
       },
+      "context-builder": {
+        "disabled": true
+      },
       "reviewer": {
-        "desabled": true
-      },
-      "scout": {
-        "model": "nvidia/openai/gpt-oss-120b"
-      },
-      "worker": {
-        "model": "nvidia/moonshotai/kimi-k2.5",
-        "thinking": "high"
+        "disabled": true
       }
     }
   },
   "packages": [
-    "npm:@juicesharp/rpiv-ask-user-question"
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:pi-subagents"
   ],
   "hideThinkingBlock": false
 }
