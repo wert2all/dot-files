@@ -549,8 +549,9 @@
         "maxTokens": 131072
       }
     ],
-    "checkedAt": 1785010814372,
-    "lastModified": 1784920531000
+    "checkedAt": 1785094079371,
+    "lastModified": 1784920531000,
+    "etag": "W/\"0782c410eaab25e2a6a97da49dad4b1c\""
   },
   "openrouter": {
     "models": [
@@ -7133,8 +7134,9 @@
         }
       }
     ],
-    "checkedAt": 1785010814459,
-    "lastModified": 1784920538000
+    "checkedAt": 1785094079244,
+    "lastModified": 1784920538000,
+    "etag": "W/\"4aac5166b816fe7aee446728527a680a\""
   },
   "opencode": {
     "models": [
@@ -8790,8 +8792,9 @@
         "maxTokens": 65536
       }
     ],
-    "checkedAt": 1785010814280,
-    "lastModified": 1784920535000
+    "checkedAt": 1785094079245,
+    "lastModified": 1784920535000,
+    "etag": "W/\"f97631422878054c850ab56a9a8f2537\""
   },
   "opencode-go": {
     "models": [
@@ -9234,7 +9237,8 @@
         "maxTokens": 65536
       }
     ],
-    "checkedAt": 1785010814474,
-    "lastModified": 1784920536000
+    "checkedAt": 1785094079241,
+    "lastModified": 1784920536000,
+    "etag": "W/\"59a6b3ee1050eab26eca0c9f9df57659\""
   }
 }

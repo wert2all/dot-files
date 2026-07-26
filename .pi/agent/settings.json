@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.82.1",
   "defaultProvider": "nvidia",
-  "defaultModel": "z-ai/glm-5.2",
+  "defaultModel": "minimaxai/minimax-m3",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
@@ -103,6 +103,7 @@
     }
   },
   "subagents": {
+    "timeoutMs": 300000,
     "agentOverrides": {
       "advisor": {
         "disabled": true
@@ -121,6 +122,10 @@
       },
       "reviewer": {
         "disabled": true
+      },
+      "scout": {
+        "model": "opencode/big-pickle",
+        "thinking": "high"
       }
     }
   },
