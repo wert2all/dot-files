@@ -1,6 +1,10 @@
-onboarding = false
+[keys]
+prefix = "ctrl+a"
+next_tab = "shift+right"
+previous_tab = "shift+left"
+
 [theme]
-name = "terminal"
+name = "vesper"
 auto_switch = false
 
 [ui.toast]
