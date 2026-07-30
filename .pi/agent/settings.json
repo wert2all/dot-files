@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.82.1",
   "defaultProvider": "nvidia",
-  "defaultModel": "minimaxai/minimax-m3",
+  "defaultModel": "z-ai/glm-5.2",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,

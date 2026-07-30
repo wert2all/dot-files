@@ -31,6 +31,10 @@ pi_quick() {
   pi -p --provider ${PI_QUICK_PROVIDER} --model ${PI_QUICK_MODEL} "$@"
 }
 
+check_model(){
+  pi -p --provider nvidia --model "nvidia/z-ai/glm-5.2" "hi"
+}
+
 # Question mark alias for opencode with special symbol support
 question() {
   if [ $# -eq 0 ]; then
