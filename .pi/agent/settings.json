@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.82.1",
+  "lastChangelogVersion": "0.83.0",
   "defaultProvider": "nvidia",
   "defaultModel": "z-ai/glm-5.2",
   "defaultThinkingLevel": "high",
@@ -11,7 +11,9 @@
     "nvidia/minimaxai/minimax-m3",
     "nvidia/z-ai/glm-5.2",
     "openrouter/cohere/north-mini-code:free",
-    "nvidia/deepseek-ai/deepseek-v4-flash"
+    "nvidia/deepseek-ai/deepseek-v4-flash",
+    "opencode/laguna-s-2.1-free",
+    "opencode/mimo-v2.5-free"
   ],
   "modelMeta": {
     "config": {
@@ -53,6 +55,10 @@
         "speed": "standart"
       },
       "opencode/big-pickle": {
+        "type": "free",
+        "speed": "fast"
+      },
+      "opencode/laguna-s-2.1-free": {
         "type": "free",
         "speed": "fast"
       },
@@ -133,5 +139,5 @@
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:pi-subagents"
   ],
-  "hideThinkingBlock": false
+  "hideThinkingBlock": true
 }
