@@ -1,14 +1,14 @@
 {
   "version": 3,
   "skills": {
-    "create-agentsmd": {
-      "source": "github/awesome-copilot",
+    "caveman": {
+      "source": "juliusbrussee/caveman",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/github/awesome-copilot.git",
-      "skillPath": "skills/create-agentsmd/SKILL.md",
-      "skillFolderHash": "290ab8ae85ba8695e9bceb674e74177e76f8633d",
-      "installedAt": "2026-04-05T22:25:47.151Z",
-      "updatedAt": "2026-04-05T22:25:47.151Z"
+      "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
+      "skillPath": "skills/caveman/SKILL.md",
+      "skillFolderHash": "3e4386ca694c65a65ba84024f0fe2646a8c9076a",
+      "installedAt": "2026-08-06T12:06:24.706Z",
+      "updatedAt": "2026-08-06T12:07:58.055Z"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
@@ -16,89 +16,62 @@
       "sourceUrl": "https://github.com/vercel-labs/skills.git",
       "skillPath": "skills/find-skills/SKILL.md",
       "skillFolderHash": "76a98a285cb0434f3d39e1a873823556330e398b",
-      "installedAt": "2026-04-05T22:25:50.920Z",
-      "updatedAt": "2026-07-30T12:33:39.204Z"
+      "installedAt": "2026-08-06T12:06:27.810Z",
+      "updatedAt": "2026-08-06T12:06:27.810Z"
     },
     "caveman-commit": {
-      "source": "JuliusBrussee/caveman",
+      "source": "juliusbrussee/caveman",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/JuliusBrussee/caveman.git",
+      "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
       "skillPath": "skills/caveman-commit/SKILL.md",
       "skillFolderHash": "6ba13fa3503e9607eed8f94828b524510d83b7ef",
-      "installedAt": "2026-04-11T09:52:34.822Z",
-      "updatedAt": "2026-07-02T13:36:43.399Z"
-    },
-    "caveman-review": {
-      "source": "JuliusBrussee/caveman",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/JuliusBrussee/caveman.git",
-      "skillPath": "skills/caveman-review/SKILL.md",
-      "skillFolderHash": "2d9762b7aec395b9713fde57fb8965bc3bbd2c3f",
-      "installedAt": "2026-04-11T09:52:35.350Z",
-      "updatedAt": "2026-07-02T13:36:45.673Z"
-    },
-    "modern-web-guidance": {
-      "source": "GoogleChrome/modern-web-guidance",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/GoogleChrome/modern-web-guidance.git",
-      "skillPath": "skills/modern-web-guidance/SKILL.md",
-      "skillFolderHash": "9999944bbd00550eba8f01f313a59bf44ef28fd8",
-      "installedAt": "2026-05-21T21:51:01.341Z",
-      "updatedAt": "2026-07-30T12:33:52.474Z"
-    },
-    "grill-with-docs": {
-      "source": "mattpocock/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/engineering/grill-with-docs/SKILL.md",
-      "skillFolderHash": "5fdcdeedf2d0c73b3ecb1da0a464dd885590f8d6",
-      "installedAt": "2026-07-08T18:36:51.385Z",
-      "updatedAt": "2026-07-30T12:33:41.529Z"
+      "installedAt": "2026-08-06T12:08:48.256Z",
+      "updatedAt": "2026-08-06T12:08:48.256Z"
     },
     "code-review": {
-      "source": "mattpocock/skills",
+      "source": "wert2all/skills",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/engineering/code-review/SKILL.md",
-      "skillFolderHash": "474a27d46efb1eff9724a29ae1edc9cd8a75d911",
-      "installedAt": "2026-07-08T18:38:24.353Z",
-      "updatedAt": "2026-07-30T12:33:43.449Z"
+      "sourceUrl": "https://github.com/wert2all/skills.git",
+      "skillPath": "skills/code-review/SKILL.md",
+      "skillFolderHash": "d8c7dcc09c55c2d4ad3f4895b3c5d8ba02257556",
+      "installedAt": "2026-08-06T12:09:56.308Z",
+      "updatedAt": "2026-08-06T12:09:56.308Z"
     },
-    "to-spec": {
-      "source": "mattpocock/skills",
+    "commit": {
+      "source": "wert2all/skills",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/engineering/to-spec/SKILL.md",
-      "skillFolderHash": "bf698b96b5d8798d110d9872e32b9310728555b0",
-      "installedAt": "2026-07-08T18:38:24.355Z",
-      "updatedAt": "2026-07-30T12:33:45.773Z"
+      "sourceUrl": "https://github.com/wert2all/skills.git",
+      "skillPath": "skills/commit/SKILL.md",
+      "skillFolderHash": "c677ac9972111ec278088cb5242c1f9b272f3bac",
+      "installedAt": "2026-08-06T12:09:56.311Z",
+      "updatedAt": "2026-08-06T12:09:56.311Z"
     },
-    "to-tickets": {
-      "source": "mattpocock/skills",
+    "domain-modeling": {
+      "source": "wert2all/skills",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/engineering/to-tickets/SKILL.md",
-      "skillFolderHash": "80c1bedbdaa72a4abd524055013accb4fe0ea8c4",
-      "installedAt": "2026-07-08T18:38:24.364Z",
-      "updatedAt": "2026-07-30T12:33:47.975Z"
+      "sourceUrl": "https://github.com/wert2all/skills.git",
+      "skillPath": "skills/domain-modeling/SKILL.md",
+      "skillFolderHash": "028a0e44b23909cbdd715aa00546d5c1c46ae4d6",
+      "installedAt": "2026-08-06T12:09:56.320Z",
+      "updatedAt": "2026-08-06T12:09:56.320Z"
     },
-    "wayfinder": {
-      "source": "mattpocock/skills",
+    "grill-with-docs": {
+      "source": "wert2all/skills",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/engineering/wayfinder/SKILL.md",
-      "skillFolderHash": "33ed747fb30668c0e7b61698af5268c25c0d75cb",
-      "installedAt": "2026-07-08T18:38:24.365Z",
-      "updatedAt": "2026-07-30T12:33:50.154Z"
+      "sourceUrl": "https://github.com/wert2all/skills.git",
+      "skillPath": "skills/grill-with-docs/SKILL.md",
+      "skillFolderHash": "21adba95de7d93065d9fec725ddf37f871e01d05",
+      "installedAt": "2026-08-06T12:09:56.321Z",
+      "updatedAt": "2026-08-06T12:09:56.321Z"
     },
-    "prompt-engineer": {
-      "source": "jeffallan/claude-skills",
+    "grilling": {
+      "source": "wert2all/skills",
       "sourceType": "github",
-      "sourceUrl": "https://github.com/jeffallan/claude-skills.git",
-      "skillPath": "skills/prompt-engineer/SKILL.md",
-      "skillFolderHash": "3c306a45231f1ce2891b1a89132b558a31cd744d",
-      "installedAt": "2026-07-25T19:54:57.832Z",
-      "updatedAt": "2026-07-25T19:54:57.832Z"
+      "sourceUrl": "https://github.com/wert2all/skills.git",
+      "skillPath": "skills/grilling/SKILL.md",
+      "skillFolderHash": "3fbeb989a808921c5288e1b0de23aa8221ec9cc5",
+      "installedAt": "2026-08-06T12:09:56.323Z",
+      "updatedAt": "2026-08-06T12:09:56.323Z"
     },
     "task-difficulty": {
       "source": "wert2all/skills",
@@ -106,8 +79,35 @@
       "sourceUrl": "https://github.com/wert2all/skills.git",
       "skillPath": "skills/task-difficulty/SKILL.md",
       "skillFolderHash": "125dda038af76fda7803a2af9d43985c9e48bc1e",
-      "installedAt": "2026-07-30T12:19:36.833Z",
-      "updatedAt": "2026-07-30T12:33:55.738Z"
+      "installedAt": "2026-08-06T12:09:56.323Z",
+      "updatedAt": "2026-08-06T12:09:56.323Z"
+    },
+    "to-spec": {
+      "source": "wert2all/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wert2all/skills.git",
+      "skillPath": "skills/to-spec/SKILL.md",
+      "skillFolderHash": "7f0026984b12e771eac7c78a24ae07b9d32289db",
+      "installedAt": "2026-08-06T12:09:56.324Z",
+      "updatedAt": "2026-08-06T12:09:56.324Z"
+    },
+    "wayfinder": {
+      "source": "wert2all/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wert2all/skills.git",
+      "skillPath": "skills/wayfinder/SKILL.md",
+      "skillFolderHash": "65445b8bac6b44b0500c84341ba36d4191f213f5",
+      "installedAt": "2026-08-06T12:09:56.326Z",
+      "updatedAt": "2026-08-06T12:09:56.326Z"
+    },
+    "simplify": {
+      "source": "brianlovin/claude-config",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/brianlovin/claude-config.git",
+      "skillPath": "skills/simplify/SKILL.md",
+      "skillFolderHash": "83566973442dc05bcf5abbe83053e8a8e5f50b6b",
+      "installedAt": "2026-08-06T12:10:42.052Z",
+      "updatedAt": "2026-08-06T12:10:42.052Z"
     }
   },
   "dismissed": {
