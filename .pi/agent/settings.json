@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.83.0",
-  "defaultProvider": "nvidia",
-  "defaultModel": "z-ai/glm-5.2",
+  "defaultProvider": "opencode",
+  "defaultModel": "mimo-v2.5-free",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
@@ -66,7 +66,15 @@
         "type": "free",
         "speed": "fast"
       },
+      "opencode/mimo-v2.5-free": {
+        "type": "free",
+        "speed": "fast"
+      },
       "openrouter/openrouter/owl-alpha": {
+        "type": "free",
+        "speed": "fast"
+      },
+      "openrouter/cohere/north-mini-code:free": {
         "type": "free",
         "speed": "fast"
       },
