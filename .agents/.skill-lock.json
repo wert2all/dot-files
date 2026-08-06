@@ -108,6 +108,15 @@
       "skillFolderHash": "83566973442dc05bcf5abbe83053e8a8e5f50b6b",
       "installedAt": "2026-08-06T12:10:42.052Z",
       "updatedAt": "2026-08-06T12:10:42.052Z"
+    },
+    "to-tickets": {
+      "source": "wert2all/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/wert2all/skills.git",
+      "skillPath": "skills/to-tickets/SKILL.md",
+      "skillFolderHash": "59235c3442ed008a742a12abc8a06831ac65a570",
+      "installedAt": "2026-08-06T14:24:14.604Z",
+      "updatedAt": "2026-08-06T14:27:22.790Z"
     }
   },
   "dismissed": {

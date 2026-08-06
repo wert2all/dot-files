@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.84.0",
-  "defaultProvider": "nvidia",
-  "defaultModel": "z-ai/glm-5.2",
+  "defaultProvider": "openrouter",
+  "defaultModel": "cohere/north-mini-code:free",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
@@ -13,7 +13,8 @@
     "openrouter/cohere/north-mini-code:free",
     "nvidia/deepseek-ai/deepseek-v4-flash",
     "opencode/laguna-s-2.1-free",
-    "opencode/mimo-v2.5-free"
+    "opencode/mimo-v2.5-free",
+    "opencode-go/deepseek-v4-pro"
   ],
   "modelMeta": {
     "config": {
