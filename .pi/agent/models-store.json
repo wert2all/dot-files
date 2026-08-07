@@ -277,37 +277,6 @@
         "maxTokens": 65536
       },
       {
-        "id": "mistralai/mistral-medium-3.5-128b",
-        "name": "Mistral Medium 3.5",
-        "api": "openai-completions",
-        "provider": "nvidia",
-        "baseUrl": "https://integrate.api.nvidia.com/v1",
-        "headers": {
-          "NVCF-POLL-SECONDS": "3600"
-        },
-        "reasoning": true,
-        "input": [
-          "text",
-          "image"
-        ],
-        "cost": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
-          "cacheWrite": 0
-        },
-        "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "supportsReasoningEffort": false,
-          "maxTokensField": "max_tokens",
-          "supportsStrictMode": false,
-          "supportsLongCacheRetention": false
-        },
-        "contextWindow": 262144,
-        "maxTokens": 32768
-      },
-      {
         "id": "moonshotai/kimi-k2.6",
         "name": "Kimi K2.6",
         "api": "openai-completions",
@@ -915,7 +884,7 @@
         "maxTokens": 131072
       }
     ],
-    "checkedAt": 1786091264072,
+    "checkedAt": 1786005926634,
     "lastModified": 1785243510000,
     "etag": "W/\"bfdd70cee2b1e644efa969c8774173f9\""
   },
@@ -8974,9 +8943,9 @@
         }
       }
     ],
-    "checkedAt": 1786091264070,
-    "lastModified": 1786091041000,
-    "etag": "W/\"898acce07072b4ebbcee17fceab7bd26\""
+    "checkedAt": 1786005926637,
+    "lastModified": 1786004065000,
+    "etag": "W/\"750ff56800c6899d35ecdabb499b54d3\""
   },
   "opencode": {
     "models": [
@@ -10241,7 +10210,7 @@
       {
         "id": "grok-build-0.1",
         "name": "Grok Build 0.1",
-        "api": "openai-completions",
+        "api": "openai-responses",
         "provider": "opencode",
         "baseUrl": "https://opencode.ai/zen/v1",
         "reasoning": true,
@@ -10256,10 +10225,8 @@
           "cacheWrite": 0
         },
         "compat": {
-          "supportsStore": false,
-          "supportsDeveloperRole": false,
-          "supportsReasoningEffort": false,
-          "maxTokensField": "max_tokens"
+          "sessionAffinityFormat": "openai-nosession",
+          "supportsReasoningEffort": false
         },
         "contextWindow": 256000,
         "maxTokens": 256000,
@@ -10417,8 +10384,8 @@
         }
       },
       {
-        "id": "ling-3.0-flash-free",
-        "name": "Ling-3.0-flash Free",
+        "id": "ling-3.0-tiny-free",
+        "name": "Ling-3.0-tiny Free",
         "api": "openai-completions",
         "provider": "opencode",
         "baseUrl": "https://opencode.ai/zen/v1",
@@ -10438,16 +10405,7 @@
           "maxTokensField": "max_tokens"
         },
         "contextWindow": 262144,
-        "maxTokens": 32768,
-        "thinkingLevelMap": {
-          "off": null,
-          "minimal": null,
-          "low": "low",
-          "medium": "medium",
-          "high": "high",
-          "xhigh": null,
-          "max": null
-        }
+        "maxTokens": 32768
       },
       {
         "id": "longcat-2.0-free",
@@ -10670,9 +10628,9 @@
         "maxTokens": 65536
       }
     ],
-    "checkedAt": 1786091263986,
-    "lastModified": 1786091039000,
-    "etag": "W/\"f29b2f14d9f92aa2f19f00af1a129405\""
+    "checkedAt": 1786005926733,
+    "lastModified": 1785917085000,
+    "etag": "W/\"eb53c016e608c41c0c79b534e7b1c40a\""
   },
   "opencode-go": {
     "models": [
@@ -11167,8 +11125,8 @@
         "maxTokens": 131072
       }
     ],
-    "checkedAt": 1786091264074,
-    "lastModified": 1786091040000,
-    "etag": "W/\"fc45c5903aaf73b9f2cdfd74cc3f77f9\""
+    "checkedAt": 1786005926635,
+    "lastModified": 1785760817000,
+    "etag": "W/\"9acd354f1fe084eec04a65a7ad727beb\""
   }
 }
