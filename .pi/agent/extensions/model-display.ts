@@ -28,7 +28,7 @@ import {
   statuslineLeft,
   statuslineRemove,
   statuslineRight,
-} from "./statusline-api";
+} from "./libs/statusline-api";
 
 type ModelMetaEntry = {
   type?: "free" | "pay";

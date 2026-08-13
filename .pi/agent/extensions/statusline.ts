@@ -6,9 +6,12 @@
  * or by emitting the events directly.
  */
 
-import type { ExtensionAPI, ExtensionContext } from "@earendil-works/pi-coding-agent";
+import type {
+  ExtensionAPI,
+  ExtensionContext,
+} from "@earendil-works/pi-coding-agent";
 import { truncateToWidth, visibleWidth } from "@earendil-works/pi-tui";
-import { STATUSLINE_CHANNELS, type StatusItem } from "./statusline-api";
+import { STATUSLINE_CHANNELS, type StatusItem } from "./libs/statusline-api";
 
 export default function statuslineExtension(pi: ExtensionAPI) {
   const left = new Map<string, StatusItem>();
@@ -29,7 +32,7 @@ export default function statuslineExtension(pi: ExtensionAPI) {
         dispose: () => {
           requestRender = undefined;
         },
-        invalidate() {},
+        invalidate() { },
         render(width: number): string[] {
           const leftStr = sorted(left)
             .map((i) => i.text)
