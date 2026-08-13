@@ -1,11 +1,7 @@
 /**
  * Model Display Extension
  *
- * Replaces the default footer with model info including:
- * - type badge (free/pay) with background color
- * - speed badge (fast/standard) with background color
- * - provider name
- * - model id
+ * Pushes model info and context usage into the shared statusline.
  *
  * Configure via modelMeta in settings.json:
  *   ~/.pi/agent/settings.json (global)
@@ -25,10 +21,14 @@ import type {
   ExtensionAPI,
   ExtensionContext,
 } from "@earendil-works/pi-coding-agent";
-import { truncateToWidth, visibleWidth } from "@earendil-works/pi-tui";
 import { existsSync, readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
+import {
+  statuslineLeft,
+  statuslineRemove,
+  statuslineRight,
+} from "./statusline-api";
 
 type ModelMetaEntry = {
   type?: "free" | "pay";
@@ -64,6 +64,9 @@ const SPEED_BG: Record<string, string> = {
   fast: BG_BLUE,
   standard: BG_GRAY,
 };
+
+const MODEL_SLOT_ID = "model-display:model";
+const USAGE_SLOT_ID = "model-display:usage";
 
 function badge(text: string, bg: string): string {
   return `${bg}${FG_WHITE} ${text} ${BG_RESET}${FG_RESET} `;
@@ -117,84 +120,66 @@ function loadModelMeta(cwd: string): ModelMetaConfig {
   return { config, models };
 }
 
-function generateStatuses(statuses: ReadonlyMap<string, string>): string {
-  const statusArr =
-    statuses instanceof Map
-      ? Array.from(statuses.values())
-      : Array.isArray(statuses)
-        ? statuses
-        : [];
-  return statusArr.filter(Boolean).join(" ");
-}
-
-function getContextUsage(usage: ContextUsage | undefined) {
+function getContextUsageBar(usage: ContextUsage | undefined): string {
   const pct = usage && usage.percent !== null ? usage.percent : 0;
   const filled = Math.round(pct / 10);
   const bar =
     "#".repeat(filled) + "-".repeat(10 - (filled <= 10 ? filled : 10));
-  return `[${bar}] ${Math.round(pct)}% `;
+  return `[${bar}] ${Math.round(pct)}%`;
 }
 
 export default function (pi: ExtensionAPI) {
   let modelMeta: ModelMetaConfig = { config: { enabled: false }, models: {} };
-  let currentModel: { provider: string; id: string } | null = null;
+  let ctx: ExtensionContext | undefined;
 
-  function getModelDisplay(models: Models, config: ExtensionConfig): string {
-    if (!currentModel) return "";
+  function pushModel(model: { provider: string; id: string }) {
+    const modelName = model.id.split("/")[1] || model.id;
+    const meta = modelMeta.models[`${model.provider}/${model.id}`];
+    const badges = buildBadges(meta, modelMeta.config.badges);
 
-    const modelName = currentModel.id.split("/")[1] || currentModel.id;
-    const meta = models[`${currentModel.provider}/${currentModel.id}`];
-    const badges = buildBadges(meta, config.badges);
-
-    return `${badges} ${currentModel.provider}: ${modelName}`;
-  }
-
-  function setFooter(ctx: ExtensionContext, config: ModelMetaConfig) {
-    ctx.ui.setFooter((tui, theme, footerData) => {
-      const unsub = footerData.onBranchChange(() => tui.requestRender());
-
-      return {
-        dispose: unsub,
-        invalidate() { },
-        render(width: number): string[] {
-          const modelInfo = theme.fg(
-            "dim",
-            getModelDisplay(config.models, config.config),
-          );
-          const statuses = theme.fg(
-            "dim",
-            generateStatuses(footerData.getExtensionStatuses()),
-          );
-          const usageBar = theme.fg(
-            "dim",
-            getContextUsage(ctx.getContextUsage()),
-          );
-
-          const gap1 = width - visibleWidth(modelInfo) - visibleWidth(statuses);
-          const line1 = modelInfo + " ".repeat(Math.max(0, gap1)) + statuses;
-
-          const gap2 = width - visibleWidth(usageBar);
-          const line2 = " ".repeat(Math.max(0, gap2)) + usageBar;
-
-          return [truncateToWidth(line1, width), truncateToWidth(line2, width)];
-        },
-      };
+    statuslineLeft(pi, {
+      id: MODEL_SLOT_ID,
+      text: `${badges}${model.provider}: ${modelName}`.trim(),
+      priority: 10,
     });
   }
 
-  pi.on("session_start", async (_event, ctx) => {
+  function pushUsage() {
+    statuslineRight(pi, {
+      id: USAGE_SLOT_ID,
+      text: getContextUsageBar(ctx?.getContextUsage()),
+      priority: 5,
+    });
+  }
+
+  pi.on("session_start", async (_event, c) => {
+    ctx = c;
     modelMeta = loadModelMeta(ctx.cwd);
 
-    if (ctx.model) {
-      currentModel = { provider: ctx.model.provider, id: ctx.model.id };
-    }
-    if (modelMeta.config.enabled) {
-      setFooter(ctx, modelMeta);
-    }
+    if (!modelMeta.config.enabled) return;
+
+    if (ctx.model) pushModel(ctx.model);
+    pushUsage();
   });
 
-  pi.on("model_select", async (event, ctx) => {
-    currentModel = { provider: event.model.provider, id: event.model.id };
+  pi.on("model_select", async (event, c) => {
+    ctx = c;
     modelMeta = loadModelMeta(ctx.cwd);
+
+    if (!modelMeta.config.enabled) return;
+
+    pushModel(event.model);
+    pushUsage();
+  });
+
+  pi.on("turn_end", async () => {
+    if (!modelMeta.config.enabled || !ctx) return;
+    pushUsage();
+  });
+
+  pi.on("session_shutdown", async () => {
+    statuslineRemove(pi, MODEL_SLOT_ID);
+    statuslineRemove(pi, USAGE_SLOT_ID);
+    ctx = undefined;
   });
 }
