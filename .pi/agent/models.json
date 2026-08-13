@@ -13,6 +13,54 @@
         }
       ]
     },
+    "unorouter": {
+      "baseUrl": "https://api.unorouter.com/v1",
+      "api": "openai-completions",
+      "authHeader": true,
+      "apiKey": "!command pass show api/ai/unorouter",
+      "models": [
+        {
+          "id": "glm-5.2:free",
+          "name": "UnoRouter GLM-5.2",
+          "reasoning": true,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "kimi-k2.7-code:free",
+          "name": "UnoRouter Kimi k2.7 code",
+          "reasoning": true,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "glm-5.2-thinking:free",
+          "name": "UnoRouter GLM-5.2 Thinking",
+          "reasoning": true,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "minimax-m3:free",
+          "name": "UnoRouter MiniMax m3",
+          "reasoning": true,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "gemini-3.6-flash-thinking:free",
+          "name": "UnoRouter Gemini 3.6 Flash Thinking",
+          "reasoning": true,
+          "input": [
+            "text"
+          ]
+        }
+      ]
+    },
     "nvidia": {
       "baseUrl": "https://integrate.api.nvidia.com/v1",
       "api": "openai-completions",

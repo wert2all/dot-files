@@ -71,3 +71,5 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[http "https://git.localhost"]
+	sslCAInfo = /home/wert2all/.herdr/worktrees/knot-ai/worktree-brave-forest-fc58/docker/git-ingress/git.localhost.crt
