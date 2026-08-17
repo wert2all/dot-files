@@ -58,6 +58,14 @@
           "input": [
             "text"
           ]
+        },
+        {
+          "id": "glm-5.2-thinking:free",
+          "name": "UnoRouter GLM-5.2",
+          "reasoning": true,
+          "input": [
+            "text"
+          ]
         }
       ]
     },
