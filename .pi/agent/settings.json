@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.84.2",
-  "defaultProvider": "nvidia",
-  "defaultModel": "z-ai/glm-5.2",
+  "defaultProvider": "opencode-go",
+  "defaultModel": "minimax-m3",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
