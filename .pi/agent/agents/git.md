@@ -1,7 +1,7 @@
 ---
 name: git
 description: git expert
-model: "opencode/big-pickle"
+model: "openrouter/stealth/ox-alpha"
 tools:
   - read
   - write

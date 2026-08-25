@@ -13,6 +13,22 @@
         }
       ]
     },
+    "openrouter": {
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "api": "openai-completions",
+      "authHeader": true,
+      "apiKey": "!command pass show api/ai/openrouter",
+      "models": [
+        {
+          "id": "stealth/ox-alpha",
+          "name": "[OpenRouter] Ox alpha",
+          "reasoning": true,
+          "input": [
+            "text"
+          ]
+        }
+      ]
+    },
     "unorouter": {
       "baseUrl": "https://api.unorouter.com/v1",
       "api": "openai-completions",
