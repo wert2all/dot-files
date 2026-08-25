@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.84.2",
+  "lastChangelogVersion": "0.84.3",
   "defaultProvider": "opencode-go",
   "defaultModel": "minimax-m3",
   "defaultThinkingLevel": "high",
@@ -12,11 +12,9 @@
     "nvidia/z-ai/glm-5.2",
     "openrouter/cohere/north-mini-code:free",
     "nvidia/deepseek-ai/deepseek-v4-flash",
-    "opencode/laguna-s-2.1-free",
-    "opencode/mimo-v2.5-free",
-    "opencode-go/deepseek-v4-pro",
     "opencode-go/minimax-m3",
-    "unorouter/kimi-k2.7-code:free"
+    "unorouter/kimi-k2.7-code:free",
+    "openrouter/stealth/ox-alpha"
   ],
   "modelMeta": {
     "config": {

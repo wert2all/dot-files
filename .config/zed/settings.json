@@ -11,31 +11,7 @@
   "agent_ui_font_size": 20,
   //theme
   "icon_theme": "Warm Charmed Icons",
-  "theme": "Aura Dark",
-  "theme_overrides": {
-    "Aura Dark": {
-      "editor.document_highlight.read_background": "#00000000",
-      "editor.document_highlight.write_background": "#00000000",
-      "border.variant": "#15141C",
-      "border": "#15141C",
-      "title_bar.background": "#15141C",
-      "panel.background": "#15141C",
-      "panel.focused_border": "#4E466E",
-      "players": [
-        {
-          "cursor": "#BD9DFF",
-        },
-      ],
-      "syntax": {
-        "comment": {
-          "font_style": "italic",
-        },
-        "comment.doc": {
-          "font_style": "italic",
-        },
-      },
-    },
-  },
+  "theme_overrides": {},
   "title_bar": {
     "show_onboarding_banner": false,
     "show_project_items": false,
