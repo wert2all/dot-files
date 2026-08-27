@@ -29,6 +29,22 @@
         }
       ]
     },
+    "empero": {
+      "baseUrl": "https://free.empero.org/v1",
+      "api": "openai-completions",
+      "authHeader": true,
+      "apiKey": "free",
+      "models": [
+        {
+          "id": "glm-5.3-flash",
+          "name": "Empero GLM-5.3 Flash",
+          "reasoning": true,
+          "input": [
+            "text"
+          ]
+        }
+      ]
+    },
     "unorouter": {
       "baseUrl": "https://api.unorouter.com/v1",
       "api": "openai-completions",
@@ -36,24 +52,8 @@
       "apiKey": "!command pass show api/ai/unorouter",
       "models": [
         {
-          "id": "glm-5.2:free",
-          "name": "UnoRouter GLM-5.2",
-          "reasoning": true,
-          "input": [
-            "text"
-          ]
-        },
-        {
-          "id": "kimi-k2.7-code:free",
-          "name": "UnoRouter Kimi k2.7 code",
-          "reasoning": true,
-          "input": [
-            "text"
-          ]
-        },
-        {
-          "id": "glm-5.2-thinking:free",
-          "name": "UnoRouter GLM-5.2 Thinking",
+          "id": "glm-5.3-thinking:free",
+          "name": "UnoRouter GLM-5.3 Thinking",
           "reasoning": true,
           "input": [
             "text"
@@ -66,22 +66,6 @@
           "input": [
             "text"
           ]
-        },
-        {
-          "id": "gemini-3.6-flash-thinking:free",
-          "name": "UnoRouter Gemini 3.6 Flash Thinking",
-          "reasoning": true,
-          "input": [
-            "text"
-          ]
-        },
-        {
-          "id": "glm-5.2-thinking:free",
-          "name": "UnoRouter GLM-5.2",
-          "reasoning": true,
-          "input": [
-            "text"
-          ]
         }
       ]
     },
@@ -90,40 +74,6 @@
       "api": "openai-completions",
       "apiKey": "!command pass show api/ai/nvidia",
       "models": [
-        {
-          "id": "openai/gpt-oss-120b",
-          "name": "[NVIDIA] GPT-OSS-120B",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ]
-        },
-        {
-          "id": "minimaxai/minimax-m2.7",
-          "name": "[NVIDIA] MiniMax m2.7",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ]
-        },
-        {
-          "id": "z-ai/glm4.7",
-          "name": "[NVIDIA] GLM-4.7",
-          "reasoning": true,
-          "input": [
-            "text"
-          ]
-        },
-        {
-          "id": "z-ai/glm-5.2",
-          "name": "[NVIDIA] GLM-5.2",
-          "reasoning": true,
-          "input": [
-            "text"
-          ]
-        },
         {
           "id": "deepseek-ai/deepseek-v4-pro",
           "name": "[NVIDIA] DeepSeek 4-pro",
@@ -160,31 +110,6 @@
         {
           "id": "poolside/laguna-xs-2.1",
           "name": "[NVIDIA] Laguna XS 2.1",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ]
-        },
-        {
-          "id": "moonshotai/kimi-k2.6",
-          "name": "[NVIDIA] Kimi k2.6",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ]
-        }
-      ]
-    },
-    "kenari": {
-      "baseUrl": "https://kenari.id/v1",
-      "api": "openai-completions",
-      "apiKey": "!command pass show api/ai/kenari",
-      "models": [
-        {
-          "id": "kimi-k2-7-code:free",
-          "name": "[Kenari] Kimi k2.7 code",
           "reasoning": true,
           "input": [
             "text",
