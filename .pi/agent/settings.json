@@ -1,20 +1,14 @@
 {
   "lastChangelogVersion": "0.84.3",
-  "defaultProvider": "opencode-go",
-  "defaultModel": "minimax-m3",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
   "theme": "rose-pine-moon",
   "enabledModels": [
-    "opencode/big-pickle",
     "nvidia/minimaxai/minimax-m3",
-    "nvidia/z-ai/glm-5.2",
-    "openrouter/cohere/north-mini-code:free",
-    "nvidia/deepseek-ai/deepseek-v4-flash",
     "opencode-go/minimax-m3",
-    "unorouter/kimi-k2.7-code:free",
-    "openrouter/stealth/ox-alpha"
+    "unorouter/minimax-m3:free",
+    "unorouter/glm-5.3-thinking:free"
   ],
   "modelMeta": {
     "config": {
