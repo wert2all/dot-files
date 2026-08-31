@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.84.3",
+  "lastChangelogVersion": "0.84.4",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
@@ -8,7 +8,8 @@
     "nvidia/minimaxai/minimax-m3",
     "opencode-go/minimax-m3",
     "unorouter/minimax-m3:free",
-    "unorouter/glm-5.3-thinking:free"
+    "unorouter/glm-5.3-thinking:free",
+    "nvidia/moonshotai/kimi-k3"
   ],
   "modelMeta": {
     "config": {

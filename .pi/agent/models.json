@@ -73,50 +73,7 @@
       "baseUrl": "https://integrate.api.nvidia.com/v1",
       "api": "openai-completions",
       "apiKey": "!command pass show api/ai/nvidia",
-      "models": [
-        {
-          "id": "deepseek-ai/deepseek-v4-pro",
-          "name": "[NVIDIA] DeepSeek 4-pro",
-          "reasoning": true,
-          "input": [
-            "text"
-          ]
-        },
-        {
-          "id": "deepseek-ai/deepseek-v4-flash",
-          "name": "[NVIDIA] DeepSeek 4-flash",
-          "reasoning": true,
-          "input": [
-            "text"
-          ]
-        },
-        {
-          "id": "deepseek-ai/deepseek-v4-flash",
-          "name": "[NVIDIA] DeepSeek 4-flash",
-          "reasoning": true,
-          "input": [
-            "text"
-          ]
-        },
-        {
-          "id": "google/gemma-4-31b-it",
-          "name": "[NVIDIA] Google Gemma-4 31B",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ]
-        },
-        {
-          "id": "poolside/laguna-xs-2.1",
-          "name": "[NVIDIA] Laguna XS 2.1",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ]
-        }
-      ]
+      "models": []
     }
   }
 }
