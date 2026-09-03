@@ -1,7 +1,7 @@
 ---
 name: git
 description: git expert
-model: "openrouter/stealth/ox-alpha"
+model: "inclusionai/ling-3.0-flash-fin:free"
 tools:
   - read
   - write
