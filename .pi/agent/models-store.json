@@ -660,7 +660,7 @@
         "maxTokens": 16384
       }
     ],
-    "checkedAt": 1788332699232,
+    "checkedAt": 1788374670221,
     "lastModified": 1788266317000,
     "etag": "W/\"52620e25656db352c870af48ff92a888\""
   },
@@ -912,6 +912,72 @@
           "output": 50,
           "cacheRead": 1,
           "cacheWrite": 12.5
+        },
+        "contextWindow": 1000000,
+        "maxTokens": 128000,
+        "compat": {
+          "thinkingFormat": "openrouter",
+          "cacheControlFormat": "anthropic"
+        }
+      },
+      {
+        "id": "anthropic/claude-fable-5.1",
+        "name": "Anthropic: Claude Fable 5.1",
+        "api": "openai-completions",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "provider": "openrouter",
+        "reasoning": true,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
+        },
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 10,
+          "output": 50,
+          "cacheRead": 0.25,
+          "cacheWrite": 12.5
+        },
+        "contextWindow": 1000000,
+        "maxTokens": 128000,
+        "compat": {
+          "thinkingFormat": "openrouter",
+          "cacheControlFormat": "anthropic"
+        }
+      },
+      {
+        "id": "anthropic/claude-fable-5.1:batch",
+        "name": "Anthropic: Claude Fable 5.1 (batch)",
+        "api": "openai-completions",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "provider": "openrouter",
+        "reasoning": true,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": "xhigh",
+          "max": "max"
+        },
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 5,
+          "output": 25,
+          "cacheRead": 0.125,
+          "cacheWrite": 6.25
         },
         "contextWindow": 1000000,
         "maxTokens": 128000,
@@ -1287,39 +1353,6 @@
         }
       },
       {
-        "id": "anthropic/claude-opus-4.8-fast",
-        "name": "Anthropic: Claude Opus 4.8 (Fast)",
-        "api": "openai-completions",
-        "baseUrl": "https://openrouter.ai/api/v1",
-        "provider": "openrouter",
-        "reasoning": true,
-        "thinkingLevelMap": {
-          "off": "none",
-          "minimal": null,
-          "low": "low",
-          "medium": "medium",
-          "high": "high",
-          "xhigh": "xhigh",
-          "max": "max"
-        },
-        "input": [
-          "text",
-          "image"
-        ],
-        "cost": {
-          "input": 10,
-          "output": 50,
-          "cacheRead": 1,
-          "cacheWrite": 12.5
-        },
-        "contextWindow": 1000000,
-        "maxTokens": 128000,
-        "compat": {
-          "thinkingFormat": "openrouter",
-          "cacheControlFormat": "anthropic"
-        }
-      },
-      {
         "id": "anthropic/claude-opus-4.8:batch",
         "name": "Anthropic: Claude Opus 4.8 (batch)",
         "api": "openai-completions",
@@ -1377,39 +1410,6 @@
           "output": 25,
           "cacheRead": 0.5,
           "cacheWrite": 6.25
-        },
-        "contextWindow": 1000000,
-        "maxTokens": 128000,
-        "compat": {
-          "thinkingFormat": "openrouter",
-          "cacheControlFormat": "anthropic"
-        }
-      },
-      {
-        "id": "anthropic/claude-opus-5-fast",
-        "name": "Claude Opus 5 (Fast)",
-        "api": "openai-completions",
-        "baseUrl": "https://openrouter.ai/api/v1",
-        "provider": "openrouter",
-        "reasoning": true,
-        "thinkingLevelMap": {
-          "off": "none",
-          "minimal": null,
-          "low": "low",
-          "medium": "medium",
-          "high": "high",
-          "xhigh": "xhigh",
-          "max": "max"
-        },
-        "input": [
-          "text",
-          "image"
-        ],
-        "cost": {
-          "input": 10,
-          "output": 50,
-          "cacheRead": 1,
-          "cacheWrite": 12.5
         },
         "contextWindow": 1000000,
         "maxTokens": 128000,
@@ -2002,13 +2002,13 @@
           "text"
         ],
         "cost": {
-          "input": 0.55,
-          "output": 1.65,
-          "cacheRead": 0.55,
+          "input": 0.25,
+          "output": 0.95,
+          "cacheRead": 0.13,
           "cacheWrite": 0
         },
-        "contextWindow": 161000,
-        "maxTokens": 144900,
+        "contextWindow": 163840,
+        "maxTokens": 32768,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter"
@@ -2155,9 +2155,9 @@
           "text"
         ],
         "cost": {
-          "input": 0.08092,
-          "output": 0.16184,
-          "cacheRead": 0.016184,
+          "input": 0.088606,
+          "output": 0.177212,
+          "cacheRead": 0.017721,
           "cacheWrite": 0
         },
         "contextWindow": 1024000,
@@ -2288,13 +2288,13 @@
           "text"
         ],
         "cost": {
-          "input": 1.6,
-          "output": 3.2,
-          "cacheRead": 0.135,
+          "input": 1.04226,
+          "output": 2.08452,
+          "cacheRead": 0.086855,
           "cacheWrite": 0
         },
-        "contextWindow": 1048576,
-        "maxTokens": 393216,
+        "contextWindow": 1024000,
+        "maxTokens": 384000,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter",
@@ -2321,12 +2321,12 @@
           "text"
         ],
         "cost": {
-          "input": 0.66,
-          "output": 1.98,
-          "cacheRead": 0.022,
+          "input": 1.1154,
+          "output": 3.3462,
+          "cacheRead": 0.03718,
           "cacheWrite": 0
         },
-        "contextWindow": 1048576,
+        "contextWindow": 1024000,
         "maxTokens": 384000,
         "compat": {
           "supportsDeveloperRole": false,
@@ -3400,6 +3400,38 @@
         },
         "contextWindow": 128000,
         "maxTokens": 50000,
+        "compat": {
+          "supportsDeveloperRole": false,
+          "thinkingFormat": "openrouter"
+        }
+      },
+      {
+        "id": "inception/mercury-2.5-preview",
+        "name": "Inception: Mercury 2.5 Preview",
+        "api": "openai-completions",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "provider": "openrouter",
+        "reasoning": true,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": "medium",
+          "high": "high",
+          "xhigh": null,
+          "max": null
+        },
+        "input": [
+          "text"
+        ],
+        "cost": {
+          "input": 0.04,
+          "output": 0.15,
+          "cacheRead": 0.004,
+          "cacheWrite": 0
+        },
+        "contextWindow": 260000,
+        "maxTokens": 65536,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter"
@@ -4897,13 +4929,13 @@
           "text"
         ],
         "cost": {
-          "input": 0.5,
-          "output": 2.2,
-          "cacheRead": 0.1,
+          "input": 0.625,
+          "output": 3.125,
+          "cacheRead": 0.1875,
           "cacheWrite": 0
         },
-        "contextWindow": 262144,
-        "maxTokens": 16384,
+        "contextWindow": 256000,
+        "maxTokens": 32768,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter"
@@ -8658,11 +8690,11 @@
         "cost": {
           "input": 2,
           "output": 6,
-          "cacheRead": 0.25,
+          "cacheRead": 0.2,
           "cacheWrite": 0
         },
-        "contextWindow": 1000000,
-        "maxTokens": 262144,
+        "contextWindow": 262144,
+        "maxTokens": 131072,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter"
@@ -8688,9 +8720,9 @@
           "text"
         ],
         "cost": {
-          "input": 2.5,
-          "output": 6.25,
-          "cacheRead": 0.5,
+          "input": 2,
+          "output": 6,
+          "cacheRead": 0.25,
           "cacheWrite": 0
         },
         "contextWindow": 1010000,
@@ -9797,13 +9829,13 @@
           "text"
         ],
         "cost": {
-          "input": 1.19,
-          "output": 3.74,
-          "cacheRead": 0.221,
+          "input": 0.966,
+          "output": 3.036,
+          "cacheRead": 0.1932,
           "cacheWrite": 0
         },
         "contextWindow": 1048576,
-        "maxTokens": 262144,
+        "maxTokens": 131072,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter"
@@ -9986,7 +10018,7 @@
         "cost": {
           "input": 10,
           "output": 50,
-          "cacheRead": 1,
+          "cacheRead": 0.25,
           "cacheWrite": 12.5
         },
         "contextWindow": 1000000,
@@ -10322,6 +10354,39 @@
         }
       },
       {
+        "id": "~z-ai/glm-flash-latest",
+        "name": "Z.ai: GLM Flash Latest",
+        "api": "openai-completions",
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "provider": "openrouter",
+        "reasoning": true,
+        "thinkingLevelMap": {
+          "off": null,
+          "minimal": null,
+          "low": "low",
+          "medium": null,
+          "high": "high",
+          "xhigh": null,
+          "max": "max"
+        },
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 0.075,
+          "output": 0.25,
+          "cacheRead": 0.015,
+          "cacheWrite": 0
+        },
+        "contextWindow": 1048576,
+        "maxTokens": 131072,
+        "compat": {
+          "supportsDeveloperRole": false,
+          "thinkingFormat": "openrouter"
+        }
+      },
+      {
         "id": "~z-ai/glm-latest",
         "name": "Z.ai: GLM Latest",
         "api": "openai-completions",
@@ -10341,22 +10406,22 @@
           "text"
         ],
         "cost": {
-          "input": 1.17,
-          "output": 3.96,
-          "cacheRead": 0.234,
+          "input": 1.15,
+          "output": 3.5,
+          "cacheRead": 0.1,
           "cacheWrite": 0
         },
-        "contextWindow": 1048576,
-        "maxTokens": 943718,
+        "contextWindow": 262144,
+        "maxTokens": 235929,
         "compat": {
           "supportsDeveloperRole": false,
           "thinkingFormat": "openrouter"
         }
       }
     ],
-    "checkedAt": 1788332699246,
-    "lastModified": 1788266323000,
-    "etag": "W/\"5655b617530f6920461f2c363c01d341\""
+    "checkedAt": 1788374670105,
+    "lastModified": 1788352809000,
+    "etag": "W/\"db57d0bb40c7f5eac8546554e8d8fae4\""
   },
   "opencode": {
     "models": [
@@ -10399,6 +10464,34 @@
           "input": 10,
           "output": 50,
           "cacheRead": 1,
+          "cacheWrite": 12.5
+        },
+        "contextWindow": 1000000,
+        "maxTokens": 128000,
+        "thinkingLevelMap": {
+          "off": null,
+          "xhigh": "xhigh",
+          "max": "max"
+        },
+        "compat": {
+          "forceAdaptiveThinking": true
+        }
+      },
+      {
+        "id": "claude-fable-5-1",
+        "name": "Claude Fable 5.1",
+        "api": "anthropic-messages",
+        "provider": "opencode",
+        "baseUrl": "https://opencode.ai/zen",
+        "reasoning": true,
+        "input": [
+          "text",
+          "image"
+        ],
+        "cost": {
+          "input": 10,
+          "output": 50,
+          "cacheRead": 0.25,
           "cacheWrite": 12.5
         },
         "contextWindow": 1000000,
@@ -12058,9 +12151,9 @@
         "maxTokens": 65536
       }
     ],
-    "checkedAt": 1788332699227,
-    "lastModified": 1788165508000,
-    "etag": "W/\"6d322f7cf8b47ef80e56f8bf65f2786f\""
+    "checkedAt": 1788374670096,
+    "lastModified": 1788352806000,
+    "etag": "W/\"ac434bcbda9ca4cacff33769bd16e910\""
   },
   "opencode-go": {
     "models": [
@@ -12789,7 +12882,7 @@
         }
       }
     ],
-    "checkedAt": 1788332699248,
+    "checkedAt": 1788374670242,
     "lastModified": 1788165509000,
     "etag": "W/\"c4b6fef889a423288047c3526fe8eb47\""
   }
