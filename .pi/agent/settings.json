@@ -5,7 +5,7 @@
   "quietStartup": true,
   "theme": "rose-pine-moon",
   "enabledModels": [
-    "openrouter/openrouter/free",
+    "openrouter/inclusionai/ling-3.0-flash-fin:free",
     "nvidia/minimaxai/minimax-m3",
     "opencode-go/minimax-m3",
     "unorouter/minimax-m3:free",
@@ -151,7 +151,7 @@
         "disabled": true
       },
       "scout": {
-        "model": "openrouter/openrouter/free"
+        "model": "inclusionai/ling-3.0-flash-fin:free"
       }
     }
   },
