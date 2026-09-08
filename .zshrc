@@ -18,4 +18,3 @@ for file in ~/.zsh/aliases/*.zsh; do
   [[ -r "$file" ]] && source "$file"
 done
 unset file
-
