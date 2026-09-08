@@ -7,10 +7,11 @@
   "enabledModels": [
     "openrouter/inclusionai/ling-3.0-flash-fin:free",
     "nvidia/minimaxai/minimax-m3",
-    "opencode-go/minimax-m3",
     "unorouter/minimax-m3:free",
-    "unorouter/glm-5.3-thinking:free",
-    "nvidia/moonshotai/kimi-k3"
+    "nvidia/moonshotai/kimi-k3",
+    "unorouter/kimi-k3",
+    "unorouter/glm-5.3",
+    "unorouter/deepseek-v4-flash"
   ],
   "modelMeta": {
     "config": {
@@ -125,6 +126,14 @@
       },
       "nvidia/moonshotai/kimi-k3": {
         "type": "free",
+        "speed": "standart"
+      },
+      "unorouter/deepseek-v4-flash": {
+        "type": "pay",
+        "speed": "fast"
+      },
+      "unorouter/glm-5.3": {
+        "type": "pay",
         "speed": "standart"
       }
     }

@@ -66,6 +66,38 @@
           "input": [
             "text"
           ]
+        },
+        {
+          "id": "kimi-k3:free",
+          "name": "UnoRouter Kimi K3",
+          "reasoning": true,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "kimi-k3",
+          "name": "UnoRouter Kimi K3",
+          "reasoning": true,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "glm-5.3",
+          "name": "UnoRouter GLM-5.3",
+          "reasoning": true,
+          "input": [
+            "text"
+          ]
+        },
+        {
+          "id": "deepseek-v4-flash",
+          "name": "UnoRouter Deepseek-v4-flash",
+          "reasoning": true,
+          "input": [
+            "text"
+          ]
         }
       ]
     },
