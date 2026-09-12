@@ -6,14 +6,13 @@
   "theme": "rose-pine-moon",
   "enabledModels": [
     "openrouter/inclusionai/ling-3.0-flash-fin:free",
-    "nvidia/minimaxai/minimax-m3",
-    "unorouter/minimax-m3:free",
     "nvidia/moonshotai/kimi-k3",
+    "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
+    "unorouter/minimax-m3:free",
     "unorouter/kimi-k3",
     "unorouter/glm-5.3",
     "unorouter/deepseek-v4-flash",
-    "unorouter/kimi-k2.6",
-    "nvidia/nvidia/nemotron-3-ultra-550b-a55b"
+    "unorouter/kimi-k2.6"
   ],
   "modelMeta": {
     "config": {
@@ -127,6 +126,10 @@
         "speed": "fast"
       },
       "nvidia/moonshotai/kimi-k3": {
+        "type": "free",
+        "speed": "standart"
+      },
+      "nvidia/nvidia/nemotron-3-ultra-550b-a55b": {
         "type": "free",
         "speed": "standart"
       },
