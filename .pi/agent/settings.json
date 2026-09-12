@@ -178,5 +178,5 @@
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:pi-subagents"
   ],
-  "hideThinkingBlock": true
+  "hideThinkingBlock": false
 }
