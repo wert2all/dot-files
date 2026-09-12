@@ -1,7 +1,7 @@
 ---
 name: git
 description: git expert
-model: "inclusionai/ling-3.0-flash-fin:free"
+model: "nvidia/nvidia/nemotron-3.5-lightning-30b-a3b"
 tools:
   - read
   - write
