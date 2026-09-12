@@ -69,7 +69,7 @@ const MODEL_SLOT_ID = "model-display:model";
 const USAGE_SLOT_ID = "model-display:usage";
 
 function badge(text: string, bg: string): string {
-  return `${bg}${FG_WHITE} ${text} ${BG_RESET}${FG_RESET} `;
+  return `${bg}${FG_WHITE} ${text} ${BG_RESET}${FG_RESET}`;
 }
 
 function getBadgeConfig(
@@ -95,7 +95,7 @@ function buildBadges(
     result += badge(badgeConfig.label, SPEED_BG[meta.speed] ?? BG_GRAY);
   }
 
-  return result;
+  return result ? `${result} ` : result;
 }
 
 function loadModelMeta(cwd: string): ModelMetaConfig {
