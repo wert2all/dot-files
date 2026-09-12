@@ -11,7 +11,8 @@
     "nvidia/moonshotai/kimi-k3",
     "unorouter/kimi-k3",
     "unorouter/glm-5.3",
-    "unorouter/deepseek-v4-flash"
+    "unorouter/deepseek-v4-flash",
+    "nvidia/nvidia/nemotron-3-ultra-550b-a55b"
   ],
   "modelMeta": {
     "config": {
