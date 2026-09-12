@@ -29,36 +29,12 @@
         }
       ]
     },
-    "empero": {
-      "baseUrl": "https://free.empero.org/v1",
-      "api": "openai-completions",
-      "authHeader": true,
-      "apiKey": "free",
-      "models": [
-        {
-          "id": "glm-5.3-flash",
-          "name": "Empero GLM-5.3 Flash",
-          "reasoning": true,
-          "input": [
-            "text"
-          ]
-        }
-      ]
-    },
     "unorouter": {
       "baseUrl": "https://api.unorouter.com/v1",
       "api": "openai-completions",
       "authHeader": true,
       "apiKey": "!command pass show api/ai/unorouter",
       "models": [
-        {
-          "id": "glm-5.3-thinking:free",
-          "name": "UnoRouter GLM-5.3 Thinking",
-          "reasoning": true,
-          "input": [
-            "text"
-          ]
-        },
         {
           "id": "minimax-m3:free",
           "name": "UnoRouter MiniMax m3",
