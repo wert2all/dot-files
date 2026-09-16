@@ -60,8 +60,8 @@
           ]
         },
         {
-          "id": "glm-5.3",
-          "name": "UnoRouter GLM-5.3",
+          "id": "glm-5.3-flash",
+          "name": "UnoRouter GLM-5.3 Flash",
           "reasoning": true,
           "input": [
             "text"
@@ -76,8 +76,8 @@
           ]
         },
         {
-          "id": "kimi-k2.6",
-          "name": "UnoRouter Kimi K2.6",
+          "id": "kimi-k2.7-code",
+          "name": "UnoRouter Kimi K2.7-code",
           "reasoning": true,
           "input": [
             "text"
