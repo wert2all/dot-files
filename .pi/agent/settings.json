@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.85.1",
+  "lastChangelogVersion": "0.87.1",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
@@ -11,7 +11,9 @@
     "nvidia/nvidia/nemotron-3.5-lightning-30b-a3b",
     "unorouter/kimi-k3",
     "unorouter/deepseek-v4-flash",
-    "unorouter/kimi-k2.7-code"
+    "unorouter/kimi-k2.7-code",
+    "nvidia/z-ai/glm-5.3-flash",
+    "nvidia/z-ai/glm-5.3"
   ],
   "modelMeta": {
     "config": {
@@ -133,6 +135,14 @@
         "speed": "fast"
       },
       "nvidia/nvidia/nemotron-3-ultra-550b-a55b": {
+        "type": "free",
+        "speed": "standart"
+      },
+      "nvidia/z-ai/glm-5.3-flash": {
+        "type": "free",
+        "speed": "fast"
+      },
+      "nvidia/z-ai/glm-5.3": {
         "type": "free",
         "speed": "standart"
       },
