@@ -1,7 +1,7 @@
 ---
 name: git
 description: git expert
-model: "nvidia/nvidia/nemotron-3.5-lightning-30b-a3b"
+model: "nvidia/z-ai/glm-5.3-flash"
 tools:
   - read
   - write
