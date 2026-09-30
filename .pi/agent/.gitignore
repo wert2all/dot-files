@@ -4,4 +4,5 @@ mcp-cache.json
 mcp-npx-cache.json
 run-history.jsonl
 npm/
+.pi/agent/models-store.json
 missions/

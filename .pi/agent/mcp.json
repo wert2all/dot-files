@@ -16,7 +16,9 @@
     "github": {
       "url": "https://api.githubcopilot.com/mcp/",
       "auth": "bearer",
-      "bearerTokenEnv": "GITHUB_TOKEN"
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_TOKEN}"
+      }
     }
   }
 }

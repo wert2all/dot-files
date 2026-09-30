@@ -1,14 +1,12 @@
 {
-  "lastChangelogVersion": "0.87.1",
+  "lastChangelogVersion": "0.99.1",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
   "theme": "rose-pine-moon",
   "enabledModels": [
-    "openrouter/inclusionai/ling-3.0-flash-fin:free",
     "nvidia/moonshotai/kimi-k3",
     "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
-    "nvidia/nvidia/nemotron-3.5-lightning-30b-a3b",
     "unorouter/kimi-k3",
     "unorouter/deepseek-v4-flash",
     "unorouter/kimi-k2.7-code",
@@ -26,74 +24,6 @@
       }
     },
     "models": {
-      "opencode-go/mimo-v2.5": {
-        "type": "pay",
-        "speed": "fast"
-      },
-      "opencode-go/kimi-k2.7-code": {
-        "type": "pay",
-        "speed": "standart"
-      },
-      "opencode-go/kimi-k2.6": {
-        "type": "pay",
-        "speed": "standart"
-      },
-      "opencode-go/mimo-v2.5-pro": {
-        "type": "pay",
-        "speed": "standart"
-      },
-      "opencode-go/glm-5.1": {
-        "type": "pay",
-        "speed": "standart"
-      },
-      "opencode-go/glm-5.2": {
-        "type": "pay",
-        "speed": "standart"
-      },
-      "opencode-go/minimax-m2.7": {
-        "type": "pay",
-        "speed": "standart"
-      },
-      "opencode-go/deepseek-v4-pro": {
-        "type": "pay",
-        "speed": "standart"
-      },
-      "opencode-go/minimax-m3": {
-        "type": "pay",
-        "speed": "standart"
-      },
-      "opencode/big-pickle": {
-        "type": "free",
-        "speed": "fast"
-      },
-      "opencode/laguna-s-2.1-free": {
-        "type": "free",
-        "speed": "fast"
-      },
-      "opencode/deepseek-v4-flash-free": {
-        "type": "free",
-        "speed": "fast"
-      },
-      "opencode/mimo-v2.5-free": {
-        "type": "free",
-        "speed": "fast"
-      },
-      "openrouter/openrouter/owl-alpha": {
-        "type": "free",
-        "speed": "fast"
-      },
-      "openrouter/cohere/north-mini-code:free": {
-        "type": "free",
-        "speed": "fast"
-      },
-      "openrouter/openrouter/free": {
-        "type": "free",
-        "speed": "fast"
-      },
-      "nvidia/z-ai/glm-5.2": {
-        "type": "free",
-        "speed": "standart"
-      },
       "nvidia/minimaxai/minimax-m3": {
         "type": "free",
         "speed": "standart"
