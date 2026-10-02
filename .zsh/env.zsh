@@ -52,8 +52,8 @@ export GPG_TTY=$(tty)
 
 # pi codding agent
 export PI_NOTIFY_SOUND_CMD='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
-export PI_QUICK_PROVIDER='opencode'
-export PI_QUICK_MODEL='deepseek-v4-flash-free'
+export PI_QUICK_PROVIDER='nvidia'
+export PI_QUICK_MODEL='nvidia/nemotron-3-ultra-550b-a55b'
 
 # docker
 export COMPOSE_BAKE=true
