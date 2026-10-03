@@ -5,7 +5,19 @@
       "source": "mattpocock/skills",
       "sourceType": "github",
       "skillPath": "skills/engineering/grill-with-docs/SKILL.md",
-      "computedHash": "e7ef25bbee50cda2eb7b3a8ef541db0a0396dad7d369f7d14fb610671dd1864b"
+      "computedHash": "35e62aa423aaeab6a414bcac273f56dfb17802ef2334b41b6a3b00f28196c8cf"
+    },
+    "retro": {
+      "source": "wert2all/skills",
+      "sourceType": "github",
+      "skillPath": "skills/retro/SKILL.md",
+      "computedHash": "994a8fab1cd72b1241f23c8ad12b8525c38570ac51c3dc07960b135ed0476077"
+    },
+    "writing-for-agents": {
+      "source": "wert2all/skills",
+      "sourceType": "github",
+      "skillPath": "skills/writing-for-agents/SKILL.md",
+      "computedHash": "7129c9c4ad43b60e8ad57065df5092163b2654458b64c9746f9dc97ed03f68b0"
     }
   }
 }
