@@ -98,10 +98,18 @@ wpi() {
   # pi() calls check_api_keys -> iap -> pass there, so keys are loaded
   # inside the ns (gpg-agent socket is reachable - netns does not
   # isolate the filesystem) and inherited by the pi binary normally.
+  # XDG_RUNTIME_DIR/WAYLAND_DISPLAY/DISPLAY keep the clipboard working: pi
+  # copies via wl-copy (then xclip/xsel, then OSC 52); without these wl-copy
+  # cannot reach the compositor and no fallback is installed.
+  # HERDR_ENV/HERDR_SOCKET_PATH/HERDR_PANE_ID keep the herdr integration
+  # enabled inside the ns: without them herdr-agent-state.ts bails out in
+  # enabled() and herdr never learns that this pane runs pi.
   # "pi" below is $0 for the inner script, remaining args are its positionals.
   sudo ip netns exec wg-netns \
     setpriv --reuid="$(id -u)" --regid="$(id -g)" --init-groups \
     env HOME="$HOME" USER="$USER" LOGNAME="$USER" PATH="$PATH" TERM="$TERM" \
+    XDG_RUNTIME_DIR="$XDG_RUNTIME_DIR" WAYLAND_DISPLAY="$WAYLAND_DISPLAY" DISPLAY="$DISPLAY" \
+    HERDR_ENV="$HERDR_ENV" HERDR_SOCKET_PATH="$HERDR_SOCKET_PATH" HERDR_PANE_ID="$HERDR_PANE_ID" \
     zsh -ic 'pi "$@"' pi "$@"
   rc=$?
 

@@ -6,9 +6,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
       "skillPath": "skills/caveman/SKILL.md",
-      "skillFolderHash": "3e4386ca694c65a65ba84024f0fe2646a8c9076a",
+      "skillFolderHash": "b314dd99b2b8723aae2de5a22079914567f2e58f",
       "installedAt": "2026-08-06T12:06:24.706Z",
-      "updatedAt": "2026-08-06T12:07:58.055Z"
+      "updatedAt": "2026-10-10T14:52:08.630Z"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
@@ -24,9 +24,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
       "skillPath": "skills/caveman-commit/SKILL.md",
-      "skillFolderHash": "6ba13fa3503e9607eed8f94828b524510d83b7ef",
+      "skillFolderHash": "7b600195c1d3cdd277dc608c56384c86afb7ec11",
       "installedAt": "2026-08-06T12:08:48.256Z",
-      "updatedAt": "2026-08-06T12:08:48.256Z"
+      "updatedAt": "2026-10-10T14:52:19.063Z"
     },
     "code-review": {
       "source": "wert2all/skills",

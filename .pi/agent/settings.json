@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.0.0",
+  "lastChangelogVersion": "1.1.0",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
@@ -120,5 +120,5 @@
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:pi-subagents"
   ],
-  "hideThinkingBlock": false
+  "hideThinkingBlock": true
 }
