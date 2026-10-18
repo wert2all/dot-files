@@ -1,5 +1,7 @@
+session-snapshots/
 session.json
 herdr-server.log
 herdr.sock
 herdr-client.log
 herdr-client.sock
+herdr.sock.agent
