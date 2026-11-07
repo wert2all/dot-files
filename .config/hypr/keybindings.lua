@@ -58,10 +58,10 @@ hl.bind(C.mainMod .. " + CTRL + right", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(C.mainMod .. " + CTRL + left", hl.dsp.focus({ workspace = "e-1" }))
 
 --  Resize windows with C.mainMod + arrow keys
-hl.bind(C.mainMod .. " + SHIFT + H", hl.dsp.window.resize({ x = -40, y = 0, relative = true }, { repeating = true }))
-hl.bind(C.mainMod .. " + SHIFT + L", hl.dsp.window.resize({ x = 40, y = 0, relative = true }, { repeating = true }))
-hl.bind(C.mainMod .. " + SHIFT + K", hl.dsp.window.resize({ x = 0, y = -40, relative = true }, { repeating = true }))
-hl.bind(C.mainMod .. " + SHIFT + J", hl.dsp.window.resize({ x = 0, y = 40, relative = true }, { repeating = true }))
+hl.bind(C.mainMod .. " + SHIFT + H", hl.dsp.window.resize({ x = -40, y = 0, relative = true }))
+hl.bind(C.mainMod .. " + SHIFT + L", hl.dsp.window.resize({ x = 40, y = 0, relative = true }))
+hl.bind(C.mainMod .. " + SHIFT + K", hl.dsp.window.resize({ x = 0, y = -40, relative = true }))
+hl.bind(C.mainMod .. " + SHIFT + J", hl.dsp.window.resize({ x = 0, y = 40, relative = true }))
 
 -- Move/resize windows with C.mainMod + LMB/RMB and dragging
 hl.bind(C.mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })

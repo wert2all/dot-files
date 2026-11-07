@@ -30,7 +30,7 @@ hl.config({
 		inactive_opacity = 0.8,
 		shadow = {
 			range = 12,
-			render_power = 50,
+			render_power = 4,
 			color = 0xee1a1a1a,
 		},
 		dim_special = 0.8,

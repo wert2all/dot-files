@@ -1,17 +1,14 @@
 {
-  "lastChangelogVersion": "1.3.0",
+  "lastChangelogVersion": "1.5.0",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
   "quietStartup": true,
   "theme": "rose-pine-moon",
   "enabledModels": [
-    "nvidia/moonshotai/kimi-k3",
     "nvidia/nvidia/nemotron-3-ultra-550b-a55b",
-    "unorouter/kimi-k3",
-    "unorouter/deepseek-v4-flash",
-    "unorouter/kimi-k2.7-code",
     "nvidia/z-ai/glm-5.3-flash",
-    "nvidia/z-ai/glm-5.3"
+    "unorouter/glm-5.2",
+    "unorouter/glm-5.3"
   ],
   "modelMeta": {
     "config": {
@@ -120,5 +117,8 @@
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:pi-subagents"
   ],
-  "hideThinkingBlock": true
+  "hideThinkingBlock": true,
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.84.0"
+  }
 }
